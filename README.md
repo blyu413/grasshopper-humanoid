@@ -26,7 +26,7 @@ trained policies, logs and generated videos are separate local artifacts.
 
 | Path | Contents |
 | --- | --- |
-| `src/nest/` | Robot configuration, Gym tasks, sensors and MDP terms; `mbrl/supermimic/` contains model-based RL |
+| `src/nest/` | Robot configuration, tasks description, sensors and MDP terms; `mbrl/supermimic/` contains model-based RL |
 | `scripts/` | Training, evaluation, model conversion, rendering and deployment entry points |
 | `tests/` | Existing reward, observation, collision, command and push checks |
 | `assets/` | Versioned robot descriptions, meshes, complete runtime USD layers and terrain |
