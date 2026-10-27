@@ -1,0 +1,20 @@
+<mujoco model="femto_bolt">
+  <default>
+    <default class="visual">
+      <geom group="2" type="mesh" contype="0" conaffinity="0"/>
+    </default>
+    <default class="collision">
+      <geom group="3" type="mesh"/>
+    </default>
+  </default>
+  <asset>
+    <material name="mtl_femto_bolt" specular="0.20000000000000004" shininess="1.0" rgba="0.79215686 0.81960784 0.93333333 1.0"/>
+    <mesh file="femto_bolt.obj"/>
+  </asset>
+  <worldbody>
+    <body name="femto_bolt">
+      <geom material="mtl_femto_bolt" mesh="femto_bolt" class="visual"/>
+      <geom mesh="femto_bolt" class="collision"/>
+    </body>
+  </worldbody>
+</mujoco>

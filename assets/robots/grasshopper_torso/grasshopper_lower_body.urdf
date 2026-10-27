@@ -1,0 +1,1253 @@
+<?xml version='1.0' encoding='utf-8'?>
+<robot name="grasshopper_lower_body">
+    <link name="base_link" />
+    <joint name="to_PELVIS" type="fixed">
+        <origin rpy="0 0 0" xyz="0 0 -0.1714" />
+        <parent link="base_link" />
+        <child link="PELVIS" />
+    </joint>
+    <link name="PELVIS">
+        <visual>
+            <geometry>
+                <mesh
+                    filename="meshes/nest_description/meshes/subsystem/lower_body/grasshopper/v0_1/pelvis.stl"
+                    scale="1 1 1" />
+            </geometry>
+            <material name="light_gray">
+                <color rgba="0.75 0.75 0.75 1" />
+            </material>
+        </visual>
+        <collision>
+            <geometry>
+                <mesh
+                    filename="meshes/nest_description/meshes/subsystem/lower_body/grasshopper/v0_1/pelvis.stl"
+                    scale="1 1 1" />
+            </geometry>
+        </collision>
+        <inertial>
+            <origin rpy="0 0 0" xyz="-0.047405184 -0.0017677397 0.01903973" />
+            <mass value="2.3314621" />
+            <inertia ixx="0.016394937" ixy="0.00019381164" ixz="0.0017890512" iyy="0.015822572"
+                iyz="-6.6568038e-05" izz="0.023956524" />
+        </inertial>
+    </link>
+    <joint name="to_WAIST_Y" type="fixed">
+        <origin rpy="0 0 -2.74889415024" xyz="-0.125 0 0.08445" />
+        <parent link="PELVIS" />
+        <child link="WAIST_Y" />
+    </joint>
+    <link name="WAIST_Y">
+        <visual>
+            <origin rpy="0 0 0" xyz="0 0 0" />
+            <geometry>
+                <mesh
+                    filename="meshes/nest_description/meshes/actuators/hornbill/strongbill.stl" />
+            </geometry>
+            <material name="silver">
+                <color rgba="0.5 0.5 0.5 1" />
+            </material>
+        </visual>
+        <collision>
+            <origin rpy="0 0 0" xyz="0 0 0" />
+            <geometry>
+                <mesh
+                    filename="meshes/nest_description/meshes/actuators/hornbill/strongbill.stl" />
+            </geometry>
+        </collision>
+        <inertial>
+            <origin rpy="0 0 0" xyz="-0.00017305394 -0.00024833716 0.0025442841" />
+            <mass value="2.3127582" />
+            <inertia ixx="0.0032238931" ixy="-1.1828485e-05" ixz="1.4616114e-05" iyy="0.0032372376"
+                iyz="1.9089402e-05" izz="0.0045489409" />
+        </inertial>
+    </link>
+    <joint name="WAIST_Y_out" type="revolute">
+        <origin rpy="0 0 0" xyz="0 0 0" />
+        <axis xyz="0 0 1" />
+        <parent link="WAIST_Y" />
+        <child link="WAIST_Y_rotor" />
+        <limit effort="196.53" lower="-3.141592653589793" upper="3.141592653589793"
+            velocity="8.90117918517108" />
+        <dynamics damping="0.1" friction="0.3" />
+    </joint>
+    <link name="WAIST_Y_rotor">
+        <inertial>
+            <origin rpy="0 0 0" xyz="0 0 0" />
+            <mass value="0.001" />
+            <inertia ixx="1e-9" ixy="0" ixz="0" iyy="1e-9" iyz="0" izz="1e-9" />
+        </inertial>
+    </link>
+    <joint name="to_WAIST" type="fixed">
+        <origin rpy="0 0 2.74889415024" xyz="-0.115484942 0.047835429 0.08695" />
+        <parent link="WAIST_Y_rotor" />
+        <child link="WAIST" />
+    </joint>
+    <link name="WAIST">
+        <visual>
+            <geometry>
+                <mesh
+                    filename="meshes/nest_description/meshes/subsystem/lower_body/grasshopper/v0_1/waist_link.stl"
+                    scale="1 1 1" />
+            </geometry>
+            <material name="light_gray">
+                <color rgba="0.75 0.75 0.75 1" />
+            </material>
+        </visual>
+        <collision>
+            <geometry>
+                <mesh
+                    filename="meshes/nest_description/meshes/subsystem/lower_body/grasshopper/v0_1/waist_link.stl"
+                    scale="1 1 1" />
+            </geometry>
+        </collision>
+        <inertial>
+            <origin rpy="0 0 0" xyz="-0.055931651 -0.00036754688 -0.033762751" />
+            <mass value="2.8778263" />
+            <inertia ixx="0.022194519" ixy="-7.308359e-05" ixz="-0.0044791533" iyy="0.022486068"
+                iyz="2.922954e-06" izz="0.028524045" />
+        </inertial>
+    </link>
+    <joint name="to_WAIST_P" type="fixed">
+        <origin rpy="1.57079632679 -0.261799299274 0" xyz="0 0.07045 0" />
+        <parent link="WAIST" />
+        <child link="WAIST_P" />
+    </joint>
+    <link name="WAIST_P">
+        <visual>
+            <origin rpy="0 0 0" xyz="0 0 0" />
+            <geometry>
+                <mesh
+                    filename="meshes/nest_description/meshes/actuators/hornbill/strongbill.stl" />
+            </geometry>
+            <material name="silver">
+                <color rgba="0.5 0.5 0.5 1" />
+            </material>
+        </visual>
+        <collision>
+            <origin rpy="0 0 0" xyz="0 0 0" />
+            <geometry>
+                <mesh
+                    filename="meshes/nest_description/meshes/actuators/hornbill/strongbill.stl" />
+            </geometry>
+        </collision>
+        <inertial>
+            <origin rpy="0 0 0" xyz="-0.00017305394 -0.00024833716 0.0025442841" />
+            <mass value="2.3127582" />
+            <inertia ixx="0.0032238931" ixy="-1.1828485e-05" ixz="1.4616114e-05" iyy="0.0032372376"
+                iyz="1.9089402e-05" izz="0.0045489409" />
+        </inertial>
+    </link>
+    <joint name="WAIST_P_out" type="revolute">
+        <origin rpy="0 0 0" xyz="0 0 0" />
+        <axis xyz="0 0 1" />
+        <parent link="WAIST_P" />
+        <child link="WAIST_P_rotor" />
+        <!-- doubled effort limit due to coupled actuator -->
+        <limit effort="393.06" lower="-3.141592653589793" upper="3.141592653589793"
+            velocity="8.90117918517108" />
+        <dynamics damping="0.1" friction="0.3" />
+    </joint>
+    <link name="WAIST_P_rotor">
+        <inertial>
+            <origin rpy="0 0 0" xyz="0 0 0" />
+            <mass value="0.001" />
+            <inertia ixx="1e-9" ixy="0" ixz="0" iyy="1e-9" iyz="0" izz="1e-9" />
+        </inertial>
+    </link>
+    <joint name="to_WAIST_P_RIGHT" type="fixed">
+        <origin rpy="1.57079632679 0.785398163397 3.14159265359" xyz="0 -0.07045 0" />
+        <parent link="WAIST" />
+        <child link="WAIST_P_RIGHT" />
+    </joint>
+    <link name="WAIST_P_RIGHT">
+        <visual>
+            <origin rpy="0 0 0" xyz="0 0 0" />
+            <geometry>
+                <mesh
+                    filename="meshes/nest_description/meshes/actuators/hornbill/strongbill.stl" />
+            </geometry>
+            <material name="silver">
+                <color rgba="0.5 0.5 0.5 1" />
+            </material>
+        </visual>
+        <collision>
+            <origin rpy="0 0 0" xyz="0 0 0" />
+            <geometry>
+                <mesh
+                    filename="meshes/nest_description/meshes/actuators/hornbill/strongbill.stl" />
+            </geometry>
+        </collision>
+        <inertial>
+            <origin rpy="0 0 0" xyz="-0.00017305394 -0.00024833716 0.0025442841" />
+            <mass value="2.3127582" />
+            <inertia ixx="0.0032238931" ixy="-1.1828485e-05" ixz="1.4616114e-05" iyy="0.0032372376"
+                iyz="1.9089402e-05" izz="0.0045489409" />
+        </inertial>
+    </link>
+    <joint name="WAIST_P_RIGHT_out" type="revolute">
+        <origin rpy="0 0 0" xyz="0 0 0" />
+        <axis xyz="0 0 1" />
+        <parent link="WAIST_P_RIGHT" />
+        <child link="WAIST_P_RIGHT_rotor" />
+        <limit effort="196.53" lower="-3.141592653589793" upper="3.141592653589793"
+            velocity="8.90117918517108" />
+        <dynamics damping="0.1" friction="0.3" />
+        <!-- Mimic here as the right, left waist pitch are mechanically coupled -->
+        <mimic joint="WAIST_P_out" multiplier="-1" offset="0.0" />
+    </joint>
+    <link name="WAIST_P_RIGHT_rotor">
+        <inertial>
+            <origin rpy="0 0 0" xyz="0 0 0" />
+            <mass value="0.001" />
+            <inertia ixx="1e-9" ixy="0" ixz="0" iyy="1e-9" iyz="0" izz="1e-9" />
+        </inertial>
+    </link>
+    <joint name="to_WAIST_P_L_BRACKET" type="fixed">
+        <origin rpy="-1.57079632679 0 -0.261799299274" xyz="0 0 -0.03445" />
+        <parent link="WAIST_P_rotor" />
+        <child link="WAIST_P_L_BRACKET" />
+    </joint>
+    <link name="WAIST_P_L_BRACKET">
+        <visual>
+            <geometry>
+                <mesh
+                    filename="meshes/nest_description/meshes/subsystem/lower_body/grasshopper/v0_1/left_waist_pitch_bracket.stl"
+                    scale="1 1 1" />
+            </geometry>
+            <material name="light_gray">
+                <color rgba="0.75 0.75 0.75 1" />
+            </material>
+        </visual>
+        <collision>
+            <geometry>
+                <mesh
+                    filename="meshes/nest_description/meshes/subsystem/lower_body/grasshopper/v0_1/left_waist_pitch_bracket.stl"
+                    scale="1 1 1" />
+            </geometry>
+        </collision>
+        <inertial>
+            <origin rpy="0 0 0" xyz="-0.0020511549 -0.038035914 0.056160017" />
+            <mass value="0.74777181" />
+            <inertia ixx="0.0041699924" ixy="-0.00010255456" ixz="4.6300693e-05" iyy="0.0024031434"
+                iyz="0.0010060603" izz="0.0039502364" />
+        </inertial>
+    </link>
+    <joint name="to_WAIST_P_R_BRACKET" type="fixed">
+        <origin rpy="1.57079632679 0 -2.35619449019" xyz="0 0 -0.03445" />
+        <parent link="WAIST_P_RIGHT_rotor" />
+        <child link="WAIST_P_R_BRACKET" />
+    </joint>
+    <link name="WAIST_P_R_BRACKET">
+        <visual>
+            <geometry>
+                <mesh
+                    filename="meshes/nest_description/meshes/subsystem/lower_body/grasshopper/v0_1/right_waist_pitch_bracket.stl"
+                    scale="1 1 1" />
+            </geometry>
+            <material name="light_gray">
+                <color rgba="0.75 0.75 0.75 1" />
+            </material>
+        </visual>
+        <collision>
+            <geometry>
+                <mesh
+                    filename="meshes/nest_description/meshes/subsystem/lower_body/grasshopper/v0_1/right_waist_pitch_bracket.stl"
+                    scale="1 1 1" />
+            </geometry>
+        </collision>
+        <inertial>
+            <origin rpy="0 0 0" xyz="2.4080549e-07 0.053980217 0.058750623" />
+            <mass value="0.83258009" />
+            <inertia ixx="0.0054260449" ixy="1.0851198e-08" ixz="-5.2657575e-07" iyy="0.0019783249"
+                iyz="-0.0013532249" izz="0.0046725441" />
+        </inertial>
+    </link>
+    <joint name="to_TORSO" type="fixed">
+        <origin rpy="0 0 0" xyz="0 0.1049 0.096" />
+        <parent link="WAIST_P_R_BRACKET" />
+        <child link="TORSO" />
+    </joint>
+    <joint name="to_R_HIP_P" type="fixed">
+        <origin rpy="1.57079632679 0.261799299274 3.14159265359" xyz="0 -0.07045 0" />
+        <parent link="PELVIS" />
+        <child link="R_HIP_P" />
+    </joint>
+    <link name="R_HIP_P">
+        <visual>
+            <origin rpy="0 0 0" xyz="0 0 0" />
+            <geometry>
+                <mesh
+                    filename="meshes/nest_description/meshes/actuators/hornbill/strongbill.stl" />
+            </geometry>
+            <material name="silver">
+                <color rgba="0.5 0.5 0.5 1" />
+            </material>
+        </visual>
+        <collision>
+            <origin rpy="0 0 0" xyz="0 0 0" />
+            <geometry>
+                <mesh
+                    filename="meshes/nest_description/meshes/actuators/hornbill/strongbill.stl" />
+            </geometry>
+        </collision>
+        <inertial>
+            <origin rpy="0 0 0" xyz="-0.00017305394 -0.00024833716 0.0025442841" />
+            <mass value="2.3127582" />
+            <inertia ixx="0.0032238931" ixy="-1.1828485e-05" ixz="1.4616114e-05" iyy="0.0032372376"
+                iyz="1.9089402e-05" izz="0.0045489409" />
+        </inertial>
+    </link>
+    <joint name="R_HIP_P_out" type="revolute">
+        <origin rpy="0 0 0" xyz="0 0 0" />
+        <axis xyz="0 0 1" />
+        <parent link="R_HIP_P" />
+        <child link="R_HIP_P_rotor" />
+        <limit effort="196.53" lower="-3.141592653589793" upper="3.141592653589793"
+            velocity="8.90117918517108" />
+        <dynamics damping="0.1" friction="0.3" />
+    </joint>
+    <link name="R_HIP_P_rotor">
+        <inertial>
+            <origin rpy="0 0 0" xyz="0 0 0" />
+            <mass value="0.001" />
+            <inertia ixx="1e-9" ixy="0" ixz="0" iyy="1e-9" iyz="0" izz="1e-9" />
+        </inertial>
+    </link>
+    <joint name="to_R_HIP_R_BRACKET" type="fixed">
+        <origin rpy="1.57079632679 0 -2.87979335432" xyz="2e-09 3e-09 -0.03445" />
+        <parent link="R_HIP_P_rotor" />
+        <child link="R_HIP_R_BRACKET" />
+    </joint>
+    <link name="R_HIP_R_BRACKET">
+        <visual>
+            <geometry>
+                <mesh
+                    filename="meshes/nest_description/meshes/subsystem/lower_body/grasshopper/v0_1/r_hip_r_bracket.stl"
+                    scale="1 1 1" />
+            </geometry>
+            <material name="light_gray">
+                <color rgba="0.75 0.75 0.75 1" />
+            </material>
+        </visual>
+        <collision>
+            <geometry>
+                <mesh
+                    filename="meshes/nest_description/meshes/subsystem/lower_body/grasshopper/v0_1/r_hip_r_bracket.stl"
+                    scale="1 1 1" />
+            </geometry>
+        </collision>
+        <inertial>
+            <origin rpy="0 0 0" xyz="0.0089213672 -0.054967047 -0.015919793" />
+            <mass value="1.0997995" />
+            <inertia ixx="0.0048449519" ixy="0.0003490419" ixz="5.8342011e-05" iyy="0.0029506792"
+                iyz="-0.00021567561" izz="0.0035757191" />
+        </inertial>
+    </link>
+    <joint name="to_R_HIP_R" type="fixed">
+        <origin rpy="-1.57079632679 -1.0471973493 1.57079632679"
+            xyz="0.007950003 -0.085 -0.022000002" />
+        <parent link="R_HIP_R_BRACKET" />
+        <child link="R_HIP_R" />
+    </joint>
+    <link name="R_HIP_R">
+        <visual>
+            <origin rpy="0 0 0" xyz="0 0 0" />
+            <geometry>
+                <mesh
+                    filename="meshes/nest_description/meshes/actuators/hornbill/strongbill.stl" />
+            </geometry>
+            <material name="silver">
+                <color rgba="0.5 0.5 0.5 1" />
+            </material>
+        </visual>
+        <collision>
+            <origin rpy="0 0 0" xyz="0 0 0" />
+            <geometry>
+                <mesh
+                    filename="meshes/nest_description/meshes/actuators/hornbill/strongbill.stl" />
+            </geometry>
+        </collision>
+        <inertial>
+            <origin rpy="0 0 0" xyz="-0.00017305394 -0.00024833716 0.0025442841" />
+            <mass value="2.3127582" />
+            <inertia ixx="0.0032238931" ixy="-1.1828485e-05" ixz="1.4616114e-05" iyy="0.0032372376"
+                iyz="1.9089402e-05" izz="0.0045489409" />
+        </inertial>
+    </link>
+    <joint name="R_HIP_R_out" type="revolute">
+        <origin rpy="0 0 0" xyz="0 0 0" />
+        <axis xyz="0 0 1" />
+        <parent link="R_HIP_R" />
+        <child link="R_HIP_R_rotor" />
+        <limit effort="196.53" lower="-3.141592653589793" upper="3.141592653589793"
+            velocity="8.90117918517108" />
+        <dynamics damping="0.1" friction="0.3" />
+    </joint>
+    <link name="R_HIP_R_rotor">
+        <inertial>
+            <origin rpy="0 0 0" xyz="0 0 0" />
+            <mass value="0.001" />
+            <inertia ixx="1e-9" ixy="0" ixz="0" iyy="1e-9" iyz="0" izz="1e-9" />
+        </inertial>
+    </link>
+    <joint name="to_R_HIP_Y_BRACKET" type="fixed">
+        <origin rpy="0.523598977491 1.57079632679 0" xyz="4e-09 1e-09 -0.03445" />
+        <parent link="R_HIP_R_rotor" />
+        <child link="R_HIP_Y_BRACKET" />
+    </joint>
+    <link name="R_HIP_Y_BRACKET">
+        <visual>
+            <geometry>
+                <mesh
+                    filename="meshes/nest_description/meshes/subsystem/lower_body/grasshopper/v0_1/r_hip_y_bracket.stl"
+                    scale="1 1 1" />
+            </geometry>
+            <material name="light_gray">
+                <color rgba="0.75 0.75 0.75 1" />
+            </material>
+        </visual>
+        <collision>
+            <geometry>
+                <mesh
+                    filename="meshes/nest_description/meshes/subsystem/lower_body/grasshopper/v0_1/r_hip_y_bracket.stl"
+                    scale="1 1 1" />
+            </geometry>
+        </collision>
+        <inertial>
+            <origin rpy="0 0 0" xyz="-0.0090098606 3.2456648e-07 -0.054056462" />
+            <mass value="0.90490119" />
+            <inertia ixx="0.0024395418" ixy="4.6037632e-07" ixz="-0.00069558902" iyy="0.0026479147"
+                iyz="4.6247497e-07" izz="0.0014667758" />
+        </inertial>
+    </link>
+    <joint name="to_R_HIP_Y" type="fixed">
+        <origin rpy="3.14159265359 0 3.14159265359" xyz="-0.0424 -3e-09 -0.138550003" />
+        <parent link="R_HIP_Y_BRACKET" />
+        <child link="R_HIP_Y_rotor" />
+    </joint>
+    <link name="R_HIP_Y">
+        <visual>
+            <origin rpy="0 0 0" xyz="0 0 0" />
+            <geometry>
+                <mesh
+                    filename="meshes/nest_description/meshes/actuators/hornbill/strongbill.stl" />
+            </geometry>
+            <material name="silver">
+                <color rgba="0.5 0.5 0.5 1" />
+            </material>
+        </visual>
+        <collision>
+            <origin rpy="0 0 0" xyz="0 0 0" />
+            <geometry>
+                <mesh
+                    filename="meshes/nest_description/meshes/actuators/hornbill/strongbill.stl" />
+            </geometry>
+        </collision>
+        <inertial>
+            <origin rpy="0 0 0" xyz="-0.00017305394 -0.00024833716 0.0025442841" />
+            <mass value="2.3127582" />
+            <inertia ixx="0.0032238931" ixy="-1.1828485e-05" ixz="1.4616114e-05" iyy="0.0032372376"
+                iyz="1.9089402e-05" izz="0.0045489409" />
+        </inertial>
+    </link>
+    <joint name="R_HIP_Y_out" type="revolute">
+        <origin rpy="0 0 0" xyz="0 0 0" />
+        <axis xyz="0 0 1" />
+        <parent link="R_HIP_Y_rotor" />
+        <child link="R_HIP_Y" />
+        <limit effort="196.53" lower="-3.141592653589793" upper="3.141592653589793"
+            velocity="8.90117918517108" />
+        <dynamics damping="0.1" friction="0.3" />
+    </joint>
+    <link name="R_HIP_Y_rotor">
+        <inertial>
+            <origin rpy="0 0 0" xyz="0 0 0" />
+            <mass value="0.001" />
+            <inertia ixx="1e-9" ixy="0" ixz="0" iyy="1e-9" iyz="0" izz="1e-9" />
+        </inertial>
+    </link>
+    <joint name="to_R_KNEE_P_BRACKET" type="fixed">
+        <origin rpy="3.14159265359 0 -3.14159265359" xyz="0 0 -0.03955" />
+        <parent link="R_HIP_Y" />
+        <child link="R_KNEE_P_BRACKET" />
+    </joint>
+    <link name="R_KNEE_P_BRACKET">
+        <visual>
+            <geometry>
+                <mesh
+                    filename="meshes/nest_description/meshes/subsystem/lower_body/grasshopper/v0_1/r_knee_p_bracket.stl"
+                    scale="1 1 1" />
+            </geometry>
+            <material name="light_gray">
+                <color rgba="0.75 0.75 0.75 1" />
+            </material>
+        </visual>
+        <collision>
+            <geometry>
+                <mesh
+                    filename="meshes/nest_description/meshes/subsystem/lower_body/grasshopper/v0_1/r_knee_p_bracket.stl"
+                    scale="1 1 1" />
+            </geometry>
+        </collision>
+        <inertial>
+            <origin rpy="0 0 0" xyz="-3.4943548e-06 0.012036043 -0.19467514" />
+            <mass value="2.3016729" />
+            <inertia ixx="0.041737933" ixy="1.4475635e-05" ixz="-8.9638057e-06" iyy="0.043024916"
+                iyz="-0.0006002752" izz="0.0070047713" />
+        </inertial>
+    </link>
+    <joint name="to_R_KNEE_P" type="fixed">
+        <origin rpy="-1.57079632679 1.0471973493 0" xyz="0 0.00255 -0.34" />
+        <parent link="R_KNEE_P_BRACKET" />
+        <child link="R_KNEE_P" />
+    </joint>
+    <link name="R_KNEE_P">
+        <visual>
+            <origin rpy="0 0 0" xyz="0 0 0" />
+            <geometry>
+                <mesh
+                    filename="meshes/nest_description/meshes/actuators/hornbill/strongbill.stl" />
+            </geometry>
+            <material name="silver">
+                <color rgba="0.5 0.5 0.5 1" />
+            </material>
+        </visual>
+        <collision>
+            <origin rpy="0 0 0" xyz="0 0 0" />
+            <geometry>
+                <mesh
+                    filename="meshes/nest_description/meshes/actuators/hornbill/strongbill.stl" />
+            </geometry>
+        </collision>
+        <inertial>
+            <origin rpy="0 0 0" xyz="-0.00017305394 -0.00024833716 0.0025442841" />
+            <mass value="2.3127582" />
+            <inertia ixx="0.0032238931" ixy="-1.1828485e-05" ixz="1.4616114e-05" iyy="0.0032372376"
+                iyz="1.9089402e-05" izz="0.0045489409" />
+        </inertial>
+    </link>
+    <joint name="R_KNEE_P_out" type="revolute">
+        <origin rpy="0 0 0" xyz="0 0 0" />
+        <axis xyz="0 0 1" />
+        <parent link="R_KNEE_P" />
+        <child link="R_KNEE_P_rotor" />
+        <limit effort="196.53" lower="-3.141592653589793" upper="3.141592653589793"
+            velocity="8.90117918517108" />
+        <dynamics damping="0.1" friction="0.3" />
+    </joint>
+    <link name="R_KNEE_P_rotor">
+        <inertial>
+            <origin rpy="0 0 0" xyz="0 0 0" />
+            <mass value="0.001" />
+            <inertia ixx="1e-9" ixy="0" ixz="0" iyy="1e-9" iyz="0" izz="1e-9" />
+        </inertial>
+    </link>
+    <joint name="to_R_ANKLE_P_BRACKET" type="fixed">
+        <origin rpy="1.57079632679 0 -1.0471973493" xyz="0 0 -0.03445" />
+        <parent link="R_KNEE_P_rotor" />
+        <child link="R_ANKLE_P_BRACKET" />
+    </joint>
+    <link name="R_ANKLE_P_BRACKET">
+        <visual>
+            <geometry>
+                <mesh
+                    filename="meshes/nest_description/meshes/subsystem/lower_body/grasshopper/v0_1/r_ankle_p_bracket.stl"
+                    scale="1 1 1" />
+            </geometry>
+            <material name="light_gray">
+                <color rgba="0.75 0.75 0.75 1" />
+            </material>
+        </visual>
+        <collision>
+            <geometry>
+                <mesh
+                    filename="meshes/nest_description/meshes/subsystem/lower_body/grasshopper/v0_1/r_ankle_p_bracket.stl"
+                    scale="1 1 1" />
+            </geometry>
+        </collision>
+        <inertial>
+            <origin rpy="0 0 0" xyz="0 -0.016352513 -0.16347025" />
+            <mass value="1.7120209" />
+            <inertia ixx="0.033666882" ixy="0" ixz="4.4022593e-07" iyy="0.035007024"
+                iyz="-3.6485205e-05" izz="0.0016523327" />
+        </inertial>
+    </link>
+    <joint name="to_R_ANKLE_P" type="fixed">
+        <origin rpy="1.57079632679 0 3.14159265359" xyz="0 0.03445 -0.33" />
+        <parent link="R_ANKLE_P_BRACKET" />
+        <child link="R_ANKLE_P_rotor" />
+    </joint>
+    <link name="R_ANKLE_P">
+        <visual>
+            <origin rpy="0 0 0" xyz="0 0 0" />
+            <geometry>
+                <mesh
+                    filename="meshes/nest_description/meshes/actuators/hornbill/strongbill.stl" />
+            </geometry>
+            <material name="silver">
+                <color rgba="0.5 0.5 0.5 1" />
+            </material>
+        </visual>
+        <collision>
+            <origin rpy="0 0 0" xyz="0 0 0" />
+            <geometry>
+                <mesh
+                    filename="meshes/nest_description/meshes/actuators/hornbill/strongbill.stl" />
+            </geometry>
+        </collision>
+        <inertial>
+            <origin rpy="0 0 0" xyz="-0.00017305394 -0.00024833716 0.0025442841" />
+            <mass value="2.3127582" />
+            <inertia ixx="0.0032238931" ixy="-1.1828485e-05" ixz="1.4616114e-05" iyy="0.0032372376"
+                iyz="1.9089402e-05" izz="0.0045489409" />
+        </inertial>
+    </link>
+    <joint name="R_ANKLE_P_out" type="revolute">
+        <origin rpy="0 0 0" xyz="0 0 0" />
+        <axis xyz="0 0 1" />
+        <parent link="R_ANKLE_P_rotor" />
+        <child link="R_ANKLE_P" />
+        <limit effort="196.53" lower="-3.141592653589793" upper="3.141592653589793"
+            velocity="8.90117918517108" />
+        <dynamics damping="0.1" friction="0.3" />
+    </joint>
+    <link name="R_ANKLE_P_rotor">
+        <inertial>
+            <origin rpy="0 0 0" xyz="0 0 0" />
+            <mass value="0.001" />
+            <inertia ixx="1e-9" ixy="0" ixz="0" iyy="1e-9" iyz="0" izz="1e-9" />
+        </inertial>
+    </link>
+    <joint name="to_R_ANKLE_R_BRACKET" type="fixed">
+        <origin rpy="1.57079632679 0 3.14159265359" xyz="0 0 -0.03955" />
+        <parent link="R_ANKLE_P" />
+        <child link="R_ANKLE_R_BRACKET" />
+    </joint>
+    <link name="R_ANKLE_R_BRACKET">
+        <visual>
+            <geometry>
+                <mesh
+                    filename="meshes/nest_description/meshes/subsystem/lower_body/grasshopper/v0_1/r_ankle_r_bracket.stl"
+                    scale="1 1 1" />
+            </geometry>
+            <material name="light_gray">
+                <color rgba="0.75 0.75 0.75 1" />
+            </material>
+        </visual>
+        <collision>
+            <geometry>
+                <mesh
+                    filename="meshes/nest_description/meshes/subsystem/lower_body/grasshopper/v0_1/r_ankle_r_bracket.stl"
+                    scale="1 1 1" />
+            </geometry>
+        </collision>
+        <inertial>
+            <origin rpy="0 0 0" xyz="-0.006360564 0.040944145 -0.052813001" />
+            <mass value="1.3860924" />
+            <inertia ixx="0.0070234187" ixy="6.4261709e-05" ixz="-0.00055588076" iyy="0.0084521608"
+                iyz="0.0004762612" izz="0.0041839233" />
+        </inertial>
+    </link>
+    <joint name="to_R_ANKLE_R" type="fixed">
+        <origin rpy="1.57079632679 1.5705603268 1.57079632679" xyz="-0.023975 0.0475 -0.11" />
+        <parent link="R_ANKLE_R_BRACKET" />
+        <child link="R_ANKLE_R" />
+    </joint>
+    <link name="R_ANKLE_R">
+        <visual>
+            <origin rpy="0 0 0" xyz="0 0 0" />
+            <geometry>
+                <mesh
+                    filename="meshes/nest_description/meshes/actuators/hornbill/smallbill.stl" />
+            </geometry>
+            <material name="silver">
+                <color rgba="0.5 0.5 0.5 1" />
+            </material>
+        </visual>
+        <collision>
+            <origin rpy="0 0 0" xyz="0 0 0" />
+            <geometry>
+                <mesh
+                    filename="meshes/nest_description/meshes/actuators/hornbill/smallbill.stl" />
+            </geometry>
+        </collision>
+        <inertial>
+            <origin rpy="0 0 0" xyz="0 0 0.0073307747" />
+            <mass value="1.3410533" />
+            <inertia ixx="0.0011414267" ixy="1.2554658e-06" ixz="-9.8085818e-07" iyy="0.001138117"
+                iyz="-2.1949641e-06" izz="0.0011224865" />
+        </inertial>
+    </link>
+    <joint name="R_ANKLE_R_out" type="revolute">
+        <origin rpy="0 0 0" xyz="0 0 0" />
+        <axis xyz="0 0 1" />
+        <parent link="R_ANKLE_R" />
+        <child link="R_ANKLE_R_rotor" />
+        <limit effort="135" lower="-3.141592653589793" upper="3.141592653589793"
+            velocity="9.948376736367678" />
+        <dynamics damping="0.1" friction="0.3" />
+    </joint>
+    <link name="R_ANKLE_R_rotor">
+        <inertial>
+            <origin rpy="0 0 0" xyz="0 0 0" />
+            <mass value="0.001" />
+            <inertia ixx="1e-9" ixy="0" ixz="0" iyy="1e-9" iyz="0" izz="1e-9" />
+        </inertial>
+    </link>
+    <joint name="to_R_FOOT" type="fixed">
+        <origin rpy="-0.000235999995619 -1.57079632679 0" xyz="0 0 -0.031925" />
+        <parent link="R_ANKLE_R_rotor" />
+        <child link="R_FOOT" />
+    </joint>
+    <link name="R_FOOT">
+        <visual>
+            <geometry>
+                <mesh
+                    filename="meshes/nest_description/meshes/subsystem/lower_body/grasshopper/v0_1/r_foot.stl"
+                    scale="1 1 1" />
+            </geometry>
+            <material name="light_gray">
+                <color rgba="0.75 0.75 0.75 1" />
+            </material>
+        </visual>
+        <!-- MJLab G1's seven longitudinal sole capsules, fitted to this foot.
+             Newton URDF extension: height is the cylindrical section length. -->
+        <collision name="R_FOOT_capsule_1">
+            <origin xyz="0.099964516129 -0.033 -0.0673" rpy="0 1.5707963267948966 0" />
+            <geometry><capsule radius="0.01" height="0.0639784946237" /></geometry>
+        </collision>
+        <collision name="R_FOOT_capsule_2">
+            <origin xyz="0.0545397849462 -0.0228461538462 -0.0673" rpy="0 1.5707963267948966 0" />
+            <geometry><capsule radius="0.01" height="0.213688172043" /></geometry>
+        </collision>
+        <collision name="R_FOOT_capsule_3">
+            <origin xyz="0.0539 -0.0126923076923 -0.0673" rpy="0 1.5707963267948966 0" />
+            <geometry><capsule radius="0.01" height="0.23288172043" /></geometry>
+        </collision>
+        <collision name="R_FOOT_capsule_4">
+            <origin xyz="0.0539 0 -0.0673" rpy="0 1.5707963267948966 0" />
+            <geometry><capsule radius="0.01" height="0.238" /></geometry>
+        </collision>
+        <collision name="R_FOOT_capsule_5">
+            <origin xyz="0.0539 0.0126923076923 -0.0673" rpy="0 1.5707963267948966 0" />
+            <geometry><capsule radius="0.01" height="0.23288172043" /></geometry>
+        </collision>
+        <collision name="R_FOOT_capsule_6">
+            <origin xyz="0.0545397849462 0.0228461538462 -0.0673" rpy="0 1.5707963267948966 0" />
+            <geometry><capsule radius="0.01" height="0.213688172043" /></geometry>
+        </collision>
+        <collision name="R_FOOT_capsule_7">
+            <origin xyz="0.099964516129 0.033 -0.0673" rpy="0 1.5707963267948966 0" />
+            <geometry><capsule radius="0.01" height="0.0639784946237" /></geometry>
+        </collision>
+        <inertial>
+            <origin rpy="0 0 0" xyz="0.039150763 -1.0158351e-06 -0.054038223" />
+            <mass value="1.5285504" />
+            <inertia ixx="0.0017391142" ixy="1.2992659e-07" ixz="0.00077072605" iyy="0.0090527991"
+                iyz="2.05644e-06" izz="0.0091690105" />
+        </inertial>
+    </link>
+    <joint name="to_L_HIP_P" type="fixed">
+        <origin rpy="1.57079632679 0 0" xyz="0 0.07045 0" />
+        <parent link="PELVIS" />
+        <child link="L_HIP_P" />
+    </joint>
+    <link name="L_HIP_P">
+        <visual>
+            <origin rpy="0 0 0" xyz="0 0 0" />
+            <geometry>
+                <mesh
+                    filename="meshes/nest_description/meshes/actuators/hornbill/strongbill.stl" />
+            </geometry>
+            <material name="silver">
+                <color rgba="0.5 0.5 0.5 1" />
+            </material>
+        </visual>
+        <collision>
+            <origin rpy="0 0 0" xyz="0 0 0" />
+            <geometry>
+                <mesh
+                    filename="meshes/nest_description/meshes/actuators/hornbill/strongbill.stl" />
+            </geometry>
+        </collision>
+        <inertial>
+            <origin rpy="0 0 0" xyz="-0.00017305394 -0.00024833716 0.0025442841" />
+            <mass value="2.3127582" />
+            <inertia ixx="0.0032238931" ixy="-1.1828485e-05" ixz="1.4616114e-05" iyy="0.0032372376"
+                iyz="1.9089402e-05" izz="0.0045489409" />
+        </inertial>
+    </link>
+    <joint name="L_HIP_P_out" type="revolute">
+        <origin rpy="0 0 0" xyz="0 0 0" />
+        <axis xyz="0 0 1" />
+        <parent link="L_HIP_P" />
+        <child link="L_HIP_P_rotor" />
+        <limit effort="196.53" lower="-3.141592653589793" upper="3.141592653589793"
+            velocity="8.90117918517108" />
+        <dynamics damping="0.1" friction="0.3" />
+    </joint>
+    <link name="L_HIP_P_rotor">
+        <inertial>
+            <origin rpy="0 0 0" xyz="0 0 0" />
+            <mass value="0.001" />
+            <inertia ixx="1e-9" ixy="0" ixz="0" iyy="1e-9" iyz="0" izz="1e-9" />
+        </inertial>
+    </link>
+    <joint name="to_L_HIP_R_BRACKET" type="fixed">
+        <origin rpy="-1.57079632679 0 0" xyz="-3e-09 -2e-09 -0.03445" />
+        <parent link="L_HIP_P_rotor" />
+        <child link="L_HIP_R_BRACKET" />
+    </joint>
+    <link name="L_HIP_R_BRACKET">
+        <visual>
+            <geometry>
+                <mesh
+                    filename="meshes/nest_description/meshes/subsystem/lower_body/grasshopper/v0_1/l_hip_r_bracket.stl"
+                    scale="1 1 1" />
+            </geometry>
+            <material name="light_gray">
+                <color rgba="0.75 0.75 0.75 1" />
+            </material>
+        </visual>
+        <collision>
+            <geometry>
+                <mesh
+                    filename="meshes/nest_description/meshes/subsystem/lower_body/grasshopper/v0_1/l_hip_r_bracket.stl"
+                    scale="1 1 1" />
+            </geometry>
+        </collision>
+        <inertial>
+            <origin rpy="0 0 0" xyz="-0.0089213612 0.054967047 -0.015919789" />
+            <mass value="1.0997995" />
+            <inertia ixx="0.0048449519" ixy="0.0003490419" ixz="-5.8342011e-05" iyy="0.0029578456"
+                iyz="0.00021212308" izz="0.0035685526" />
+        </inertial>
+    </link>
+    <joint name="to_L_HIP_R" type="fixed">
+        <origin rpy="3.14159265359 -1.57079632679 0" xyz="-0.007949997 0.085 -0.021999998" />
+        <parent link="L_HIP_R_BRACKET" />
+        <child link="L_HIP_R" />
+    </joint>
+    <link name="L_HIP_R">
+        <visual>
+            <origin rpy="0 0 0" xyz="0 0 0" />
+            <geometry>
+                <mesh
+                    filename="meshes/nest_description/meshes/actuators/hornbill/strongbill.stl" />
+            </geometry>
+            <material name="silver">
+                <color rgba="0.5 0.5 0.5 1" />
+            </material>
+        </visual>
+        <collision>
+            <origin rpy="0 0 0" xyz="0 0 0" />
+            <geometry>
+                <mesh
+                    filename="meshes/nest_description/meshes/actuators/hornbill/strongbill.stl" />
+            </geometry>
+        </collision>
+        <inertial>
+            <origin rpy="0 0 0" xyz="-0.00017305394 -0.00024833716 0.0025442841" />
+            <mass value="2.3127582" />
+            <inertia ixx="0.0032238931" ixy="-1.1828485e-05" ixz="1.4616114e-05" iyy="0.0032372376"
+                iyz="1.9089402e-05" izz="0.0045489409" />
+        </inertial>
+    </link>
+    <joint name="L_HIP_R_out" type="revolute">
+        <origin rpy="0 0 0" xyz="0 0 0" />
+        <axis xyz="0 0 1" />
+        <parent link="L_HIP_R" />
+        <child link="L_HIP_R_rotor" />
+        <limit effort="196.53" lower="-3.141592653589793" upper="3.141592653589793"
+            velocity="8.90117918517108" />
+        <dynamics damping="0.1" friction="0.3" />
+    </joint>
+    <link name="L_HIP_R_rotor">
+        <inertial>
+            <origin rpy="0 0 0" xyz="0 0 0" />
+            <mass value="0.001" />
+            <inertia ixx="1e-9" ixy="0" ixz="0" iyy="1e-9" iyz="0" izz="1e-9" />
+        </inertial>
+    </link>
+    <joint name="to_L_HIP_Y_BRACKET" type="fixed">
+        <origin rpy="-3.14159265359 -1.57079632679 0" xyz="3e-09 3e-09 -0.03445" />
+        <parent link="L_HIP_R_rotor" />
+        <child link="L_HIP_Y_BRACKET" />
+    </joint>
+    <link name="L_HIP_Y_BRACKET">
+        <visual>
+            <geometry>
+                <mesh
+                    filename="meshes/nest_description/meshes/subsystem/lower_body/grasshopper/v0_1/l_hip_y_bracket.stl"
+                    scale="1 1 1" />
+            </geometry>
+            <material name="light_gray">
+                <color rgba="0.75 0.75 0.75 1" />
+            </material>
+        </visual>
+        <collision>
+            <geometry>
+                <mesh
+                    filename="meshes/nest_description/meshes/subsystem/lower_body/grasshopper/v0_1/l_hip_y_bracket.stl"
+                    scale="1 1 1" />
+            </geometry>
+        </collision>
+        <inertial>
+            <origin rpy="0 0 0" xyz="0.0090098606 -3.2456648e-07 -0.054056462" />
+            <mass value="0.90490119" />
+            <inertia ixx="0.0024395418" ixy="4.6037608e-07" ixz="0.00069558902" iyy="0.0026479147"
+                iyz="-4.62475e-07" izz="0.0014667758" />
+        </inertial>
+    </link>
+    <joint name="to_L_HIP_Y" type="fixed">
+        <origin rpy="3.14159265359 0 -0.916297990496" xyz="0.0424 3e-09 -0.138550003" />
+        <parent link="L_HIP_Y_BRACKET" />
+        <child link="L_HIP_Y_rotor" />
+    </joint>
+    <link name="L_HIP_Y">
+        <visual>
+            <origin rpy="0 0 0" xyz="0 0 0" />
+            <geometry>
+                <mesh
+                    filename="meshes/nest_description/meshes/actuators/hornbill/strongbill.stl" />
+            </geometry>
+            <material name="silver">
+                <color rgba="0.5 0.5 0.5 1" />
+            </material>
+        </visual>
+        <collision>
+            <origin rpy="0 0 0" xyz="0 0 0" />
+            <geometry>
+                <mesh
+                    filename="meshes/nest_description/meshes/actuators/hornbill/strongbill.stl" />
+            </geometry>
+        </collision>
+        <inertial>
+            <origin rpy="0 0 0" xyz="-0.00017305394 -0.00024833716 0.0025442841" />
+            <mass value="2.3127582" />
+            <inertia ixx="0.0032238931" ixy="-1.1828485e-05" ixz="1.4616114e-05" iyy="0.0032372376"
+                iyz="1.9089402e-05" izz="0.0045489409" />
+        </inertial>
+    </link>
+    <joint name="L_HIP_Y_out" type="revolute">
+        <origin rpy="0 0 0" xyz="0 0 0" />
+        <axis xyz="0 0 1" />
+        <parent link="L_HIP_Y_rotor" />
+        <child link="L_HIP_Y" />
+        <limit effort="196.53" lower="-3.141592653589793" upper="3.141592653589793"
+            velocity="8.90117918517108" />
+        <dynamics damping="0.1" friction="0.3" />
+    </joint>
+    <link name="L_HIP_Y_rotor">
+        <inertial>
+            <origin rpy="0 0 0" xyz="0 0 0" />
+            <mass value="0.001" />
+            <inertia ixx="1e-9" ixy="0" ixz="0" iyy="1e-9" iyz="0" izz="1e-9" />
+        </inertial>
+    </link>
+    <joint name="to_L_KNEE_P_BRACKET" type="fixed">
+        <origin rpy="3.14159265359 0 -0.916297990496" xyz="0 0 -0.03955" />
+        <parent link="L_HIP_Y" />
+        <child link="L_KNEE_P_BRACKET" />
+    </joint>
+    <link name="L_KNEE_P_BRACKET">
+        <visual>
+            <geometry>
+                <mesh
+                    filename="meshes/nest_description/meshes/subsystem/lower_body/grasshopper/v0_1/l_knee_p_bracket.stl"
+                    scale="1 1 1" />
+            </geometry>
+            <material name="light_gray">
+                <color rgba="0.75 0.75 0.75 1" />
+            </material>
+        </visual>
+        <collision>
+            <geometry>
+                <mesh
+                    filename="meshes/nest_description/meshes/subsystem/lower_body/grasshopper/v0_1/l_knee_p_bracket.stl"
+                    scale="1 1 1" />
+            </geometry>
+        </collision>
+        <inertial>
+            <origin rpy="0 0 0" xyz="3.4943548e-06 -0.012036043 -0.19467514" />
+            <mass value="2.3016729" />
+            <inertia ixx="0.041736769" ixy="1.533184e-05" ixz="8.0862364e-06" iyy="0.043012253"
+                iyz="0.0006002752" izz="0.0070185976" />
+        </inertial>
+    </link>
+    <joint name="to_L_KNEE_P" type="fixed">
+        <origin rpy="1.57079632679 0 0" xyz="0 -0.00255 -0.34" />
+        <parent link="L_KNEE_P_BRACKET" />
+        <child link="L_KNEE_P" />
+    </joint>
+    <link name="L_KNEE_P">
+        <visual>
+            <origin rpy="0 0 0" xyz="0 0 0" />
+            <geometry>
+                <mesh
+                    filename="meshes/nest_description/meshes/actuators/hornbill/strongbill.stl" />
+            </geometry>
+            <material name="silver">
+                <color rgba="0.5 0.5 0.5 1" />
+            </material>
+        </visual>
+        <collision>
+            <origin rpy="0 0 0" xyz="0 0 0" />
+            <geometry>
+                <mesh
+                    filename="meshes/nest_description/meshes/actuators/hornbill/strongbill.stl" />
+            </geometry>
+        </collision>
+        <inertial>
+            <origin rpy="0 0 0" xyz="-0.00017305394 -0.00024833716 0.0025442841" />
+            <mass value="2.3127582" />
+            <inertia ixx="0.0032238931" ixy="-1.1828485e-05" ixz="1.4616114e-05" iyy="0.0032372376"
+                iyz="1.9089402e-05" izz="0.0045489409" />
+        </inertial>
+    </link>
+    <joint name="L_KNEE_P_out" type="revolute">
+        <origin rpy="0 0 0" xyz="0 0 0" />
+        <axis xyz="0 0 1" />
+        <parent link="L_KNEE_P" />
+        <child link="L_KNEE_P_rotor" />
+        <limit effort="196.53" lower="-3.141592653589793" upper="3.141592653589793"
+            velocity="8.90117918517108" />
+        <dynamics damping="0.1" friction="0.3" />
+    </joint>
+    <link name="L_KNEE_P_rotor">
+        <inertial>
+            <origin rpy="0 0 0" xyz="0 0 0" />
+            <mass value="0.001" />
+            <inertia ixx="1e-9" ixy="0" ixz="0" iyy="1e-9" iyz="0" izz="1e-9" />
+        </inertial>
+    </link>
+    <joint name="to_L_ANKLE_P_BRACKET" type="fixed">
+        <origin rpy="-1.57079632679 0 0" xyz="0 0 -0.03445" />
+        <parent link="L_KNEE_P_rotor" />
+        <child link="L_ANKLE_P_BRACKET" />
+    </joint>
+    <link name="L_ANKLE_P_BRACKET">
+        <visual>
+            <geometry>
+                <mesh
+                    filename="meshes/nest_description/meshes/subsystem/lower_body/grasshopper/v0_1/l_ankle_p_bracket.stl"
+                    scale="1 1 1" />
+            </geometry>
+            <material name="light_gray">
+                <color rgba="0.75 0.75 0.75 1" />
+            </material>
+        </visual>
+        <collision>
+            <geometry>
+                <mesh
+                    filename="meshes/nest_description/meshes/subsystem/lower_body/grasshopper/v0_1/l_ankle_p_bracket.stl"
+                    scale="1 1 1" />
+            </geometry>
+        </collision>
+        <inertial>
+            <origin rpy="0 0 0" xyz="0 0.016352513 -0.16347025" />
+            <mass value="1.7120209" />
+            <inertia ixx="0.033666882" ixy="0" ixz="-4.4022593e-07" iyy="0.035007024"
+                iyz="3.6485205e-05" izz="0.0016523327" />
+        </inertial>
+    </link>
+    <joint name="to_L_ANKLE_P" type="fixed">
+        <origin rpy="-1.57079632679 0 -3.14159265359" xyz="0 -0.03445 -0.33" />
+        <parent link="L_ANKLE_P_BRACKET" />
+        <child link="L_ANKLE_P_rotor" />
+    </joint>
+    <link name="L_ANKLE_P">
+        <visual>
+            <origin rpy="0 0 0" xyz="0 0 0" />
+            <geometry>
+                <mesh
+                    filename="meshes/nest_description/meshes/actuators/hornbill/strongbill.stl" />
+            </geometry>
+            <material name="silver">
+                <color rgba="0.5 0.5 0.5 1" />
+            </material>
+        </visual>
+        <collision>
+            <origin rpy="0 0 0" xyz="0 0 0" />
+            <geometry>
+                <mesh
+                    filename="meshes/nest_description/meshes/actuators/hornbill/strongbill.stl" />
+            </geometry>
+        </collision>
+        <inertial>
+            <origin rpy="0 0 0" xyz="-0.00017305394 -0.00024833716 0.0025442841" />
+            <mass value="2.3127582" />
+            <inertia ixx="0.0032238931" ixy="-1.1828485e-05" ixz="1.4616114e-05" iyy="0.0032372376"
+                iyz="1.9089402e-05" izz="0.0045489409" />
+        </inertial>
+    </link>
+    <joint name="L_ANKLE_P_out" type="revolute">
+        <origin rpy="0 0 0" xyz="0 0 0" />
+        <axis xyz="0 0 1" />
+        <parent link="L_ANKLE_P_rotor" />
+        <child link="L_ANKLE_P" />
+        <limit effort="196.53" lower="-3.141592653589793" upper="3.141592653589793"
+            velocity="8.90117918517108" />
+        <dynamics damping="0.1" friction="0.3" />
+    </joint>
+    <link name="L_ANKLE_P_rotor">
+        <inertial>
+            <origin rpy="0 0 0" xyz="0 0 0" />
+            <mass value="0.001" />
+            <inertia ixx="1e-9" ixy="0" ixz="0" iyy="1e-9" iyz="0" izz="1e-9" />
+        </inertial>
+    </link>
+    <joint name="to_L_ANKLE_R_BRACKET" type="fixed">
+        <origin rpy="-1.57079632679 0 3.14159265359" xyz="0 0 -0.03955" />
+        <parent link="L_ANKLE_P" />
+        <child link="L_ANKLE_R_BRACKET" />
+    </joint>
+    <link name="L_ANKLE_R_BRACKET">
+        <visual>
+            <geometry>
+                <mesh
+                    filename="meshes/nest_description/meshes/subsystem/lower_body/grasshopper/v0_1/l_ankle_r_bracket.stl"
+                    scale="1 1 1" />
+            </geometry>
+            <material name="light_gray">
+                <color rgba="0.75 0.75 0.75 1" />
+            </material>
+        </visual>
+        <collision>
+            <geometry>
+                <mesh
+                    filename="meshes/nest_description/meshes/subsystem/lower_body/grasshopper/v0_1/l_ankle_r_bracket.stl"
+                    scale="1 1 1" />
+            </geometry>
+        </collision>
+        <inertial>
+            <origin rpy="0 0 0" xyz="0.006360564 -0.040944145 -0.052813001" />
+            <mass value="1.3860924" />
+            <inertia ixx="0.0070234187" ixy="6.4261709e-05" ixz="0.00055588076" iyy="0.0084518459"
+                iyz="-0.00047545073" izz="0.0041842382" />
+        </inertial>
+    </link>
+    <joint name="to_L_ANKLE_R" type="fixed">
+        <origin rpy="-1.57079632679 1.30923208056 1.57079632679" xyz="0.023975 -0.0475 -0.11" />
+        <parent link="L_ANKLE_R_BRACKET" />
+        <child link="L_ANKLE_R" />
+    </joint>
+    <link name="L_ANKLE_R">
+        <visual>
+            <origin rpy="0 0 0" xyz="0 0 0" />
+            <geometry>
+                <mesh
+                    filename="meshes/nest_description/meshes/actuators/hornbill/smallbill.stl" />
+            </geometry>
+            <material name="silver">
+                <color rgba="0.5 0.5 0.5 1" />
+            </material>
+        </visual>
+        <collision>
+            <origin rpy="0 0 0" xyz="0 0 0" />
+            <geometry>
+                <mesh
+                    filename="meshes/nest_description/meshes/actuators/hornbill/smallbill.stl" />
+            </geometry>
+        </collision>
+        <inertial>
+            <origin rpy="0 0 0" xyz="0 0 0.0073307747" />
+            <mass value="1.3410533" />
+            <inertia ixx="0.0011414267" ixy="1.2554658e-06" ixz="-9.8085818e-07" iyy="0.001138117"
+                iyz="-2.1949641e-06" izz="0.0011224865" />
+        </inertial>
+    </link>
+    <joint name="L_ANKLE_R_out" type="revolute">
+        <origin rpy="0 0 0" xyz="0 0 0" />
+        <axis xyz="0 0 1" />
+        <parent link="L_ANKLE_R" />
+        <child link="L_ANKLE_R_rotor" />
+        <limit effort="135" lower="-3.141592653589793" upper="3.141592653589793"
+            velocity="9.948376736367678" />
+        <dynamics damping="0.1" friction="0.3" />
+    </joint>
+    <link name="L_ANKLE_R_rotor">
+        <inertial>
+            <origin rpy="0 0 0" xyz="0 0 0" />
+            <mass value="0.001" />
+            <inertia ixx="1e-9" ixy="0" ixz="0" iyy="1e-9" iyz="0" izz="1e-9" />
+        </inertial>
+    </link>
+    <joint name="to_L_FOOT" type="fixed">
+        <origin rpy="2.88002840736 1.57079632679 0" xyz="0 0 -0.031925" />
+        <parent link="L_ANKLE_R_rotor" />
+        <child link="L_FOOT" />
+    </joint>
+    <link name="L_FOOT">
+        <visual>
+            <geometry>
+                <mesh
+                    filename="meshes/nest_description/meshes/subsystem/lower_body/grasshopper/v0_1/l_foot.stl"
+                    scale="1 1 1" />
+            </geometry>
+            <material name="light_gray">
+                <color rgba="0.75 0.75 0.75 1" />
+            </material>
+        </visual>
+        <!-- The left foot mesh frame is mirrored in X relative to R_FOOT. -->
+        <collision name="L_FOOT_capsule_1">
+            <origin xyz="-0.099964516129 -0.033 -0.0673" rpy="0 1.5707963267948966 0" />
+            <geometry><capsule radius="0.01" height="0.0639784946237" /></geometry>
+        </collision>
+        <collision name="L_FOOT_capsule_2">
+            <origin xyz="-0.0545397849462 -0.0228461538462 -0.0673" rpy="0 1.5707963267948966 0" />
+            <geometry><capsule radius="0.01" height="0.213688172043" /></geometry>
+        </collision>
+        <collision name="L_FOOT_capsule_3">
+            <origin xyz="-0.0539 -0.0126923076923 -0.0673" rpy="0 1.5707963267948966 0" />
+            <geometry><capsule radius="0.01" height="0.23288172043" /></geometry>
+        </collision>
+        <collision name="L_FOOT_capsule_4">
+            <origin xyz="-0.0539 0 -0.0673" rpy="0 1.5707963267948966 0" />
+            <geometry><capsule radius="0.01" height="0.238" /></geometry>
+        </collision>
+        <collision name="L_FOOT_capsule_5">
+            <origin xyz="-0.0539 0.0126923076923 -0.0673" rpy="0 1.5707963267948966 0" />
+            <geometry><capsule radius="0.01" height="0.23288172043" /></geometry>
+        </collision>
+        <collision name="L_FOOT_capsule_6">
+            <origin xyz="-0.0545397849462 0.0228461538462 -0.0673" rpy="0 1.5707963267948966 0" />
+            <geometry><capsule radius="0.01" height="0.213688172043" /></geometry>
+        </collision>
+        <collision name="L_FOOT_capsule_7">
+            <origin xyz="-0.099964516129 0.033 -0.0673" rpy="0 1.5707963267948966 0" />
+            <geometry><capsule radius="0.01" height="0.0639784946237" /></geometry>
+        </collision>
+        <inertial>
+            <origin rpy="0 0 0" xyz="-0.039150763 1.0158351e-06 -0.054038223" />
+            <mass value="1.5285504" />
+            <inertia ixx="0.0017391142" ixy="1.2992659e-07" ixz="-0.00077072605" iyy="0.0090542726"
+                iyz="-1.4461018e-06" izz="0.009167537" />
+        </inertial>
+    </link>
+    <link name="TORSO">
+        <visual>
+            <geometry>
+                <mesh
+                    filename="meshes/nest_description/meshes/subsystem/torso/v0_1/torso.stl"
+                    scale="1 1 1" />
+            </geometry>
+            <material name="silver">
+                <color rgba="0.5 0.5 0.5 1" />
+            </material>
+        </visual>
+        <collision>
+            <geometry>
+                <mesh
+                    filename="meshes/nest_description/meshes/subsystem/torso/v0_1/torso.stl"
+                    scale="1 1 1" />
+            </geometry>
+        </collision>
+        <inertial>
+            <origin rpy="0 0 0" xyz="9.87326961822e-16 -5.70009671712e-16 0.177235891631" />
+            <mass value="20" />
+            <inertia ixx="0.592377386644" ixy="5.34579288058e-14" ixz="3.31833116135e-15"
+                iyy="0.346595496447" iyz="-2.20357677955e-15" izz="0.367656505883" />
+        </inertial>
+    </link>
+</robot>

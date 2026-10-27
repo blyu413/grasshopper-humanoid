@@ -1,0 +1,25 @@
+# Local environments and Python build/cache files
+.venv/
+.uv-cache/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.ruff_cache/
+build/
+dist/
+*.egg-info/
+
+# Training runs and generated exports, evaluations, images and videos.
+# Runtime robot assets belong in assets/, including the complete USD payloads.
+/logs/
+/outputs/
+
+# Machine-specific settings and credentials
+.env
+.env.*
+!.env.example
+/.aws/
+/.codex/
+.vscode/
+.idea/
+.DS_Store

@@ -1,0 +1,50 @@
+[build-system]
+requires = ["uv_build>=0.12.6,<0.13"]
+build-backend = "uv_build"
+
+[project]
+name = "nest"
+version = "0.1.0"
+requires-python = ">=3.12,<3.13"
+dependencies = ["isaaclab[rsl-rl,video]"]
+
+[project.entry-points."isaaclab.tasks"]
+nest = "nest.tasks"
+
+[tool.uv]
+index-strategy = "unsafe-best-match"
+prerelease = "allow"
+environments = ["sys_platform == 'linux' and platform_machine == 'x86_64'"]
+override-dependencies = [
+    "numpy>=2",
+    "mujoco~=3.12.0",
+    "mujoco-warp~=3.12.0",
+    "newton[sim]==1.6.0",
+    "newton-usd-schemas>=0.5.0",
+    "torch==2.12.0",
+    "torchvision==0.27.0",
+    "packaging>=20,<27",
+]
+
+[tool.uv.sources]
+isaaclab = { path = "../IsaacLab-3.0.0/tools/wheel_builder" }
+omniverseclient = { index = "pypi-public" }
+torch = { index = "pytorch-cu130" }
+torchvision = { index = "pytorch-cu130" }
+torchaudio = { index = "pytorch-cu130" }
+
+[tool.uv.build-backend]
+module-name = "nest"
+
+[[tool.uv.index]]
+url = "https://pypi.nvidia.com"
+
+[[tool.uv.index]]
+name = "pypi-public"
+url = "https://pypi.org/simple"
+explicit = true
+
+[[tool.uv.index]]
+name = "pytorch-cu130"
+url = "https://download.pytorch.org/whl/cu130"
+explicit = true

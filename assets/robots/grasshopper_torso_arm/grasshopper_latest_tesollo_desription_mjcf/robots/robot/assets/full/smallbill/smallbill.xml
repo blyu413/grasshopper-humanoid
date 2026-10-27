@@ -1,0 +1,20 @@
+<mujoco model="smallbill">
+  <default>
+    <default class="visual">
+      <geom group="2" type="mesh" contype="0" conaffinity="0"/>
+    </default>
+    <default class="collision">
+      <geom group="3" type="mesh"/>
+    </default>
+  </default>
+  <asset>
+    <material name="mtl_smallbill" specular="0.20000000000000004" shininess="1.0" rgba="0.50196078 0.50196078 0.50196078 1.0"/>
+    <mesh file="smallbill.obj"/>
+  </asset>
+  <worldbody>
+    <body name="smallbill">
+      <geom material="mtl_smallbill" mesh="smallbill" class="visual"/>
+      <geom mesh="smallbill" class="collision"/>
+    </body>
+  </worldbody>
+</mujoco>

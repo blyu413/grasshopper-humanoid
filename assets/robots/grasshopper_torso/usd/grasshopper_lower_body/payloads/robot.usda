@@ -1,0 +1,641 @@
+#usda 1.0
+(
+    customLayerData = {
+        string creator = "URDF USD Converter v0.3.2"
+    }
+    defaultPrim = "grasshopper_lower_body"
+    endTimeCode = 1000000
+    kilogramsPerUnit = 1
+    metersPerUnit = 1
+    startTimeCode = 0
+    upAxis = "Z"
+)
+
+over "grasshopper_lower_body" (
+    prepend apiSchemas = ["IsaacRobotAPI"]
+)
+{
+    prepend rel isaac:physics:robotJoints = [
+        </grasshopper_lower_body/Physics/to_WAIST_Y>,
+        </grasshopper_lower_body/Physics/to_R_HIP_P>,
+        </grasshopper_lower_body/Physics/to_L_HIP_P>,
+        </grasshopper_lower_body/Physics/WAIST_Y_out>,
+        </grasshopper_lower_body/Physics/to_WAIST>,
+        </grasshopper_lower_body/Physics/to_WAIST_P>,
+        </grasshopper_lower_body/Physics/to_WAIST_P_RIGHT>,
+        </grasshopper_lower_body/Physics/WAIST_P_out>,
+        </grasshopper_lower_body/Physics/to_WAIST_P_L_BRACKET>,
+        </grasshopper_lower_body/Physics/WAIST_P_RIGHT_out>,
+        </grasshopper_lower_body/Physics/to_WAIST_P_R_BRACKET>,
+        </grasshopper_lower_body/Physics/to_TORSO>,
+        </grasshopper_lower_body/Physics/R_HIP_P_out>,
+        </grasshopper_lower_body/Physics/to_R_HIP_R_BRACKET>,
+        </grasshopper_lower_body/Physics/to_R_HIP_R>,
+        </grasshopper_lower_body/Physics/R_HIP_R_out>,
+        </grasshopper_lower_body/Physics/to_R_HIP_Y_BRACKET>,
+        </grasshopper_lower_body/Physics/to_R_HIP_Y>,
+        </grasshopper_lower_body/Physics/R_HIP_Y_out>,
+        </grasshopper_lower_body/Physics/to_R_KNEE_P_BRACKET>,
+        </grasshopper_lower_body/Physics/to_R_KNEE_P>,
+        </grasshopper_lower_body/Physics/R_KNEE_P_out>,
+        </grasshopper_lower_body/Physics/to_R_ANKLE_P_BRACKET>,
+        </grasshopper_lower_body/Physics/to_R_ANKLE_P>,
+        </grasshopper_lower_body/Physics/R_ANKLE_P_out>,
+        </grasshopper_lower_body/Physics/to_R_ANKLE_R_BRACKET>,
+        </grasshopper_lower_body/Physics/to_R_ANKLE_R>,
+        </grasshopper_lower_body/Physics/R_ANKLE_R_out>,
+        </grasshopper_lower_body/Physics/to_R_FOOT>,
+        </grasshopper_lower_body/Physics/L_HIP_P_out>,
+        </grasshopper_lower_body/Physics/to_L_HIP_R_BRACKET>,
+        </grasshopper_lower_body/Physics/to_L_HIP_R>,
+        </grasshopper_lower_body/Physics/L_HIP_R_out>,
+        </grasshopper_lower_body/Physics/to_L_HIP_Y_BRACKET>,
+        </grasshopper_lower_body/Physics/to_L_HIP_Y>,
+        </grasshopper_lower_body/Physics/L_HIP_Y_out>,
+        </grasshopper_lower_body/Physics/to_L_KNEE_P_BRACKET>,
+        </grasshopper_lower_body/Physics/to_L_KNEE_P>,
+        </grasshopper_lower_body/Physics/L_KNEE_P_out>,
+        </grasshopper_lower_body/Physics/to_L_ANKLE_P_BRACKET>,
+        </grasshopper_lower_body/Physics/to_L_ANKLE_P>,
+        </grasshopper_lower_body/Physics/L_ANKLE_P_out>,
+        </grasshopper_lower_body/Physics/to_L_ANKLE_R_BRACKET>,
+        </grasshopper_lower_body/Physics/to_L_ANKLE_R>,
+        </grasshopper_lower_body/Physics/L_ANKLE_R_out>,
+        </grasshopper_lower_body/Physics/to_L_FOOT>,
+    ]
+    prepend rel isaac:physics:robotLinks = [
+        </grasshopper_lower_body/Geometry/base_link/PELVIS>,
+        </grasshopper_lower_body/Geometry/base_link/PELVIS/WAIST_Y>,
+        </grasshopper_lower_body/Geometry/base_link/PELVIS/WAIST_Y/WAIST_Y_rotor>,
+        </grasshopper_lower_body/Geometry/base_link/PELVIS/WAIST_Y/WAIST_Y_rotor/WAIST>,
+        </grasshopper_lower_body/Geometry/base_link/PELVIS/WAIST_Y/WAIST_Y_rotor/WAIST/WAIST_P>,
+        </grasshopper_lower_body/Geometry/base_link/PELVIS/WAIST_Y/WAIST_Y_rotor/WAIST/WAIST_P/WAIST_P_rotor>,
+        </grasshopper_lower_body/Geometry/base_link/PELVIS/WAIST_Y/WAIST_Y_rotor/WAIST/WAIST_P/WAIST_P_rotor/WAIST_P_L_BRACKET>,
+        </grasshopper_lower_body/Geometry/base_link/PELVIS/WAIST_Y/WAIST_Y_rotor/WAIST/WAIST_P_RIGHT>,
+        </grasshopper_lower_body/Geometry/base_link/PELVIS/WAIST_Y/WAIST_Y_rotor/WAIST/WAIST_P_RIGHT/WAIST_P_RIGHT_rotor>,
+        </grasshopper_lower_body/Geometry/base_link/PELVIS/WAIST_Y/WAIST_Y_rotor/WAIST/WAIST_P_RIGHT/WAIST_P_RIGHT_rotor/WAIST_P_R_BRACKET>,
+        </grasshopper_lower_body/Geometry/base_link/PELVIS/WAIST_Y/WAIST_Y_rotor/WAIST/WAIST_P_RIGHT/WAIST_P_RIGHT_rotor/WAIST_P_R_BRACKET/TORSO>,
+        </grasshopper_lower_body/Geometry/base_link/PELVIS/R_HIP_P>,
+        </grasshopper_lower_body/Geometry/base_link/PELVIS/R_HIP_P/R_HIP_P_rotor>,
+        </grasshopper_lower_body/Geometry/base_link/PELVIS/R_HIP_P/R_HIP_P_rotor/R_HIP_R_BRACKET>,
+        </grasshopper_lower_body/Geometry/base_link/PELVIS/R_HIP_P/R_HIP_P_rotor/R_HIP_R_BRACKET/R_HIP_R>,
+        </grasshopper_lower_body/Geometry/base_link/PELVIS/R_HIP_P/R_HIP_P_rotor/R_HIP_R_BRACKET/R_HIP_R/R_HIP_R_rotor>,
+        </grasshopper_lower_body/Geometry/base_link/PELVIS/R_HIP_P/R_HIP_P_rotor/R_HIP_R_BRACKET/R_HIP_R/R_HIP_R_rotor/R_HIP_Y_BRACKET>,
+        </grasshopper_lower_body/Geometry/base_link/PELVIS/R_HIP_P/R_HIP_P_rotor/R_HIP_R_BRACKET/R_HIP_R/R_HIP_R_rotor/R_HIP_Y_BRACKET/R_HIP_Y_rotor>,
+        </grasshopper_lower_body/Geometry/base_link/PELVIS/R_HIP_P/R_HIP_P_rotor/R_HIP_R_BRACKET/R_HIP_R/R_HIP_R_rotor/R_HIP_Y_BRACKET/R_HIP_Y_rotor/R_HIP_Y>,
+        </grasshopper_lower_body/Geometry/base_link/PELVIS/R_HIP_P/R_HIP_P_rotor/R_HIP_R_BRACKET/R_HIP_R/R_HIP_R_rotor/R_HIP_Y_BRACKET/R_HIP_Y_rotor/R_HIP_Y/R_KNEE_P_BRACKET>,
+        </grasshopper_lower_body/Geometry/base_link/PELVIS/R_HIP_P/R_HIP_P_rotor/R_HIP_R_BRACKET/R_HIP_R/R_HIP_R_rotor/R_HIP_Y_BRACKET/R_HIP_Y_rotor/R_HIP_Y/R_KNEE_P_BRACKET/R_KNEE_P>,
+        </grasshopper_lower_body/Geometry/base_link/PELVIS/R_HIP_P/R_HIP_P_rotor/R_HIP_R_BRACKET/R_HIP_R/R_HIP_R_rotor/R_HIP_Y_BRACKET/R_HIP_Y_rotor/R_HIP_Y/R_KNEE_P_BRACKET/R_KNEE_P/R_KNEE_P_rotor>,
+        </grasshopper_lower_body/Geometry/base_link/PELVIS/R_HIP_P/R_HIP_P_rotor/R_HIP_R_BRACKET/R_HIP_R/R_HIP_R_rotor/R_HIP_Y_BRACKET/R_HIP_Y_rotor/R_HIP_Y/R_KNEE_P_BRACKET/R_KNEE_P/R_KNEE_P_rotor/R_ANKLE_P_BRACKET>,
+        </grasshopper_lower_body/Geometry/base_link/PELVIS/R_HIP_P/R_HIP_P_rotor/R_HIP_R_BRACKET/R_HIP_R/R_HIP_R_rotor/R_HIP_Y_BRACKET/R_HIP_Y_rotor/R_HIP_Y/R_KNEE_P_BRACKET/R_KNEE_P/R_KNEE_P_rotor/R_ANKLE_P_BRACKET/R_ANKLE_P_rotor>,
+        </grasshopper_lower_body/Geometry/base_link/PELVIS/R_HIP_P/R_HIP_P_rotor/R_HIP_R_BRACKET/R_HIP_R/R_HIP_R_rotor/R_HIP_Y_BRACKET/R_HIP_Y_rotor/R_HIP_Y/R_KNEE_P_BRACKET/R_KNEE_P/R_KNEE_P_rotor/R_ANKLE_P_BRACKET/R_ANKLE_P_rotor/R_ANKLE_P>,
+        </grasshopper_lower_body/Geometry/base_link/PELVIS/R_HIP_P/R_HIP_P_rotor/R_HIP_R_BRACKET/R_HIP_R/R_HIP_R_rotor/R_HIP_Y_BRACKET/R_HIP_Y_rotor/R_HIP_Y/R_KNEE_P_BRACKET/R_KNEE_P/R_KNEE_P_rotor/R_ANKLE_P_BRACKET/R_ANKLE_P_rotor/R_ANKLE_P/R_ANKLE_R_BRACKET>,
+        </grasshopper_lower_body/Geometry/base_link/PELVIS/R_HIP_P/R_HIP_P_rotor/R_HIP_R_BRACKET/R_HIP_R/R_HIP_R_rotor/R_HIP_Y_BRACKET/R_HIP_Y_rotor/R_HIP_Y/R_KNEE_P_BRACKET/R_KNEE_P/R_KNEE_P_rotor/R_ANKLE_P_BRACKET/R_ANKLE_P_rotor/R_ANKLE_P/R_ANKLE_R_BRACKET/R_ANKLE_R>,
+        </grasshopper_lower_body/Geometry/base_link/PELVIS/R_HIP_P/R_HIP_P_rotor/R_HIP_R_BRACKET/R_HIP_R/R_HIP_R_rotor/R_HIP_Y_BRACKET/R_HIP_Y_rotor/R_HIP_Y/R_KNEE_P_BRACKET/R_KNEE_P/R_KNEE_P_rotor/R_ANKLE_P_BRACKET/R_ANKLE_P_rotor/R_ANKLE_P/R_ANKLE_R_BRACKET/R_ANKLE_R/R_ANKLE_R_rotor>,
+        </grasshopper_lower_body/Geometry/base_link/PELVIS/R_HIP_P/R_HIP_P_rotor/R_HIP_R_BRACKET/R_HIP_R/R_HIP_R_rotor/R_HIP_Y_BRACKET/R_HIP_Y_rotor/R_HIP_Y/R_KNEE_P_BRACKET/R_KNEE_P/R_KNEE_P_rotor/R_ANKLE_P_BRACKET/R_ANKLE_P_rotor/R_ANKLE_P/R_ANKLE_R_BRACKET/R_ANKLE_R/R_ANKLE_R_rotor/R_FOOT>,
+        </grasshopper_lower_body/Geometry/base_link/PELVIS/L_HIP_P>,
+        </grasshopper_lower_body/Geometry/base_link/PELVIS/L_HIP_P/L_HIP_P_rotor>,
+        </grasshopper_lower_body/Geometry/base_link/PELVIS/L_HIP_P/L_HIP_P_rotor/L_HIP_R_BRACKET>,
+        </grasshopper_lower_body/Geometry/base_link/PELVIS/L_HIP_P/L_HIP_P_rotor/L_HIP_R_BRACKET/L_HIP_R>,
+        </grasshopper_lower_body/Geometry/base_link/PELVIS/L_HIP_P/L_HIP_P_rotor/L_HIP_R_BRACKET/L_HIP_R/L_HIP_R_rotor>,
+        </grasshopper_lower_body/Geometry/base_link/PELVIS/L_HIP_P/L_HIP_P_rotor/L_HIP_R_BRACKET/L_HIP_R/L_HIP_R_rotor/L_HIP_Y_BRACKET>,
+        </grasshopper_lower_body/Geometry/base_link/PELVIS/L_HIP_P/L_HIP_P_rotor/L_HIP_R_BRACKET/L_HIP_R/L_HIP_R_rotor/L_HIP_Y_BRACKET/L_HIP_Y_rotor>,
+        </grasshopper_lower_body/Geometry/base_link/PELVIS/L_HIP_P/L_HIP_P_rotor/L_HIP_R_BRACKET/L_HIP_R/L_HIP_R_rotor/L_HIP_Y_BRACKET/L_HIP_Y_rotor/L_HIP_Y>,
+        </grasshopper_lower_body/Geometry/base_link/PELVIS/L_HIP_P/L_HIP_P_rotor/L_HIP_R_BRACKET/L_HIP_R/L_HIP_R_rotor/L_HIP_Y_BRACKET/L_HIP_Y_rotor/L_HIP_Y/L_KNEE_P_BRACKET>,
+        </grasshopper_lower_body/Geometry/base_link/PELVIS/L_HIP_P/L_HIP_P_rotor/L_HIP_R_BRACKET/L_HIP_R/L_HIP_R_rotor/L_HIP_Y_BRACKET/L_HIP_Y_rotor/L_HIP_Y/L_KNEE_P_BRACKET/L_KNEE_P>,
+        </grasshopper_lower_body/Geometry/base_link/PELVIS/L_HIP_P/L_HIP_P_rotor/L_HIP_R_BRACKET/L_HIP_R/L_HIP_R_rotor/L_HIP_Y_BRACKET/L_HIP_Y_rotor/L_HIP_Y/L_KNEE_P_BRACKET/L_KNEE_P/L_KNEE_P_rotor>,
+        </grasshopper_lower_body/Geometry/base_link/PELVIS/L_HIP_P/L_HIP_P_rotor/L_HIP_R_BRACKET/L_HIP_R/L_HIP_R_rotor/L_HIP_Y_BRACKET/L_HIP_Y_rotor/L_HIP_Y/L_KNEE_P_BRACKET/L_KNEE_P/L_KNEE_P_rotor/L_ANKLE_P_BRACKET>,
+        </grasshopper_lower_body/Geometry/base_link/PELVIS/L_HIP_P/L_HIP_P_rotor/L_HIP_R_BRACKET/L_HIP_R/L_HIP_R_rotor/L_HIP_Y_BRACKET/L_HIP_Y_rotor/L_HIP_Y/L_KNEE_P_BRACKET/L_KNEE_P/L_KNEE_P_rotor/L_ANKLE_P_BRACKET/L_ANKLE_P_rotor>,
+        </grasshopper_lower_body/Geometry/base_link/PELVIS/L_HIP_P/L_HIP_P_rotor/L_HIP_R_BRACKET/L_HIP_R/L_HIP_R_rotor/L_HIP_Y_BRACKET/L_HIP_Y_rotor/L_HIP_Y/L_KNEE_P_BRACKET/L_KNEE_P/L_KNEE_P_rotor/L_ANKLE_P_BRACKET/L_ANKLE_P_rotor/L_ANKLE_P>,
+        </grasshopper_lower_body/Geometry/base_link/PELVIS/L_HIP_P/L_HIP_P_rotor/L_HIP_R_BRACKET/L_HIP_R/L_HIP_R_rotor/L_HIP_Y_BRACKET/L_HIP_Y_rotor/L_HIP_Y/L_KNEE_P_BRACKET/L_KNEE_P/L_KNEE_P_rotor/L_ANKLE_P_BRACKET/L_ANKLE_P_rotor/L_ANKLE_P/L_ANKLE_R_BRACKET>,
+        </grasshopper_lower_body/Geometry/base_link/PELVIS/L_HIP_P/L_HIP_P_rotor/L_HIP_R_BRACKET/L_HIP_R/L_HIP_R_rotor/L_HIP_Y_BRACKET/L_HIP_Y_rotor/L_HIP_Y/L_KNEE_P_BRACKET/L_KNEE_P/L_KNEE_P_rotor/L_ANKLE_P_BRACKET/L_ANKLE_P_rotor/L_ANKLE_P/L_ANKLE_R_BRACKET/L_ANKLE_R>,
+        </grasshopper_lower_body/Geometry/base_link/PELVIS/L_HIP_P/L_HIP_P_rotor/L_HIP_R_BRACKET/L_HIP_R/L_HIP_R_rotor/L_HIP_Y_BRACKET/L_HIP_Y_rotor/L_HIP_Y/L_KNEE_P_BRACKET/L_KNEE_P/L_KNEE_P_rotor/L_ANKLE_P_BRACKET/L_ANKLE_P_rotor/L_ANKLE_P/L_ANKLE_R_BRACKET/L_ANKLE_R/L_ANKLE_R_rotor>,
+        </grasshopper_lower_body/Geometry/base_link/PELVIS/L_HIP_P/L_HIP_P_rotor/L_HIP_R_BRACKET/L_HIP_R/L_HIP_R_rotor/L_HIP_Y_BRACKET/L_HIP_Y_rotor/L_HIP_Y/L_KNEE_P_BRACKET/L_KNEE_P/L_KNEE_P_rotor/L_ANKLE_P_BRACKET/L_ANKLE_P_rotor/L_ANKLE_P/L_ANKLE_R_BRACKET/L_ANKLE_R/L_ANKLE_R_rotor/L_FOOT>,
+    ]
+    token isaac:robotType = "Default"
+
+    over "Geometry"
+    {
+        over "base_link"
+        {
+            over "PELVIS" (
+                prepend apiSchemas = ["IsaacLinkAPI"]
+            )
+            {
+                over "WAIST_Y" (
+                    prepend apiSchemas = ["IsaacLinkAPI"]
+                )
+                {
+                    over "WAIST_Y_rotor" (
+                        prepend apiSchemas = ["IsaacLinkAPI"]
+                    )
+                    {
+                        over "WAIST" (
+                            prepend apiSchemas = ["IsaacLinkAPI"]
+                        )
+                        {
+                            over "WAIST_P" (
+                                prepend apiSchemas = ["IsaacLinkAPI"]
+                            )
+                            {
+                                over "WAIST_P_rotor" (
+                                    prepend apiSchemas = ["IsaacLinkAPI"]
+                                )
+                                {
+                                    over "WAIST_P_L_BRACKET" (
+                                        prepend apiSchemas = ["IsaacLinkAPI"]
+                                    )
+                                    {
+                                    }
+                                }
+                            }
+
+                            over "WAIST_P_RIGHT" (
+                                prepend apiSchemas = ["IsaacLinkAPI"]
+                            )
+                            {
+                                over "WAIST_P_RIGHT_rotor" (
+                                    prepend apiSchemas = ["IsaacLinkAPI"]
+                                )
+                                {
+                                    over "WAIST_P_R_BRACKET" (
+                                        prepend apiSchemas = ["IsaacLinkAPI"]
+                                    )
+                                    {
+                                        over "TORSO" (
+                                            prepend apiSchemas = ["IsaacLinkAPI"]
+                                        )
+                                        {
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+
+                over "R_HIP_P" (
+                    prepend apiSchemas = ["IsaacLinkAPI"]
+                )
+                {
+                    over "R_HIP_P_rotor" (
+                        prepend apiSchemas = ["IsaacLinkAPI"]
+                    )
+                    {
+                        over "R_HIP_R_BRACKET" (
+                            prepend apiSchemas = ["IsaacLinkAPI"]
+                        )
+                        {
+                            over "R_HIP_R" (
+                                prepend apiSchemas = ["IsaacLinkAPI"]
+                            )
+                            {
+                                over "R_HIP_R_rotor" (
+                                    prepend apiSchemas = ["IsaacLinkAPI"]
+                                )
+                                {
+                                    over "R_HIP_Y_BRACKET" (
+                                        prepend apiSchemas = ["IsaacLinkAPI"]
+                                    )
+                                    {
+                                        over "R_HIP_Y_rotor" (
+                                            prepend apiSchemas = ["IsaacLinkAPI"]
+                                        )
+                                        {
+                                            over "R_HIP_Y" (
+                                                prepend apiSchemas = ["IsaacLinkAPI"]
+                                            )
+                                            {
+                                                over "R_KNEE_P_BRACKET" (
+                                                    prepend apiSchemas = ["IsaacLinkAPI"]
+                                                )
+                                                {
+                                                    over "R_KNEE_P" (
+                                                        prepend apiSchemas = ["IsaacLinkAPI"]
+                                                    )
+                                                    {
+                                                        over "R_KNEE_P_rotor" (
+                                                            prepend apiSchemas = ["IsaacLinkAPI"]
+                                                        )
+                                                        {
+                                                            over "R_ANKLE_P_BRACKET" (
+                                                                prepend apiSchemas = ["IsaacLinkAPI"]
+                                                            )
+                                                            {
+                                                                over "R_ANKLE_P_rotor" (
+                                                                    prepend apiSchemas = ["IsaacLinkAPI"]
+                                                                )
+                                                                {
+                                                                    over "R_ANKLE_P" (
+                                                                        prepend apiSchemas = ["IsaacLinkAPI"]
+                                                                    )
+                                                                    {
+                                                                        over "R_ANKLE_R_BRACKET" (
+                                                                            prepend apiSchemas = ["IsaacLinkAPI"]
+                                                                        )
+                                                                        {
+                                                                            over "R_ANKLE_R" (
+                                                                                prepend apiSchemas = ["IsaacLinkAPI"]
+                                                                            )
+                                                                            {
+                                                                                over "R_ANKLE_R_rotor" (
+                                                                                    prepend apiSchemas = ["IsaacLinkAPI"]
+                                                                                )
+                                                                                {
+                                                                                    over "R_FOOT" (
+                                                                                        prepend apiSchemas = ["IsaacLinkAPI"]
+                                                                                    )
+                                                                                    {
+                                                                                    }
+                                                                                }
+                                                                            }
+                                                                        }
+                                                                    }
+                                                                }
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+
+                over "L_HIP_P" (
+                    prepend apiSchemas = ["IsaacLinkAPI"]
+                )
+                {
+                    over "L_HIP_P_rotor" (
+                        prepend apiSchemas = ["IsaacLinkAPI"]
+                    )
+                    {
+                        over "L_HIP_R_BRACKET" (
+                            prepend apiSchemas = ["IsaacLinkAPI"]
+                        )
+                        {
+                            over "L_HIP_R" (
+                                prepend apiSchemas = ["IsaacLinkAPI"]
+                            )
+                            {
+                                over "L_HIP_R_rotor" (
+                                    prepend apiSchemas = ["IsaacLinkAPI"]
+                                )
+                                {
+                                    over "L_HIP_Y_BRACKET" (
+                                        prepend apiSchemas = ["IsaacLinkAPI"]
+                                    )
+                                    {
+                                        over "L_HIP_Y_rotor" (
+                                            prepend apiSchemas = ["IsaacLinkAPI"]
+                                        )
+                                        {
+                                            over "L_HIP_Y" (
+                                                prepend apiSchemas = ["IsaacLinkAPI"]
+                                            )
+                                            {
+                                                over "L_KNEE_P_BRACKET" (
+                                                    prepend apiSchemas = ["IsaacLinkAPI"]
+                                                )
+                                                {
+                                                    over "L_KNEE_P" (
+                                                        prepend apiSchemas = ["IsaacLinkAPI"]
+                                                    )
+                                                    {
+                                                        over "L_KNEE_P_rotor" (
+                                                            prepend apiSchemas = ["IsaacLinkAPI"]
+                                                        )
+                                                        {
+                                                            over "L_ANKLE_P_BRACKET" (
+                                                                prepend apiSchemas = ["IsaacLinkAPI"]
+                                                            )
+                                                            {
+                                                                over "L_ANKLE_P_rotor" (
+                                                                    prepend apiSchemas = ["IsaacLinkAPI"]
+                                                                )
+                                                                {
+                                                                    over "L_ANKLE_P" (
+                                                                        prepend apiSchemas = ["IsaacLinkAPI"]
+                                                                    )
+                                                                    {
+                                                                        over "L_ANKLE_R_BRACKET" (
+                                                                            prepend apiSchemas = ["IsaacLinkAPI"]
+                                                                        )
+                                                                        {
+                                                                            over "L_ANKLE_R" (
+                                                                                prepend apiSchemas = ["IsaacLinkAPI"]
+                                                                            )
+                                                                            {
+                                                                                over "L_ANKLE_R_rotor" (
+                                                                                    prepend apiSchemas = ["IsaacLinkAPI"]
+                                                                                )
+                                                                                {
+                                                                                    over "L_FOOT" (
+                                                                                        prepend apiSchemas = ["IsaacLinkAPI"]
+                                                                                    )
+                                                                                    {
+                                                                                    }
+                                                                                }
+                                                                            }
+                                                                        }
+                                                                    }
+                                                                }
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    over "Physics"
+    {
+        over "to_WAIST_Y" (
+            prepend apiSchemas = ["IsaacJointAPI"]
+        )
+        {
+        }
+
+        over "WAIST_Y_out" (
+            prepend apiSchemas = ["IsaacJointAPI"]
+        )
+        {
+        }
+
+        over "to_WAIST" (
+            prepend apiSchemas = ["IsaacJointAPI"]
+        )
+        {
+        }
+
+        over "to_WAIST_P" (
+            prepend apiSchemas = ["IsaacJointAPI"]
+        )
+        {
+        }
+
+        over "WAIST_P_out" (
+            prepend apiSchemas = ["IsaacJointAPI"]
+        )
+        {
+        }
+
+        over "to_WAIST_P_RIGHT" (
+            prepend apiSchemas = ["IsaacJointAPI"]
+        )
+        {
+        }
+
+        over "WAIST_P_RIGHT_out" (
+            prepend apiSchemas = ["IsaacJointAPI"]
+        )
+        {
+        }
+
+        over "to_WAIST_P_L_BRACKET" (
+            prepend apiSchemas = ["IsaacJointAPI"]
+        )
+        {
+        }
+
+        over "to_WAIST_P_R_BRACKET" (
+            prepend apiSchemas = ["IsaacJointAPI"]
+        )
+        {
+        }
+
+        over "to_TORSO" (
+            prepend apiSchemas = ["IsaacJointAPI"]
+        )
+        {
+        }
+
+        over "to_R_HIP_P" (
+            prepend apiSchemas = ["IsaacJointAPI"]
+        )
+        {
+        }
+
+        over "R_HIP_P_out" (
+            prepend apiSchemas = ["IsaacJointAPI"]
+        )
+        {
+        }
+
+        over "to_R_HIP_R_BRACKET" (
+            prepend apiSchemas = ["IsaacJointAPI"]
+        )
+        {
+        }
+
+        over "to_R_HIP_R" (
+            prepend apiSchemas = ["IsaacJointAPI"]
+        )
+        {
+        }
+
+        over "R_HIP_R_out" (
+            prepend apiSchemas = ["IsaacJointAPI"]
+        )
+        {
+        }
+
+        over "to_R_HIP_Y_BRACKET" (
+            prepend apiSchemas = ["IsaacJointAPI"]
+        )
+        {
+        }
+
+        over "to_R_HIP_Y" (
+            prepend apiSchemas = ["IsaacJointAPI"]
+        )
+        {
+        }
+
+        over "R_HIP_Y_out" (
+            prepend apiSchemas = ["IsaacJointAPI"]
+        )
+        {
+        }
+
+        over "to_R_KNEE_P_BRACKET" (
+            prepend apiSchemas = ["IsaacJointAPI"]
+        )
+        {
+        }
+
+        over "to_R_KNEE_P" (
+            prepend apiSchemas = ["IsaacJointAPI"]
+        )
+        {
+        }
+
+        over "R_KNEE_P_out" (
+            prepend apiSchemas = ["IsaacJointAPI"]
+        )
+        {
+        }
+
+        over "to_R_ANKLE_P_BRACKET" (
+            prepend apiSchemas = ["IsaacJointAPI"]
+        )
+        {
+        }
+
+        over "to_R_ANKLE_P" (
+            prepend apiSchemas = ["IsaacJointAPI"]
+        )
+        {
+        }
+
+        over "R_ANKLE_P_out" (
+            prepend apiSchemas = ["IsaacJointAPI"]
+        )
+        {
+        }
+
+        over "to_R_ANKLE_R_BRACKET" (
+            prepend apiSchemas = ["IsaacJointAPI"]
+        )
+        {
+        }
+
+        over "to_R_ANKLE_R" (
+            prepend apiSchemas = ["IsaacJointAPI"]
+        )
+        {
+        }
+
+        over "R_ANKLE_R_out" (
+            prepend apiSchemas = ["IsaacJointAPI"]
+        )
+        {
+        }
+
+        over "to_R_FOOT" (
+            prepend apiSchemas = ["IsaacJointAPI"]
+        )
+        {
+        }
+
+        over "to_L_HIP_P" (
+            prepend apiSchemas = ["IsaacJointAPI"]
+        )
+        {
+        }
+
+        over "L_HIP_P_out" (
+            prepend apiSchemas = ["IsaacJointAPI"]
+        )
+        {
+        }
+
+        over "to_L_HIP_R_BRACKET" (
+            prepend apiSchemas = ["IsaacJointAPI"]
+        )
+        {
+        }
+
+        over "to_L_HIP_R" (
+            prepend apiSchemas = ["IsaacJointAPI"]
+        )
+        {
+        }
+
+        over "L_HIP_R_out" (
+            prepend apiSchemas = ["IsaacJointAPI"]
+        )
+        {
+        }
+
+        over "to_L_HIP_Y_BRACKET" (
+            prepend apiSchemas = ["IsaacJointAPI"]
+        )
+        {
+        }
+
+        over "to_L_HIP_Y" (
+            prepend apiSchemas = ["IsaacJointAPI"]
+        )
+        {
+        }
+
+        over "L_HIP_Y_out" (
+            prepend apiSchemas = ["IsaacJointAPI"]
+        )
+        {
+        }
+
+        over "to_L_KNEE_P_BRACKET" (
+            prepend apiSchemas = ["IsaacJointAPI"]
+        )
+        {
+        }
+
+        over "to_L_KNEE_P" (
+            prepend apiSchemas = ["IsaacJointAPI"]
+        )
+        {
+        }
+
+        over "L_KNEE_P_out" (
+            prepend apiSchemas = ["IsaacJointAPI"]
+        )
+        {
+        }
+
+        over "to_L_ANKLE_P_BRACKET" (
+            prepend apiSchemas = ["IsaacJointAPI"]
+        )
+        {
+        }
+
+        over "to_L_ANKLE_P" (
+            prepend apiSchemas = ["IsaacJointAPI"]
+        )
+        {
+        }
+
+        over "L_ANKLE_P_out" (
+            prepend apiSchemas = ["IsaacJointAPI"]
+        )
+        {
+        }
+
+        over "to_L_ANKLE_R_BRACKET" (
+            prepend apiSchemas = ["IsaacJointAPI"]
+        )
+        {
+        }
+
+        over "to_L_ANKLE_R" (
+            prepend apiSchemas = ["IsaacJointAPI"]
+        )
+        {
+        }
+
+        over "L_ANKLE_R_out" (
+            prepend apiSchemas = ["IsaacJointAPI"]
+        )
+        {
+        }
+
+        over "to_L_FOOT" (
+            prepend apiSchemas = ["IsaacJointAPI"]
+        )
+        {
+        }
+    }
+}
+

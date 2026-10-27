@@ -1,0 +1,20 @@
+<mujoco model="JD10">
+  <default>
+    <default class="visual">
+      <geom group="2" type="mesh" contype="0" conaffinity="0"/>
+    </default>
+    <default class="collision">
+      <geom group="3" type="mesh"/>
+    </default>
+  </default>
+  <asset>
+    <material name="mtl_JD10" specular="0.20000000000000004" shininess="1.0" rgba="0.50196078 0.50196078 0.50196078 1.0"/>
+    <mesh file="JD10.obj"/>
+  </asset>
+  <worldbody>
+    <body name="JD10">
+      <geom material="mtl_JD10" mesh="JD10" class="visual"/>
+      <geom mesh="JD10" class="collision"/>
+    </body>
+  </worldbody>
+</mujoco>

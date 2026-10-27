@@ -1,0 +1,20 @@
+<mujoco model="JP25__1">
+  <default>
+    <default class="visual">
+      <geom group="2" type="mesh" contype="0" conaffinity="0"/>
+    </default>
+    <default class="collision">
+      <geom group="3" type="mesh"/>
+    </default>
+  </default>
+  <asset>
+    <material name="mtl_JP25__1" specular="0.20000000000000004" shininess="1.0" rgba="1.00000000 1.00000000 1.00000000 1.0"/>
+    <mesh file="JP25__1.obj"/>
+  </asset>
+  <worldbody>
+    <body name="JP25__1">
+      <geom material="mtl_JP25__1" mesh="JP25__1" class="visual"/>
+      <geom mesh="JP25__1" class="collision"/>
+    </body>
+  </worldbody>
+</mujoco>

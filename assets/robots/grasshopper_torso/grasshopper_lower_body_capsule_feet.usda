@@ -1,0 +1,462 @@
+#usda 1.0
+(
+    customLayerData = {
+        string collisionSource = "grasshopper_lower_body.urdf"
+        string generator = "scripts/build_grasshopper_capsule_feet.py"
+        string layoutReference = "MJLab Unitree G1: seven longitudinal sole capsules per foot"
+    }
+    defaultPrim = "grasshopper_lower_body"
+    kilogramsPerUnit = 1
+    metersPerUnit = 1
+    upAxis = "Z"
+)
+
+def Xform "grasshopper_lower_body" (
+    prepend references = @usd/grasshopper_lower_body/grasshopper_lower_body.usda@
+    variants = {
+        string Physics = "mujoco"
+    }
+)
+{
+    def Material "sole_contact_material" (
+        prepend apiSchemas = ["PhysicsMaterialAPI"]
+    )
+    {
+        custom int mjc:priority = 1
+        float physics:dynamicFriction = 0.6
+        float physics:restitution = 0
+        float physics:staticFriction = 0.6
+    }
+
+    over "Geometry"
+    {
+        over "base_link"
+        {
+            over "PELVIS"
+            {
+                over "R_HIP_P"
+                {
+                    over "R_HIP_P_rotor"
+                    {
+                        over "R_HIP_R_BRACKET"
+                        {
+                            over "R_HIP_R"
+                            {
+                                over "R_HIP_R_rotor"
+                                {
+                                    over "R_HIP_Y_BRACKET"
+                                    {
+                                        over "R_HIP_Y_rotor"
+                                        {
+                                            over "R_HIP_Y"
+                                            {
+                                                over "R_KNEE_P_BRACKET"
+                                                {
+                                                    over "R_KNEE_P"
+                                                    {
+                                                        over "R_KNEE_P_rotor"
+                                                        {
+                                                            over "R_ANKLE_P_BRACKET"
+                                                            {
+                                                                over "R_ANKLE_P_rotor"
+                                                                {
+                                                                    over "R_ANKLE_P"
+                                                                    {
+                                                                        over "R_ANKLE_R_BRACKET"
+                                                                        {
+                                                                            over "R_ANKLE_R"
+                                                                            {
+                                                                                over "R_ANKLE_R_rotor"
+                                                                                {
+                                                                                    over "R_FOOT"
+                                                                                    {
+                                                                                        over "r_foot_1" (
+                                                                                            instanceable = false
+                                                                                        )
+                                                                                        {
+                                                                                            over "r_foot"
+                                                                                            {
+                                                                                                bool physics:collisionEnabled = 0
+                                                                                            }
+                                                                                        }
+
+                                                                                        def Capsule "sole_capsule_1" (
+                                                                                            prepend apiSchemas = ["PhysicsCollisionAPI", "MaterialBindingAPI"]
+                                                                                        )
+                                                                                        {
+                                                                                            uniform token axis = "Z"
+                                                                                            double height = 0.0639784946237
+                                                                                            rel material:binding:physics = </grasshopper_lower_body/sole_contact_material>
+                                                                                            custom int mjc:condim = 3
+                                                                                            custom float mjc:gap = 0
+                                                                                            custom float mjc:margin = 0
+                                                                                            custom int mjc:priority = 1
+                                                                                            custom float2 mjc:solref = (0.02, 1)
+                                                                                            bool physics:collisionEnabled = 1
+                                                                                            color3f[] primvars:displayColor = [(0.1, 0.8, 0.5)]
+                                                                                            uniform token purpose = "guide"
+                                                                                            double radius = 0.01
+                                                                                            quatf xformOp:orient = (0.70710677, 0, 0.70710677, 0)
+                                                                                            double3 xformOp:translate = (0.099964516129, -0.033, -0.0673)
+                                                                                            uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient"]
+                                                                                        }
+
+                                                                                        def Capsule "sole_capsule_2" (
+                                                                                            prepend apiSchemas = ["PhysicsCollisionAPI", "MaterialBindingAPI"]
+                                                                                        )
+                                                                                        {
+                                                                                            uniform token axis = "Z"
+                                                                                            double height = 0.213688172043
+                                                                                            rel material:binding:physics = </grasshopper_lower_body/sole_contact_material>
+                                                                                            custom int mjc:condim = 3
+                                                                                            custom float mjc:gap = 0
+                                                                                            custom float mjc:margin = 0
+                                                                                            custom int mjc:priority = 1
+                                                                                            custom float2 mjc:solref = (0.02, 1)
+                                                                                            bool physics:collisionEnabled = 1
+                                                                                            color3f[] primvars:displayColor = [(0.1, 0.8, 0.5)]
+                                                                                            uniform token purpose = "guide"
+                                                                                            double radius = 0.01
+                                                                                            quatf xformOp:orient = (0.70710677, 0, 0.70710677, 0)
+                                                                                            double3 xformOp:translate = (0.0545397849462, -0.0228461538462, -0.0673)
+                                                                                            uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient"]
+                                                                                        }
+
+                                                                                        def Capsule "sole_capsule_3" (
+                                                                                            prepend apiSchemas = ["PhysicsCollisionAPI", "MaterialBindingAPI"]
+                                                                                        )
+                                                                                        {
+                                                                                            uniform token axis = "Z"
+                                                                                            double height = 0.23288172043
+                                                                                            rel material:binding:physics = </grasshopper_lower_body/sole_contact_material>
+                                                                                            custom int mjc:condim = 3
+                                                                                            custom float mjc:gap = 0
+                                                                                            custom float mjc:margin = 0
+                                                                                            custom int mjc:priority = 1
+                                                                                            custom float2 mjc:solref = (0.02, 1)
+                                                                                            bool physics:collisionEnabled = 1
+                                                                                            color3f[] primvars:displayColor = [(0.1, 0.8, 0.5)]
+                                                                                            uniform token purpose = "guide"
+                                                                                            double radius = 0.01
+                                                                                            quatf xformOp:orient = (0.70710677, 0, 0.70710677, 0)
+                                                                                            double3 xformOp:translate = (0.0539, -0.0126923076923, -0.0673)
+                                                                                            uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient"]
+                                                                                        }
+
+                                                                                        def Capsule "sole_capsule_4" (
+                                                                                            prepend apiSchemas = ["PhysicsCollisionAPI", "MaterialBindingAPI"]
+                                                                                        )
+                                                                                        {
+                                                                                            uniform token axis = "Z"
+                                                                                            double height = 0.238
+                                                                                            rel material:binding:physics = </grasshopper_lower_body/sole_contact_material>
+                                                                                            custom int mjc:condim = 3
+                                                                                            custom float mjc:gap = 0
+                                                                                            custom float mjc:margin = 0
+                                                                                            custom int mjc:priority = 1
+                                                                                            custom float2 mjc:solref = (0.02, 1)
+                                                                                            bool physics:collisionEnabled = 1
+                                                                                            color3f[] primvars:displayColor = [(0.1, 0.8, 0.5)]
+                                                                                            uniform token purpose = "guide"
+                                                                                            double radius = 0.01
+                                                                                            quatf xformOp:orient = (0.70710677, 0, 0.70710677, 0)
+                                                                                            double3 xformOp:translate = (0.0539, 0, -0.0673)
+                                                                                            uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient"]
+                                                                                        }
+
+                                                                                        def Capsule "sole_capsule_5" (
+                                                                                            prepend apiSchemas = ["PhysicsCollisionAPI", "MaterialBindingAPI"]
+                                                                                        )
+                                                                                        {
+                                                                                            uniform token axis = "Z"
+                                                                                            double height = 0.23288172043
+                                                                                            rel material:binding:physics = </grasshopper_lower_body/sole_contact_material>
+                                                                                            custom int mjc:condim = 3
+                                                                                            custom float mjc:gap = 0
+                                                                                            custom float mjc:margin = 0
+                                                                                            custom int mjc:priority = 1
+                                                                                            custom float2 mjc:solref = (0.02, 1)
+                                                                                            bool physics:collisionEnabled = 1
+                                                                                            color3f[] primvars:displayColor = [(0.1, 0.8, 0.5)]
+                                                                                            uniform token purpose = "guide"
+                                                                                            double radius = 0.01
+                                                                                            quatf xformOp:orient = (0.70710677, 0, 0.70710677, 0)
+                                                                                            double3 xformOp:translate = (0.0539, 0.0126923076923, -0.0673)
+                                                                                            uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient"]
+                                                                                        }
+
+                                                                                        def Capsule "sole_capsule_6" (
+                                                                                            prepend apiSchemas = ["PhysicsCollisionAPI", "MaterialBindingAPI"]
+                                                                                        )
+                                                                                        {
+                                                                                            uniform token axis = "Z"
+                                                                                            double height = 0.213688172043
+                                                                                            rel material:binding:physics = </grasshopper_lower_body/sole_contact_material>
+                                                                                            custom int mjc:condim = 3
+                                                                                            custom float mjc:gap = 0
+                                                                                            custom float mjc:margin = 0
+                                                                                            custom int mjc:priority = 1
+                                                                                            custom float2 mjc:solref = (0.02, 1)
+                                                                                            bool physics:collisionEnabled = 1
+                                                                                            color3f[] primvars:displayColor = [(0.1, 0.8, 0.5)]
+                                                                                            uniform token purpose = "guide"
+                                                                                            double radius = 0.01
+                                                                                            quatf xformOp:orient = (0.70710677, 0, 0.70710677, 0)
+                                                                                            double3 xformOp:translate = (0.0545397849462, 0.0228461538462, -0.0673)
+                                                                                            uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient"]
+                                                                                        }
+
+                                                                                        def Capsule "sole_capsule_7" (
+                                                                                            prepend apiSchemas = ["PhysicsCollisionAPI", "MaterialBindingAPI"]
+                                                                                        )
+                                                                                        {
+                                                                                            uniform token axis = "Z"
+                                                                                            double height = 0.0639784946237
+                                                                                            rel material:binding:physics = </grasshopper_lower_body/sole_contact_material>
+                                                                                            custom int mjc:condim = 3
+                                                                                            custom float mjc:gap = 0
+                                                                                            custom float mjc:margin = 0
+                                                                                            custom int mjc:priority = 1
+                                                                                            custom float2 mjc:solref = (0.02, 1)
+                                                                                            bool physics:collisionEnabled = 1
+                                                                                            color3f[] primvars:displayColor = [(0.1, 0.8, 0.5)]
+                                                                                            uniform token purpose = "guide"
+                                                                                            double radius = 0.01
+                                                                                            quatf xformOp:orient = (0.70710677, 0, 0.70710677, 0)
+                                                                                            double3 xformOp:translate = (0.099964516129, 0.033, -0.0673)
+                                                                                            uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient"]
+                                                                                        }
+                                                                                    }
+                                                                                }
+                                                                            }
+                                                                        }
+                                                                    }
+                                                                }
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+
+                over "L_HIP_P"
+                {
+                    over "L_HIP_P_rotor"
+                    {
+                        over "L_HIP_R_BRACKET"
+                        {
+                            over "L_HIP_R"
+                            {
+                                over "L_HIP_R_rotor"
+                                {
+                                    over "L_HIP_Y_BRACKET"
+                                    {
+                                        over "L_HIP_Y_rotor"
+                                        {
+                                            over "L_HIP_Y"
+                                            {
+                                                over "L_KNEE_P_BRACKET"
+                                                {
+                                                    over "L_KNEE_P"
+                                                    {
+                                                        over "L_KNEE_P_rotor"
+                                                        {
+                                                            over "L_ANKLE_P_BRACKET"
+                                                            {
+                                                                over "L_ANKLE_P_rotor"
+                                                                {
+                                                                    over "L_ANKLE_P"
+                                                                    {
+                                                                        over "L_ANKLE_R_BRACKET"
+                                                                        {
+                                                                            over "L_ANKLE_R"
+                                                                            {
+                                                                                over "L_ANKLE_R_rotor"
+                                                                                {
+                                                                                    over "L_FOOT"
+                                                                                    {
+                                                                                        over "l_foot_1" (
+                                                                                            instanceable = false
+                                                                                        )
+                                                                                        {
+                                                                                            over "l_foot"
+                                                                                            {
+                                                                                                bool physics:collisionEnabled = 0
+                                                                                            }
+                                                                                        }
+
+                                                                                        def Capsule "sole_capsule_1" (
+                                                                                            prepend apiSchemas = ["PhysicsCollisionAPI", "MaterialBindingAPI"]
+                                                                                        )
+                                                                                        {
+                                                                                            uniform token axis = "Z"
+                                                                                            double height = 0.0639784946237
+                                                                                            rel material:binding:physics = </grasshopper_lower_body/sole_contact_material>
+                                                                                            custom int mjc:condim = 3
+                                                                                            custom float mjc:gap = 0
+                                                                                            custom float mjc:margin = 0
+                                                                                            custom int mjc:priority = 1
+                                                                                            custom float2 mjc:solref = (0.02, 1)
+                                                                                            bool physics:collisionEnabled = 1
+                                                                                            color3f[] primvars:displayColor = [(0.1, 0.8, 0.5)]
+                                                                                            uniform token purpose = "guide"
+                                                                                            double radius = 0.01
+                                                                                            quatf xformOp:orient = (0.70710677, 0, 0.70710677, 0)
+                                                                                            double3 xformOp:translate = (-0.099964516129, -0.033, -0.0673)
+                                                                                            uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient"]
+                                                                                        }
+
+                                                                                        def Capsule "sole_capsule_2" (
+                                                                                            prepend apiSchemas = ["PhysicsCollisionAPI", "MaterialBindingAPI"]
+                                                                                        )
+                                                                                        {
+                                                                                            uniform token axis = "Z"
+                                                                                            double height = 0.213688172043
+                                                                                            rel material:binding:physics = </grasshopper_lower_body/sole_contact_material>
+                                                                                            custom int mjc:condim = 3
+                                                                                            custom float mjc:gap = 0
+                                                                                            custom float mjc:margin = 0
+                                                                                            custom int mjc:priority = 1
+                                                                                            custom float2 mjc:solref = (0.02, 1)
+                                                                                            bool physics:collisionEnabled = 1
+                                                                                            color3f[] primvars:displayColor = [(0.1, 0.8, 0.5)]
+                                                                                            uniform token purpose = "guide"
+                                                                                            double radius = 0.01
+                                                                                            quatf xformOp:orient = (0.70710677, 0, 0.70710677, 0)
+                                                                                            double3 xformOp:translate = (-0.0545397849462, -0.0228461538462, -0.0673)
+                                                                                            uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient"]
+                                                                                        }
+
+                                                                                        def Capsule "sole_capsule_3" (
+                                                                                            prepend apiSchemas = ["PhysicsCollisionAPI", "MaterialBindingAPI"]
+                                                                                        )
+                                                                                        {
+                                                                                            uniform token axis = "Z"
+                                                                                            double height = 0.23288172043
+                                                                                            rel material:binding:physics = </grasshopper_lower_body/sole_contact_material>
+                                                                                            custom int mjc:condim = 3
+                                                                                            custom float mjc:gap = 0
+                                                                                            custom float mjc:margin = 0
+                                                                                            custom int mjc:priority = 1
+                                                                                            custom float2 mjc:solref = (0.02, 1)
+                                                                                            bool physics:collisionEnabled = 1
+                                                                                            color3f[] primvars:displayColor = [(0.1, 0.8, 0.5)]
+                                                                                            uniform token purpose = "guide"
+                                                                                            double radius = 0.01
+                                                                                            quatf xformOp:orient = (0.70710677, 0, 0.70710677, 0)
+                                                                                            double3 xformOp:translate = (-0.0539, -0.0126923076923, -0.0673)
+                                                                                            uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient"]
+                                                                                        }
+
+                                                                                        def Capsule "sole_capsule_4" (
+                                                                                            prepend apiSchemas = ["PhysicsCollisionAPI", "MaterialBindingAPI"]
+                                                                                        )
+                                                                                        {
+                                                                                            uniform token axis = "Z"
+                                                                                            double height = 0.238
+                                                                                            rel material:binding:physics = </grasshopper_lower_body/sole_contact_material>
+                                                                                            custom int mjc:condim = 3
+                                                                                            custom float mjc:gap = 0
+                                                                                            custom float mjc:margin = 0
+                                                                                            custom int mjc:priority = 1
+                                                                                            custom float2 mjc:solref = (0.02, 1)
+                                                                                            bool physics:collisionEnabled = 1
+                                                                                            color3f[] primvars:displayColor = [(0.1, 0.8, 0.5)]
+                                                                                            uniform token purpose = "guide"
+                                                                                            double radius = 0.01
+                                                                                            quatf xformOp:orient = (0.70710677, 0, 0.70710677, 0)
+                                                                                            double3 xformOp:translate = (-0.0539, 0, -0.0673)
+                                                                                            uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient"]
+                                                                                        }
+
+                                                                                        def Capsule "sole_capsule_5" (
+                                                                                            prepend apiSchemas = ["PhysicsCollisionAPI", "MaterialBindingAPI"]
+                                                                                        )
+                                                                                        {
+                                                                                            uniform token axis = "Z"
+                                                                                            double height = 0.23288172043
+                                                                                            rel material:binding:physics = </grasshopper_lower_body/sole_contact_material>
+                                                                                            custom int mjc:condim = 3
+                                                                                            custom float mjc:gap = 0
+                                                                                            custom float mjc:margin = 0
+                                                                                            custom int mjc:priority = 1
+                                                                                            custom float2 mjc:solref = (0.02, 1)
+                                                                                            bool physics:collisionEnabled = 1
+                                                                                            color3f[] primvars:displayColor = [(0.1, 0.8, 0.5)]
+                                                                                            uniform token purpose = "guide"
+                                                                                            double radius = 0.01
+                                                                                            quatf xformOp:orient = (0.70710677, 0, 0.70710677, 0)
+                                                                                            double3 xformOp:translate = (-0.0539, 0.0126923076923, -0.0673)
+                                                                                            uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient"]
+                                                                                        }
+
+                                                                                        def Capsule "sole_capsule_6" (
+                                                                                            prepend apiSchemas = ["PhysicsCollisionAPI", "MaterialBindingAPI"]
+                                                                                        )
+                                                                                        {
+                                                                                            uniform token axis = "Z"
+                                                                                            double height = 0.213688172043
+                                                                                            rel material:binding:physics = </grasshopper_lower_body/sole_contact_material>
+                                                                                            custom int mjc:condim = 3
+                                                                                            custom float mjc:gap = 0
+                                                                                            custom float mjc:margin = 0
+                                                                                            custom int mjc:priority = 1
+                                                                                            custom float2 mjc:solref = (0.02, 1)
+                                                                                            bool physics:collisionEnabled = 1
+                                                                                            color3f[] primvars:displayColor = [(0.1, 0.8, 0.5)]
+                                                                                            uniform token purpose = "guide"
+                                                                                            double radius = 0.01
+                                                                                            quatf xformOp:orient = (0.70710677, 0, 0.70710677, 0)
+                                                                                            double3 xformOp:translate = (-0.0545397849462, 0.0228461538462, -0.0673)
+                                                                                            uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient"]
+                                                                                        }
+
+                                                                                        def Capsule "sole_capsule_7" (
+                                                                                            prepend apiSchemas = ["PhysicsCollisionAPI", "MaterialBindingAPI"]
+                                                                                        )
+                                                                                        {
+                                                                                            uniform token axis = "Z"
+                                                                                            double height = 0.0639784946237
+                                                                                            rel material:binding:physics = </grasshopper_lower_body/sole_contact_material>
+                                                                                            custom int mjc:condim = 3
+                                                                                            custom float mjc:gap = 0
+                                                                                            custom float mjc:margin = 0
+                                                                                            custom int mjc:priority = 1
+                                                                                            custom float2 mjc:solref = (0.02, 1)
+                                                                                            bool physics:collisionEnabled = 1
+                                                                                            color3f[] primvars:displayColor = [(0.1, 0.8, 0.5)]
+                                                                                            uniform token purpose = "guide"
+                                                                                            double radius = 0.01
+                                                                                            quatf xformOp:orient = (0.70710677, 0, 0.70710677, 0)
+                                                                                            double3 xformOp:translate = (-0.099964516129, 0.033, -0.0673)
+                                                                                            uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient"]
+                                                                                        }
+                                                                                    }
+                                                                                }
+                                                                            }
+                                                                        }
+                                                                    }
+                                                                }
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+

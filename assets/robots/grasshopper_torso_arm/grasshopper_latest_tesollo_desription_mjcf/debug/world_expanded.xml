@@ -1,0 +1,35 @@
+<mujoco model="empty_world">
+  <compiler angle="radian" balanceinertia="false" discardvisual="false" fusestatic="false" inertiafromgeom="false" meshdir="." />
+  <size memory="500M" />
+  <option cone="elliptic" impratio="100" integrator="implicitfast" iterations="150" noslip_iterations="5" solver="CG" timestep="0.0005">
+    <flag multiccd="enable" />
+  </option>
+  <visual>
+    <map zfar="50" znear="0.01" />
+    <global azimuth="180" elevation="-45" />
+  </visual>
+  <statistic center="0 2.0 0.5" extent="5.0" />
+  <asset>
+    <texture builtin="checker" height="300" mark="edge" markrgb="0.03 0.58 0.3" name="floor_texture" rgb1="0.3 0.3 0.3" rgb2="0.2 0.2 0.2" type="2d" width="300" />
+    <material name="floor_material" texrepeat="10 10" texture="floor_texture" texuniform="true" />
+  </asset>
+  <worldbody>
+    <geom conaffinity="9" contype="8" material="floor_material" name="floor" size="20 20 0.1" type="plane" />
+    <light bulbradius="0.25" castshadow="true" diffuse="0.5 0.5 0.5" dir="0 0 -1" intensity="1" name="key_light" pos="0 0.2 2" type="directional" />
+    <light bulbradius="0.25" castshadow="true" diffuse="0.5 0.5 0.5" dir="0 0 -1" intensity="1" name="fill_light" pos="0 1.0 2" type="directional" />
+    <body name="visual_axes">
+      <body euler="0 1.5708 0" name="world_x_axis">
+        <geom conaffinity="0" contype="0" name="x_axis_shaft" pos="0 0 0.075" rgba="1 0 0 1" size="0.01 0.075" type="cylinder" />
+        <geom conaffinity="0" contype="0" name="x_axis_head" pos="0 0 0.15" rgba="1 0 0 1" size="0.025" type="sphere" />
+      </body>
+      <body euler="-1.5708 0 0" name="world_y_axis">
+        <geom conaffinity="0" contype="0" name="y_axis_shaft" pos="0 0 0.075" rgba="0 1 0 1" size="0.01 0.075" type="cylinder" />
+        <geom conaffinity="0" contype="0" name="y_axis_head" pos="0 0 0.15" rgba="0 1 0 1" size="0.025" type="sphere" />
+      </body>
+      <body name="world_z_axis">
+        <geom conaffinity="0" contype="0" name="z_axis_shaft" pos="0 0 0.075" rgba="0 0 1 1" size="0.01 0.075" type="cylinder" />
+        <geom conaffinity="0" contype="0" name="z_axis_head" pos="0 0 0.15" rgba="0 0 1 1" size="0.025" type="sphere" />
+      </body>
+    </body>
+  </worldbody>
+</mujoco>

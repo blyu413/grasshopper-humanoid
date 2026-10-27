@@ -1,0 +1,20 @@
+<mujoco model="sh_r_bracket">
+  <default>
+    <default class="visual">
+      <geom group="2" type="mesh" contype="0" conaffinity="0"/>
+    </default>
+    <default class="collision">
+      <geom group="3" type="mesh"/>
+    </default>
+  </default>
+  <asset>
+    <material name="mtl_sh_r_bracket" specular="0.20000000000000004" shininess="1.0" rgba="1.00000000 1.00000000 1.00000000 1.0"/>
+    <mesh file="sh_r_bracket.obj"/>
+  </asset>
+  <worldbody>
+    <body name="sh_r_bracket">
+      <geom material="mtl_sh_r_bracket" mesh="sh_r_bracket" class="visual"/>
+      <geom mesh="sh_r_bracket" class="collision"/>
+    </body>
+  </worldbody>
+</mujoco>

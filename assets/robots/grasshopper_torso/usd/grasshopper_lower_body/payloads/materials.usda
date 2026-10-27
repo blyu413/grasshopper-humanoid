@@ -1,0 +1,81 @@
+#usda 1.0
+(
+    customLayerData = {
+        string creator = "URDF USD Converter v0.3.2"
+    }
+    endTimeCode = 1000000
+    kilogramsPerUnit = 1
+    metersPerUnit = 1
+    startTimeCode = 0
+    upAxis = "Z"
+)
+
+def Scope "Materials"
+{
+    def Material "light_gray"
+    {
+        color3f inputs:diffuseColor = (0.5225216, 0.5225216, 0.5225216)
+        float inputs:metallic = 0
+        float inputs:opacity = 1
+        float inputs:roughness = 0.5
+        token inputs:wrapMode = "repeat"
+        token outputs:displacement (
+            displayGroup = "Outputs"
+        )
+        prepend token outputs:displacement.connect = </Materials/light_gray/PreviewSurface.outputs:displacement>
+        token outputs:surface (
+            displayGroup = "Outputs"
+        )
+        prepend token outputs:surface.connect = </Materials/light_gray/PreviewSurface.outputs:surface>
+        token outputs:volume (
+            displayGroup = "Outputs"
+        )
+
+        def Shader "PreviewSurface" (
+            apiSchemas = ["NodeDefAPI"]
+        )
+        {
+            token info:id = "UsdPreviewSurface"
+            prepend color3f inputs:diffuseColor.connect = </Materials/light_gray.inputs:diffuseColor>
+            prepend float inputs:metallic.connect = </Materials/light_gray.inputs:metallic>
+            prepend float inputs:opacity.connect = </Materials/light_gray.inputs:opacity>
+            prepend float inputs:roughness.connect = </Materials/light_gray.inputs:roughness>
+            token outputs:displacement
+            token outputs:surface
+        }
+    }
+
+    def Material "silver"
+    {
+        color3f inputs:diffuseColor = (0.21404114, 0.21404114, 0.21404114)
+        float inputs:metallic = 0
+        float inputs:opacity = 1
+        float inputs:roughness = 0.5
+        token inputs:wrapMode = "repeat"
+        token outputs:displacement (
+            displayGroup = "Outputs"
+        )
+        prepend token outputs:displacement.connect = </Materials/silver/PreviewSurface.outputs:displacement>
+        token outputs:surface (
+            displayGroup = "Outputs"
+        )
+        prepend token outputs:surface.connect = </Materials/silver/PreviewSurface.outputs:surface>
+        token outputs:volume (
+            displayGroup = "Outputs"
+        )
+
+        def Shader "PreviewSurface" (
+            apiSchemas = ["NodeDefAPI"]
+        )
+        {
+            token info:id = "UsdPreviewSurface"
+            prepend color3f inputs:diffuseColor.connect = </Materials/silver.inputs:diffuseColor>
+            prepend float inputs:metallic.connect = </Materials/silver.inputs:metallic>
+            prepend float inputs:opacity.connect = </Materials/silver.inputs:opacity>
+            prepend float inputs:roughness.connect = </Materials/silver.inputs:roughness>
+            token outputs:displacement
+            token outputs:surface
+        }
+    }
+}
+

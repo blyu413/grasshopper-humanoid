@@ -1,0 +1,20 @@
+<mujoco model="torso_casing">
+  <default>
+    <default class="visual">
+      <geom group="2" type="mesh" contype="0" conaffinity="0"/>
+    </default>
+    <default class="collision">
+      <geom group="3" type="mesh"/>
+    </default>
+  </default>
+  <asset>
+    <material name="mtl_torso_casing" specular="0.20000000000000004" shininess="1.0" rgba="1.00000000 1.00000000 1.00000000 1.0"/>
+    <mesh file="torso_casing.obj"/>
+  </asset>
+  <worldbody>
+    <body name="torso_casing">
+      <geom material="mtl_torso_casing" mesh="torso_casing" class="visual"/>
+      <geom mesh="torso_casing" class="collision"/>
+    </body>
+  </worldbody>
+</mujoco>

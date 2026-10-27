@@ -1,0 +1,20 @@
+<mujoco model="link_3_tip">
+  <default>
+    <default class="visual">
+      <geom group="2" type="mesh" contype="0" conaffinity="0"/>
+    </default>
+    <default class="collision">
+      <geom group="3" type="mesh"/>
+    </default>
+  </default>
+  <asset>
+    <material name="material_link_3_tip_0" specular="0.20000000000000004" shininess="1.0" rgba="0.80000000 0.80000000 0.80000000 1.0"/>
+    <mesh file="link_3_tip.obj"/>
+  </asset>
+  <worldbody>
+    <body name="link_3_tip">
+      <geom material="material_link_3_tip_0" mesh="link_3_tip" class="visual"/>
+      <geom mesh="link_3_tip" class="collision"/>
+    </body>
+  </worldbody>
+</mujoco>

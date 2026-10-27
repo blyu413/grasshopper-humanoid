@@ -1,0 +1,1 @@
+"""NEST robot asset configurations."""

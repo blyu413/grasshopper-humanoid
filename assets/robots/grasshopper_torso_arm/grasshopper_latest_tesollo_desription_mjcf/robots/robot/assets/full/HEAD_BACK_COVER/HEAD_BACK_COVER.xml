@@ -1,0 +1,20 @@
+<mujoco model="HEAD_BACK_COVER">
+  <default>
+    <default class="visual">
+      <geom group="2" type="mesh" contype="0" conaffinity="0"/>
+    </default>
+    <default class="collision">
+      <geom group="3" type="mesh"/>
+    </default>
+  </default>
+  <asset>
+    <material name="mtl_HEAD_BACK_COVER" specular="0.20000000000000004" shininess="1.0" rgba="0.20000000 0.20000000 0.20000000 1.0"/>
+    <mesh file="HEAD_BACK_COVER.obj"/>
+  </asset>
+  <worldbody>
+    <body name="HEAD_BACK_COVER">
+      <geom material="mtl_HEAD_BACK_COVER" mesh="HEAD_BACK_COVER" class="visual"/>
+      <geom mesh="HEAD_BACK_COVER" class="collision"/>
+    </body>
+  </worldbody>
+</mujoco>

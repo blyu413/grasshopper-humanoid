@@ -1,0 +1,40 @@
+<mujoco model="link_base__1">
+  <default>
+    <default class="visual">
+      <geom group="2" type="mesh" contype="0" conaffinity="0"/>
+    </default>
+    <default class="collision">
+      <geom group="3" type="mesh"/>
+    </default>
+  </default>
+  <asset>
+    <material name="material_link_base__1_0" specular="0.20000000000000004" shininess="1.0" rgba="0.40000000 0.40000000 0.40000000 1.0"/>
+    <material name="material_link_base__1_1" specular="0.20000000000000004" shininess="1.0" rgba="0.00000000 0.50196078 0.00000000 1.0"/>
+    <material name="material_link_base__1_2" specular="0.20000000000000004" shininess="1.0" rgba="0.80000000 0.80000000 0.80000000 1.0"/>
+    <material name="material_link_base__1_3" specular="0.20000000000000004" shininess="1.0" rgba="0.20000000 0.20000000 0.16862745 1.0"/>
+    <material name="material_link_base__1_4" specular="0.20000000000000004" shininess="1.0" rgba="0.71372549 0.80000000 0.03529412 1.0"/>
+    <material name="material_link_base__1_5" specular="0.20000000000000004" shininess="1.0" rgba="0.00000000 0.00000000 0.00000000 1.0"/>
+    <mesh file="link_base__1_0.obj"/>
+    <mesh file="link_base__1_1.obj"/>
+    <mesh file="link_base__1_2.obj"/>
+    <mesh file="link_base__1_3.obj"/>
+    <mesh file="link_base__1_4.obj"/>
+    <mesh file="link_base__1_5.obj"/>
+  </asset>
+  <worldbody>
+    <body name="link_base__1">
+      <geom mesh="link_base__1_0" material="material_link_base__1_5" class="visual"/>
+      <geom mesh="link_base__1_1" material="material_link_base__1_4" class="visual"/>
+      <geom mesh="link_base__1_2" material="material_link_base__1_3" class="visual"/>
+      <geom mesh="link_base__1_3" material="material_link_base__1_2" class="visual"/>
+      <geom mesh="link_base__1_4" material="material_link_base__1_1" class="visual"/>
+      <geom mesh="link_base__1_5" material="material_link_base__1_0" class="visual"/>
+      <geom mesh="link_base__1_0" class="collision"/>
+      <geom mesh="link_base__1_1" class="collision"/>
+      <geom mesh="link_base__1_2" class="collision"/>
+      <geom mesh="link_base__1_3" class="collision"/>
+      <geom mesh="link_base__1_4" class="collision"/>
+      <geom mesh="link_base__1_5" class="collision"/>
+    </body>
+  </worldbody>
+</mujoco>

@@ -1,0 +1,1277 @@
+#usda 1.0
+(
+    customLayerData = {
+        string creator = "URDF USD Converter v0.3.2"
+    }
+    defaultPrim = "grasshopper_lower_body"
+    endTimeCode = 1000000
+    kilogramsPerUnit = 1
+    metersPerUnit = 1
+    startTimeCode = 0
+    upAxis = "Z"
+)
+
+over "grasshopper_lower_body"
+{
+    over "Geometry"
+    {
+        over "base_link"
+        {
+            over "PELVIS" (
+                prepend apiSchemas = ["PhysicsRigidBodyAPI", "PhysicsArticulationRootAPI", "NewtonArticulationRootAPI", "PhysicsMassAPI", "NewtonMassAPI"]
+            )
+            {
+                double[] newton:inertia = [0.016394937, 0.015822572, 0.023956524, 0.00019381164, 0.0017890512, -0.000066568038]
+                bool newton:selfCollisionEnabled = 0
+                point3f physics:centerOfMass = (-0.047405183, -0.0017677397, 0.01903973)
+                float3 physics:diagonalInertia = (0.015686955, 0.016128574, 0.024358505)
+                float physics:mass = 2.3314621
+                quatf physics:principalAxes = (-0.097790375, 0.46945858, 0.8760449, -0.050901204)
+
+                over "WAIST_Y" (
+                    prepend apiSchemas = ["PhysicsRigidBodyAPI", "PhysicsMassAPI", "NewtonMassAPI"]
+                )
+                {
+                    double[] newton:inertia = [0.0032238931, 0.0032372376, 0.0045489409, -0.000011828485, 0.000014616114, 0.000019089402]
+                    point3f physics:centerOfMass = (-0.00017305394, -0.00024833716, 0.002544284)
+                    float3 physics:diagonalInertia = (0.0032166124, 0.0032440831, 0.004549376)
+                    float physics:mass = 2.3127582
+                    quatf physics:principalAxes = (0.96450096, -0.00552997, 0.00716187, 0.26392427)
+
+                    over "WAIST_Y_rotor" (
+                        prepend apiSchemas = ["PhysicsRigidBodyAPI", "PhysicsMassAPI", "NewtonMassAPI"]
+                    )
+                    {
+                        double[] newton:inertia = [1e-9, 1e-9, 1e-9, 0, 0, 0]
+                        point3f physics:centerOfMass = (0, 0, 0)
+                        float3 physics:diagonalInertia = (1e-9, 1e-9, 1e-9)
+                        float physics:mass = 0.001
+                        quatf physics:principalAxes = (1, 0, 0, 0)
+
+                        over "WAIST" (
+                            prepend apiSchemas = ["PhysicsRigidBodyAPI", "PhysicsMassAPI", "NewtonMassAPI"]
+                        )
+                        {
+                            double[] newton:inertia = [0.022194519, 0.022486068, 0.028524045, -0.00007308359, -0.0044791533, 0.000002922954]
+                            point3f physics:centerOfMass = (-0.05593165, -0.0003675469, -0.03376275)
+                            float3 physics:diagonalInertia = (0.019873345, 0.022487458, 0.03084383)
+                            float physics:mass = 2.8778262
+                            quatf physics:principalAxes = (0.971523, -0.0049822084, -0.23662329, 0.011302174)
+
+                            over "WAIST_P" (
+                                prepend apiSchemas = ["PhysicsRigidBodyAPI", "PhysicsMassAPI", "NewtonMassAPI"]
+                            )
+                            {
+                                double[] newton:inertia = [0.0032238931, 0.0032372376, 0.0045489409, -0.000011828485, 0.000014616114, 0.000019089402]
+                                point3f physics:centerOfMass = (-0.00017305394, -0.00024833716, 0.002544284)
+                                float3 physics:diagonalInertia = (0.0032166124, 0.0032440831, 0.004549376)
+                                float physics:mass = 2.3127582
+                                quatf physics:principalAxes = (0.96450096, -0.00552997, 0.00716187, 0.26392427)
+
+                                over "WAIST_P_rotor" (
+                                    prepend apiSchemas = ["PhysicsRigidBodyAPI", "PhysicsMassAPI", "NewtonMassAPI"]
+                                )
+                                {
+                                    double[] newton:inertia = [1e-9, 1e-9, 1e-9, 0, 0, 0]
+                                    point3f physics:centerOfMass = (0, 0, 0)
+                                    float3 physics:diagonalInertia = (1e-9, 1e-9, 1e-9)
+                                    float physics:mass = 0.001
+                                    quatf physics:principalAxes = (1, 0, 0, 0)
+
+                                    over "WAIST_P_L_BRACKET" (
+                                        prepend apiSchemas = ["PhysicsRigidBodyAPI", "PhysicsMassAPI", "NewtonMassAPI"]
+                                    )
+                                    {
+                                        double[] newton:inertia = [0.0041699924, 0.0024031434, 0.0039502364, -0.00010255456, 0.000046300693, 0.0010060603]
+                                        point3f physics:centerOfMass = (-0.0020511549, -0.038035914, 0.056160018)
+                                        float3 physics:diagonalInertia = (0.0019020464, 0.0041755163, 0.00444581)
+                                        float physics:mass = 0.7477718
+                                        quatf physics:principalAxes = (0.16921838, 0.7043634, 0.6724855, -0.15165943)
+                                    }
+                                }
+                            }
+
+                            over "WAIST_P_RIGHT" (
+                                prepend apiSchemas = ["PhysicsRigidBodyAPI", "PhysicsMassAPI", "NewtonMassAPI"]
+                            )
+                            {
+                                double[] newton:inertia = [0.0032238931, 0.0032372376, 0.0045489409, -0.000011828485, 0.000014616114, 0.000019089402]
+                                point3f physics:centerOfMass = (-0.00017305394, -0.00024833716, 0.002544284)
+                                float3 physics:diagonalInertia = (0.0032166124, 0.0032440831, 0.004549376)
+                                float physics:mass = 2.3127582
+                                quatf physics:principalAxes = (0.96450096, -0.00552997, 0.00716187, 0.26392427)
+
+                                over "WAIST_P_RIGHT_rotor" (
+                                    prepend apiSchemas = ["PhysicsRigidBodyAPI", "PhysicsMassAPI", "NewtonMassAPI"]
+                                )
+                                {
+                                    double[] newton:inertia = [1e-9, 1e-9, 1e-9, 0, 0, 0]
+                                    point3f physics:centerOfMass = (0, 0, 0)
+                                    float3 physics:diagonalInertia = (1e-9, 1e-9, 1e-9)
+                                    float physics:mass = 0.001
+                                    quatf physics:principalAxes = (1, 0, 0, 0)
+
+                                    over "WAIST_P_R_BRACKET" (
+                                        prepend apiSchemas = ["PhysicsRigidBodyAPI", "PhysicsMassAPI", "NewtonMassAPI"]
+                                    )
+                                    {
+                                        double[] newton:inertia = [0.0054260449, 0.0019783249, 0.0046725441, 1.0851198e-8, -5.2657575e-7, -0.0013532249]
+                                        point3f physics:centerOfMass = (2.408055e-7, 0.053980216, 0.058750622)
+                                        float3 physics:diagonalInertia = (0.0014160047, 0.005234863, 0.005426046)
+                                        float physics:mass = 0.8325801
+                                        quatf physics:principalAxes = (0.39176923, 0.58867717, 0.3932592, 0.58764213)
+
+                                        over "TORSO" (
+                                            prepend apiSchemas = ["PhysicsRigidBodyAPI", "PhysicsMassAPI", "NewtonMassAPI"]
+                                        )
+                                        {
+                                            double[] newton:inertia = [0.592377386644, 0.346595496447, 0.367656505883, 5.34579288058e-14, 3.31833116135e-15, -2.20357677955e-15]
+                                            point3f physics:centerOfMass = (9.87327e-16, -5.7000966e-16, 0.17723589)
+                                            float3 physics:diagonalInertia = (0.3465955, 0.3676565, 0.59237736)
+                                            float physics:mass = 20
+                                            quatf physics:principalAxes = (0.5, 0.5, 0.5, 0.5)
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+
+                over "R_HIP_P" (
+                    prepend apiSchemas = ["PhysicsRigidBodyAPI", "PhysicsMassAPI", "NewtonMassAPI"]
+                )
+                {
+                    double[] newton:inertia = [0.0032238931, 0.0032372376, 0.0045489409, -0.000011828485, 0.000014616114, 0.000019089402]
+                    point3f physics:centerOfMass = (-0.00017305394, -0.00024833716, 0.002544284)
+                    float3 physics:diagonalInertia = (0.0032166124, 0.0032440831, 0.004549376)
+                    float physics:mass = 2.3127582
+                    quatf physics:principalAxes = (0.96450096, -0.00552997, 0.00716187, 0.26392427)
+
+                    over "R_HIP_P_rotor" (
+                        prepend apiSchemas = ["PhysicsRigidBodyAPI", "PhysicsMassAPI", "NewtonMassAPI"]
+                    )
+                    {
+                        double[] newton:inertia = [1e-9, 1e-9, 1e-9, 0, 0, 0]
+                        point3f physics:centerOfMass = (0, 0, 0)
+                        float3 physics:diagonalInertia = (1e-9, 1e-9, 1e-9)
+                        float physics:mass = 0.001
+                        quatf physics:principalAxes = (1, 0, 0, 0)
+
+                        over "R_HIP_R_BRACKET" (
+                            prepend apiSchemas = ["PhysicsRigidBodyAPI", "PhysicsMassAPI", "NewtonMassAPI"]
+                        )
+                        {
+                            double[] newton:inertia = [0.0048449519, 0.0029506792, 0.0035757191, 0.0003490419, 0.000058342011, -0.00021567561]
+                            point3f physics:centerOfMass = (0.008921367, -0.054967046, -0.015919793)
+                            float3 physics:diagonalInertia = (0.0028226173, 0.0036412203, 0.0049075126)
+                            float physics:mass = 1.0997995
+                            quatf physics:principalAxes = (0.37491217, 0.52337563, 0.46754527, 0.6057395)
+
+                            over "R_HIP_R" (
+                                prepend apiSchemas = ["PhysicsRigidBodyAPI", "PhysicsMassAPI", "NewtonMassAPI"]
+                            )
+                            {
+                                double[] newton:inertia = [0.0032238931, 0.0032372376, 0.0045489409, -0.000011828485, 0.000014616114, 0.000019089402]
+                                point3f physics:centerOfMass = (-0.00017305394, -0.00024833716, 0.002544284)
+                                float3 physics:diagonalInertia = (0.0032166124, 0.0032440831, 0.004549376)
+                                float physics:mass = 2.3127582
+                                quatf physics:principalAxes = (0.96450096, -0.00552997, 0.00716187, 0.26392427)
+
+                                over "R_HIP_R_rotor" (
+                                    prepend apiSchemas = ["PhysicsRigidBodyAPI", "PhysicsMassAPI", "NewtonMassAPI"]
+                                )
+                                {
+                                    double[] newton:inertia = [1e-9, 1e-9, 1e-9, 0, 0, 0]
+                                    point3f physics:centerOfMass = (0, 0, 0)
+                                    float3 physics:diagonalInertia = (1e-9, 1e-9, 1e-9)
+                                    float physics:mass = 0.001
+                                    quatf physics:principalAxes = (1, 0, 0, 0)
+
+                                    over "R_HIP_Y_BRACKET" (
+                                        prepend apiSchemas = ["PhysicsRigidBodyAPI", "PhysicsMassAPI", "NewtonMassAPI"]
+                                    )
+                                    {
+                                        double[] newton:inertia = [0.0024395418, 0.0026479147, 0.0014667758, 4.6037632e-7, -0.00069558902, 4.6247497e-7]
+                                        point3f physics:centerOfMass = (-0.00900986, 3.2456649e-7, -0.054056462)
+                                        float3 physics:diagonalInertia = (0.0011043873, 0.0026479147, 0.0028019303)
+                                        float physics:mass = 0.9049012
+                                        quatf physics:principalAxes = (0.85499597, 0.00064481614, -0.51863426, 0.00015515638)
+
+                                        over "R_HIP_Y_rotor" (
+                                            prepend apiSchemas = ["PhysicsRigidBodyAPI", "PhysicsMassAPI", "NewtonMassAPI"]
+                                        )
+                                        {
+                                            double[] newton:inertia = [1e-9, 1e-9, 1e-9, 0, 0, 0]
+                                            point3f physics:centerOfMass = (0, 0, 0)
+                                            float3 physics:diagonalInertia = (1e-9, 1e-9, 1e-9)
+                                            float physics:mass = 0.001
+                                            quatf physics:principalAxes = (1, 0, 0, 0)
+
+                                            over "R_HIP_Y" (
+                                                prepend apiSchemas = ["PhysicsRigidBodyAPI", "PhysicsMassAPI", "NewtonMassAPI"]
+                                            )
+                                            {
+                                                double[] newton:inertia = [0.0032238931, 0.0032372376, 0.0045489409, -0.000011828485, 0.000014616114, 0.000019089402]
+                                                point3f physics:centerOfMass = (-0.00017305394, -0.00024833716, 0.002544284)
+                                                float3 physics:diagonalInertia = (0.0032166124, 0.0032440831, 0.004549376)
+                                                float physics:mass = 2.3127582
+                                                quatf physics:principalAxes = (0.96450096, -0.00552997, 0.00716187, 0.26392427)
+
+                                                over "R_KNEE_P_BRACKET" (
+                                                    prepend apiSchemas = ["PhysicsRigidBodyAPI", "PhysicsMassAPI", "NewtonMassAPI"]
+                                                )
+                                                {
+                                                    double[] newton:inertia = [0.041737933, 0.043024916, 0.0070047713, 0.000014475635, -0.0000089638057, -0.0006002752]
+                                                    point3f physics:centerOfMass = (-0.0000034943548, 0.012036043, -0.19467513)
+                                                    float3 physics:diagonalInertia = (0.0069947685, 0.04173777, 0.043035083)
+                                                    float physics:mass = 2.301673
+                                                    quatf physics:principalAxes = (-0.4930305, 0.50699747, 0.50128174, 0.4985891)
+
+                                                    over "R_KNEE_P" (
+                                                        prepend apiSchemas = ["PhysicsRigidBodyAPI", "PhysicsMassAPI", "NewtonMassAPI"]
+                                                    )
+                                                    {
+                                                        double[] newton:inertia = [0.0032238931, 0.0032372376, 0.0045489409, -0.000011828485, 0.000014616114, 0.000019089402]
+                                                        point3f physics:centerOfMass = (-0.00017305394, -0.00024833716, 0.002544284)
+                                                        float3 physics:diagonalInertia = (0.0032166124, 0.0032440831, 0.004549376)
+                                                        float physics:mass = 2.3127582
+                                                        quatf physics:principalAxes = (0.96450096, -0.00552997, 0.00716187, 0.26392427)
+
+                                                        over "R_KNEE_P_rotor" (
+                                                            prepend apiSchemas = ["PhysicsRigidBodyAPI", "PhysicsMassAPI", "NewtonMassAPI"]
+                                                        )
+                                                        {
+                                                            double[] newton:inertia = [1e-9, 1e-9, 1e-9, 0, 0, 0]
+                                                            point3f physics:centerOfMass = (0, 0, 0)
+                                                            float3 physics:diagonalInertia = (1e-9, 1e-9, 1e-9)
+                                                            float physics:mass = 0.001
+                                                            quatf physics:principalAxes = (1, 0, 0, 0)
+
+                                                            over "R_ANKLE_P_BRACKET" (
+                                                                prepend apiSchemas = ["PhysicsRigidBodyAPI", "PhysicsMassAPI", "NewtonMassAPI"]
+                                                            )
+                                                            {
+                                                                double[] newton:inertia = [0.033666882, 0.035007024, 0.0016523327, 0, 4.4022593e-7, -0.000036485205]
+                                                                point3f physics:centerOfMass = (0, -0.016352514, -0.16347025)
+                                                                float3 physics:diagonalInertia = (0.0016522928, 0.033666883, 0.035007063)
+                                                                float physics:mass = 1.7120209
+                                                                quatf physics:principalAxes = (-0.4997231, 0.50026983, 0.5002769, 0.4997298)
+
+                                                                over "R_ANKLE_P_rotor" (
+                                                                    prepend apiSchemas = ["PhysicsRigidBodyAPI", "PhysicsMassAPI", "NewtonMassAPI"]
+                                                                )
+                                                                {
+                                                                    double[] newton:inertia = [1e-9, 1e-9, 1e-9, 0, 0, 0]
+                                                                    point3f physics:centerOfMass = (0, 0, 0)
+                                                                    float3 physics:diagonalInertia = (1e-9, 1e-9, 1e-9)
+                                                                    float physics:mass = 0.001
+                                                                    quatf physics:principalAxes = (1, 0, 0, 0)
+
+                                                                    over "R_ANKLE_P" (
+                                                                        prepend apiSchemas = ["PhysicsRigidBodyAPI", "PhysicsMassAPI", "NewtonMassAPI"]
+                                                                    )
+                                                                    {
+                                                                        double[] newton:inertia = [0.0032238931, 0.0032372376, 0.0045489409, -0.000011828485, 0.000014616114, 0.000019089402]
+                                                                        point3f physics:centerOfMass = (-0.00017305394, -0.00024833716, 0.002544284)
+                                                                        float3 physics:diagonalInertia = (0.0032166124, 0.0032440831, 0.004549376)
+                                                                        float physics:mass = 2.3127582
+                                                                        quatf physics:principalAxes = (0.96450096, -0.00552997, 0.00716187, 0.26392427)
+
+                                                                        over "R_ANKLE_R_BRACKET" (
+                                                                            prepend apiSchemas = ["PhysicsRigidBodyAPI", "PhysicsMassAPI", "NewtonMassAPI"]
+                                                                        )
+                                                                        {
+                                                                            double[] newton:inertia = [0.0070234187, 0.0084521608, 0.0041839233, 0.000064261709, -0.00055588076, 0.0004762612]
+                                                                            point3f physics:centerOfMass = (-0.006360564, 0.040944144, -0.052813)
+                                                                            float3 physics:diagonalInertia = (0.0040269294, 0.0071279095, 0.008504664)
+                                                                            float physics:mass = 1.3860924
+                                                                            quatf physics:principalAxes = (0.5724661, -0.51387525, -0.42577544, -0.47637185)
+
+                                                                            over "R_ANKLE_R" (
+                                                                                prepend apiSchemas = ["PhysicsRigidBodyAPI", "PhysicsMassAPI", "NewtonMassAPI"]
+                                                                            )
+                                                                            {
+                                                                                double[] newton:inertia = [0.0011414267, 0.001138117, 0.0011224865, 0.0000012554658, -9.8085818e-7, -0.0000021949641]
+                                                                                point3f physics:centerOfMass = (0, 0, 0.007330775)
+                                                                                float3 physics:diagonalInertia = (0.0011221507, 0.0011378891, 0.0011419904)
+                                                                                float physics:mass = 1.3410532
+                                                                                quatf physics:principalAxes = (0.71676147, 0.08438692, -0.6705792, 0.17162587)
+
+                                                                                over "R_ANKLE_R_rotor" (
+                                                                                    prepend apiSchemas = ["PhysicsRigidBodyAPI", "PhysicsMassAPI", "NewtonMassAPI"]
+                                                                                )
+                                                                                {
+                                                                                    double[] newton:inertia = [1e-9, 1e-9, 1e-9, 0, 0, 0]
+                                                                                    point3f physics:centerOfMass = (0, 0, 0)
+                                                                                    float3 physics:diagonalInertia = (1e-9, 1e-9, 1e-9)
+                                                                                    float physics:mass = 0.001
+                                                                                    quatf physics:principalAxes = (1, 0, 0, 0)
+
+                                                                                    over "R_FOOT" (
+                                                                                        prepend apiSchemas = ["PhysicsRigidBodyAPI", "PhysicsMassAPI", "NewtonMassAPI"]
+                                                                                    )
+                                                                                    {
+                                                                                        double[] newton:inertia = [0.0017391142, 0.0090527991, 0.0091690105, 1.2992659e-7, 0.00077072605, 0.00000205644]
+                                                                                        point3f physics:centerOfMass = (0.039150763, -0.0000010158351, -0.054038223)
+                                                                                        float3 physics:diagonalInertia = (0.0016600067, 0.009052778, 0.009248139)
+                                                                                        float physics:mass = 1.5285504
+                                                                                        quatf physics:principalAxes = (0.99867874, -0.0052627865, 0.051118013, 0.0002748459)
+                                                                                    }
+                                                                                }
+                                                                            }
+                                                                        }
+                                                                    }
+                                                                }
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+
+                over "L_HIP_P" (
+                    prepend apiSchemas = ["PhysicsRigidBodyAPI", "PhysicsMassAPI", "NewtonMassAPI"]
+                )
+                {
+                    double[] newton:inertia = [0.0032238931, 0.0032372376, 0.0045489409, -0.000011828485, 0.000014616114, 0.000019089402]
+                    point3f physics:centerOfMass = (-0.00017305394, -0.00024833716, 0.002544284)
+                    float3 physics:diagonalInertia = (0.0032166124, 0.0032440831, 0.004549376)
+                    float physics:mass = 2.3127582
+                    quatf physics:principalAxes = (0.96450096, -0.00552997, 0.00716187, 0.26392427)
+
+                    over "L_HIP_P_rotor" (
+                        prepend apiSchemas = ["PhysicsRigidBodyAPI", "PhysicsMassAPI", "NewtonMassAPI"]
+                    )
+                    {
+                        double[] newton:inertia = [1e-9, 1e-9, 1e-9, 0, 0, 0]
+                        point3f physics:centerOfMass = (0, 0, 0)
+                        float3 physics:diagonalInertia = (1e-9, 1e-9, 1e-9)
+                        float physics:mass = 0.001
+                        quatf physics:principalAxes = (1, 0, 0, 0)
+
+                        over "L_HIP_R_BRACKET" (
+                            prepend apiSchemas = ["PhysicsRigidBodyAPI", "PhysicsMassAPI", "NewtonMassAPI"]
+                        )
+                        {
+                            double[] newton:inertia = [0.0048449519, 0.0029578456, 0.0035685526, 0.0003490419, -0.000058342011, 0.00021212308]
+                            point3f physics:centerOfMass = (-0.0089213615, 0.054967046, -0.01591979)
+                            float3 physics:diagonalInertia = (0.002830321, 0.003633282, 0.0049077473)
+                            float physics:mass = 1.0997995
+                            quatf physics:principalAxes = (0.52342606, 0.374435, 0.6061499, 0.4673392)
+
+                            over "L_HIP_R" (
+                                prepend apiSchemas = ["PhysicsRigidBodyAPI", "PhysicsMassAPI", "NewtonMassAPI"]
+                            )
+                            {
+                                double[] newton:inertia = [0.0032238931, 0.0032372376, 0.0045489409, -0.000011828485, 0.000014616114, 0.000019089402]
+                                point3f physics:centerOfMass = (-0.00017305394, -0.00024833716, 0.002544284)
+                                float3 physics:diagonalInertia = (0.0032166124, 0.0032440831, 0.004549376)
+                                float physics:mass = 2.3127582
+                                quatf physics:principalAxes = (0.96450096, -0.00552997, 0.00716187, 0.26392427)
+
+                                over "L_HIP_R_rotor" (
+                                    prepend apiSchemas = ["PhysicsRigidBodyAPI", "PhysicsMassAPI", "NewtonMassAPI"]
+                                )
+                                {
+                                    double[] newton:inertia = [1e-9, 1e-9, 1e-9, 0, 0, 0]
+                                    point3f physics:centerOfMass = (0, 0, 0)
+                                    float3 physics:diagonalInertia = (1e-9, 1e-9, 1e-9)
+                                    float physics:mass = 0.001
+                                    quatf physics:principalAxes = (1, 0, 0, 0)
+
+                                    over "L_HIP_Y_BRACKET" (
+                                        prepend apiSchemas = ["PhysicsRigidBodyAPI", "PhysicsMassAPI", "NewtonMassAPI"]
+                                    )
+                                    {
+                                        double[] newton:inertia = [0.0024395418, 0.0026479147, 0.0014667758, 4.6037608e-7, 0.00069558902, -4.62475e-7]
+                                        point3f physics:centerOfMass = (0.00900986, -3.2456649e-7, -0.054056462)
+                                        float3 physics:diagonalInertia = (0.0011043873, 0.0026479147, 0.0028019303)
+                                        float physics:mass = 0.9049012
+                                        quatf physics:principalAxes = (-0.51863426, -0.00015515601, 0.85499597, -0.0006448155)
+
+                                        over "L_HIP_Y_rotor" (
+                                            prepend apiSchemas = ["PhysicsRigidBodyAPI", "PhysicsMassAPI", "NewtonMassAPI"]
+                                        )
+                                        {
+                                            double[] newton:inertia = [1e-9, 1e-9, 1e-9, 0, 0, 0]
+                                            point3f physics:centerOfMass = (0, 0, 0)
+                                            float3 physics:diagonalInertia = (1e-9, 1e-9, 1e-9)
+                                            float physics:mass = 0.001
+                                            quatf physics:principalAxes = (1, 0, 0, 0)
+
+                                            over "L_HIP_Y" (
+                                                prepend apiSchemas = ["PhysicsRigidBodyAPI", "PhysicsMassAPI", "NewtonMassAPI"]
+                                            )
+                                            {
+                                                double[] newton:inertia = [0.0032238931, 0.0032372376, 0.0045489409, -0.000011828485, 0.000014616114, 0.000019089402]
+                                                point3f physics:centerOfMass = (-0.00017305394, -0.00024833716, 0.002544284)
+                                                float3 physics:diagonalInertia = (0.0032166124, 0.0032440831, 0.004549376)
+                                                float physics:mass = 2.3127582
+                                                quatf physics:principalAxes = (0.96450096, -0.00552997, 0.00716187, 0.26392427)
+
+                                                over "L_KNEE_P_BRACKET" (
+                                                    prepend apiSchemas = ["PhysicsRigidBodyAPI", "PhysicsMassAPI", "NewtonMassAPI"]
+                                                )
+                                                {
+                                                    double[] newton:inertia = [0.041736769, 0.043012253, 0.0070185976, 0.00001533184, 0.0000080862364, 0.0006002752]
+                                                    point3f physics:centerOfMass = (0.0000034943548, -0.012036043, -0.19467513)
+                                                    float3 physics:diagonalInertia = (0.0070085875, 0.041736584, 0.043022446)
+                                                    float physics:mass = 2.301673
+                                                    quatf physics:principalAxes = (-0.501103, 0.49878162, 0.49282965, 0.5071801)
+
+                                                    over "L_KNEE_P" (
+                                                        prepend apiSchemas = ["PhysicsRigidBodyAPI", "PhysicsMassAPI", "NewtonMassAPI"]
+                                                    )
+                                                    {
+                                                        double[] newton:inertia = [0.0032238931, 0.0032372376, 0.0045489409, -0.000011828485, 0.000014616114, 0.000019089402]
+                                                        point3f physics:centerOfMass = (-0.00017305394, -0.00024833716, 0.002544284)
+                                                        float3 physics:diagonalInertia = (0.0032166124, 0.0032440831, 0.004549376)
+                                                        float physics:mass = 2.3127582
+                                                        quatf physics:principalAxes = (0.96450096, -0.00552997, 0.00716187, 0.26392427)
+
+                                                        over "L_KNEE_P_rotor" (
+                                                            prepend apiSchemas = ["PhysicsRigidBodyAPI", "PhysicsMassAPI", "NewtonMassAPI"]
+                                                        )
+                                                        {
+                                                            double[] newton:inertia = [1e-9, 1e-9, 1e-9, 0, 0, 0]
+                                                            point3f physics:centerOfMass = (0, 0, 0)
+                                                            float3 physics:diagonalInertia = (1e-9, 1e-9, 1e-9)
+                                                            float physics:mass = 0.001
+                                                            quatf physics:principalAxes = (1, 0, 0, 0)
+
+                                                            over "L_ANKLE_P_BRACKET" (
+                                                                prepend apiSchemas = ["PhysicsRigidBodyAPI", "PhysicsMassAPI", "NewtonMassAPI"]
+                                                            )
+                                                            {
+                                                                double[] newton:inertia = [0.033666882, 0.035007024, 0.0016523327, 0, -4.4022593e-7, 0.000036485205]
+                                                                point3f physics:centerOfMass = (0, 0.016352514, -0.16347025)
+                                                                float3 physics:diagonalInertia = (0.0016522928, 0.033666883, 0.035007063)
+                                                                float physics:mass = 1.7120209
+                                                                quatf physics:principalAxes = (0.5002769, -0.4997298, -0.4997231, -0.50026983)
+
+                                                                over "L_ANKLE_P_rotor" (
+                                                                    prepend apiSchemas = ["PhysicsRigidBodyAPI", "PhysicsMassAPI", "NewtonMassAPI"]
+                                                                )
+                                                                {
+                                                                    double[] newton:inertia = [1e-9, 1e-9, 1e-9, 0, 0, 0]
+                                                                    point3f physics:centerOfMass = (0, 0, 0)
+                                                                    float3 physics:diagonalInertia = (1e-9, 1e-9, 1e-9)
+                                                                    float physics:mass = 0.001
+                                                                    quatf physics:principalAxes = (1, 0, 0, 0)
+
+                                                                    over "L_ANKLE_P" (
+                                                                        prepend apiSchemas = ["PhysicsRigidBodyAPI", "PhysicsMassAPI", "NewtonMassAPI"]
+                                                                    )
+                                                                    {
+                                                                        double[] newton:inertia = [0.0032238931, 0.0032372376, 0.0045489409, -0.000011828485, 0.000014616114, 0.000019089402]
+                                                                        point3f physics:centerOfMass = (-0.00017305394, -0.00024833716, 0.002544284)
+                                                                        float3 physics:diagonalInertia = (0.0032166124, 0.0032440831, 0.004549376)
+                                                                        float physics:mass = 2.3127582
+                                                                        quatf physics:principalAxes = (0.96450096, -0.00552997, 0.00716187, 0.26392427)
+
+                                                                        over "L_ANKLE_R_BRACKET" (
+                                                                            prepend apiSchemas = ["PhysicsRigidBodyAPI", "PhysicsMassAPI", "NewtonMassAPI"]
+                                                                        )
+                                                                        {
+                                                                            double[] newton:inertia = [0.0070234187, 0.0084518459, 0.0041842382, 0.000064261709, 0.00055588076, -0.00047545073]
+                                                                            point3f physics:centerOfMass = (0.006360564, -0.040944144, -0.052813)
+                                                                            float3 physics:diagonalInertia = (0.004027397, 0.0071279253, 0.00850418)
+                                                                            float physics:mass = 1.3860924
+                                                                            quatf physics:principalAxes = (-0.4257906, 0.47634384, 0.5724139, 0.5139467)
+
+                                                                            over "L_ANKLE_R" (
+                                                                                prepend apiSchemas = ["PhysicsRigidBodyAPI", "PhysicsMassAPI", "NewtonMassAPI"]
+                                                                            )
+                                                                            {
+                                                                                double[] newton:inertia = [0.0011414267, 0.001138117, 0.0011224865, 0.0000012554658, -9.8085818e-7, -0.0000021949641]
+                                                                                point3f physics:centerOfMass = (0, 0, 0.007330775)
+                                                                                float3 physics:diagonalInertia = (0.0011221507, 0.0011378891, 0.0011419904)
+                                                                                float physics:mass = 1.3410532
+                                                                                quatf physics:principalAxes = (0.71676147, 0.08438692, -0.6705792, 0.17162587)
+
+                                                                                over "L_ANKLE_R_rotor" (
+                                                                                    prepend apiSchemas = ["PhysicsRigidBodyAPI", "PhysicsMassAPI", "NewtonMassAPI"]
+                                                                                )
+                                                                                {
+                                                                                    double[] newton:inertia = [1e-9, 1e-9, 1e-9, 0, 0, 0]
+                                                                                    point3f physics:centerOfMass = (0, 0, 0)
+                                                                                    float3 physics:diagonalInertia = (1e-9, 1e-9, 1e-9)
+                                                                                    float physics:mass = 0.001
+                                                                                    quatf physics:principalAxes = (1, 0, 0, 0)
+
+                                                                                    over "L_FOOT" (
+                                                                                        prepend apiSchemas = ["PhysicsRigidBodyAPI", "PhysicsMassAPI", "NewtonMassAPI"]
+                                                                                    )
+                                                                                    {
+                                                                                        double[] newton:inertia = [0.0017391142, 0.0090542726, 0.009167537, 1.2992659e-7, -0.00077072605, -0.0000014461018]
+                                                                                        point3f physics:centerOfMass = (-0.039150763, 0.0000010158351, -0.054038223)
+                                                                                        float3 physics:diagonalInertia = (0.0016599913, 0.009054261, 0.009246671)
+                                                                                        float physics:mass = 1.5285504
+                                                                                        quatf physics:principalAxes = (0.99868494, 0.00376785, -0.05112823, 0.0001941453)
+                                                                                    }
+                                                                                }
+                                                                            }
+                                                                        }
+                                                                    }
+                                                                }
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    over "Physics"
+    {
+        def PhysicsRevoluteJoint "WAIST_Y_out" (
+            prepend apiSchemas = ["NewtonJointAPI", "PhysicsDriveAPI:angular", "PhysicsJointStateAPI:angular"]
+        )
+        {
+            float drive:angular:physics:damping = 0
+            float drive:angular:physics:maxForce = 196.53
+            float drive:angular:physics:stiffness = 0
+            float newton:damping = 0.0017453292
+            float newton:friction = 0.3
+            float newton:velocityLimit = 510
+            uniform token physics:axis = "Z"
+            custom rel physics:body0
+            append rel physics:body0 = </grasshopper_lower_body/Geometry/base_link/PELVIS/WAIST_Y>
+            custom rel physics:body1
+            append rel physics:body1 = </grasshopper_lower_body/Geometry/base_link/PELVIS/WAIST_Y/WAIST_Y_rotor>
+            point3f physics:localPos0 = (0, 0, 0)
+            point3f physics:localPos1 = (0, 0, 0)
+            quatf physics:localRot0 = (1, 0, 0, 0)
+            quatf physics:localRot1 = (1, 0, 0, 0)
+            float physics:lowerLimit = -180
+            float physics:upperLimit = 180
+            custom float urdf:limit:effort = 196.53
+        }
+
+        def PhysicsRevoluteJoint "WAIST_P_out" (
+            prepend apiSchemas = ["NewtonJointAPI", "PhysicsDriveAPI:angular", "PhysicsJointStateAPI:angular"]
+        )
+        {
+            float drive:angular:physics:damping = 0
+            float drive:angular:physics:maxForce = 393.06
+            float drive:angular:physics:stiffness = 0
+            float newton:damping = 0.0017453292
+            float newton:friction = 0.3
+            float newton:velocityLimit = 510
+            uniform token physics:axis = "Z"
+            custom rel physics:body0
+            append rel physics:body0 = </grasshopper_lower_body/Geometry/base_link/PELVIS/WAIST_Y/WAIST_Y_rotor/WAIST/WAIST_P>
+            custom rel physics:body1
+            append rel physics:body1 = </grasshopper_lower_body/Geometry/base_link/PELVIS/WAIST_Y/WAIST_Y_rotor/WAIST/WAIST_P/WAIST_P_rotor>
+            point3f physics:localPos0 = (-3.3119536e-26, -4.135903e-25, -1.3877788e-17)
+            point3f physics:localPos1 = (0, 0, 0)
+            quatf physics:localRot0 = (1, 0, 0, 0)
+            quatf physics:localRot1 = (1, 0, 0, 0)
+            float physics:lowerLimit = -180
+            float physics:upperLimit = 180
+            custom float urdf:limit:effort = 393.06
+        }
+
+        def PhysicsRevoluteJoint "WAIST_P_RIGHT_out" (
+            prepend apiSchemas = ["NewtonJointAPI", "NewtonMimicAPI", "PhysicsDriveAPI:angular", "PhysicsJointStateAPI:angular"]
+        )
+        {
+            float drive:angular:physics:damping = 0
+            float drive:angular:physics:maxForce = 196.53
+            float drive:angular:physics:stiffness = 0
+            float newton:damping = 0.0017453292
+            float newton:friction = 0.3
+            float newton:mimicCoef1 = -1
+            rel newton:mimicJoint = </grasshopper_lower_body/Physics/WAIST_P_out>
+            float newton:velocityLimit = 510
+            uniform token physics:axis = "Z"
+            custom rel physics:body0
+            append rel physics:body0 = </grasshopper_lower_body/Geometry/base_link/PELVIS/WAIST_Y/WAIST_Y_rotor/WAIST/WAIST_P_RIGHT>
+            custom rel physics:body1
+            append rel physics:body1 = </grasshopper_lower_body/Geometry/base_link/PELVIS/WAIST_Y/WAIST_Y_rotor/WAIST/WAIST_P_RIGHT/WAIST_P_RIGHT_rotor>
+            point3f physics:localPos0 = (0, 2.0679515e-25, -1.3877788e-17)
+            point3f physics:localPos1 = (0, 0, 0)
+            quatf physics:localRot0 = (1, 0, 0, 0)
+            quatf physics:localRot1 = (1, 0, 0, 0)
+            float physics:lowerLimit = -180
+            float physics:upperLimit = 180
+            custom float urdf:limit:effort = 196.53
+        }
+
+        def PhysicsRevoluteJoint "R_HIP_P_out" (
+            prepend apiSchemas = ["NewtonJointAPI", "PhysicsDriveAPI:angular", "PhysicsJointStateAPI:angular"]
+        )
+        {
+            float drive:angular:physics:damping = 0
+            float drive:angular:physics:maxForce = 196.53
+            float drive:angular:physics:stiffness = 0
+            float newton:damping = 0.0017453292
+            float newton:friction = 0.3
+            float newton:velocityLimit = 510
+            uniform token physics:axis = "Z"
+            custom rel physics:body0
+            append rel physics:body0 = </grasshopper_lower_body/Geometry/base_link/PELVIS/R_HIP_P>
+            custom rel physics:body1
+            append rel physics:body1 = </grasshopper_lower_body/Geometry/base_link/PELVIS/R_HIP_P/R_HIP_P_rotor>
+            point3f physics:localPos0 = (0, 0, 0)
+            point3f physics:localPos1 = (0, 0, 0)
+            quatf physics:localRot0 = (1, 0, 0, 0)
+            quatf physics:localRot1 = (1, 0, 0, 0)
+            float physics:lowerLimit = -180
+            float physics:upperLimit = 180
+            custom float urdf:limit:effort = 196.53
+        }
+
+        def PhysicsRevoluteJoint "R_HIP_R_out" (
+            prepend apiSchemas = ["NewtonJointAPI", "PhysicsDriveAPI:angular", "PhysicsJointStateAPI:angular"]
+        )
+        {
+            float drive:angular:physics:damping = 0
+            float drive:angular:physics:maxForce = 196.53
+            float drive:angular:physics:stiffness = 0
+            float newton:damping = 0.0017453292
+            float newton:friction = 0.3
+            float newton:velocityLimit = 510
+            uniform token physics:axis = "Z"
+            custom rel physics:body0
+            append rel physics:body0 = </grasshopper_lower_body/Geometry/base_link/PELVIS/R_HIP_P/R_HIP_P_rotor/R_HIP_R_BRACKET/R_HIP_R>
+            custom rel physics:body1
+            append rel physics:body1 = </grasshopper_lower_body/Geometry/base_link/PELVIS/R_HIP_P/R_HIP_P_rotor/R_HIP_R_BRACKET/R_HIP_R/R_HIP_R_rotor>
+            point3f physics:localPos0 = (5.551115e-17, -4.1633363e-17, 3.469447e-18)
+            point3f physics:localPos1 = (0, 0, 0)
+            quatf physics:localRot0 = (1, 0, 0, 0)
+            quatf physics:localRot1 = (1, 0, 0, 0)
+            float physics:lowerLimit = -180
+            float physics:upperLimit = 180
+            custom float urdf:limit:effort = 196.53
+        }
+
+        def PhysicsRevoluteJoint "R_HIP_Y_out" (
+            prepend apiSchemas = ["NewtonJointAPI", "PhysicsDriveAPI:angular", "PhysicsJointStateAPI:angular"]
+        )
+        {
+            float drive:angular:physics:damping = 0
+            float drive:angular:physics:maxForce = 196.53
+            float drive:angular:physics:stiffness = 0
+            float newton:damping = 0.0017453292
+            float newton:friction = 0.3
+            float newton:velocityLimit = 510
+            uniform token physics:axis = "Z"
+            custom rel physics:body0
+            append rel physics:body0 = </grasshopper_lower_body/Geometry/base_link/PELVIS/R_HIP_P/R_HIP_P_rotor/R_HIP_R_BRACKET/R_HIP_R/R_HIP_R_rotor/R_HIP_Y_BRACKET/R_HIP_Y_rotor>
+            custom rel physics:body1
+            append rel physics:body1 = </grasshopper_lower_body/Geometry/base_link/PELVIS/R_HIP_P/R_HIP_P_rotor/R_HIP_R_BRACKET/R_HIP_R/R_HIP_R_rotor/R_HIP_Y_BRACKET/R_HIP_Y_rotor/R_HIP_Y>
+            point3f physics:localPos0 = (0, 0, 0)
+            point3f physics:localPos1 = (0, 0, 0)
+            quatf physics:localRot0 = (1, 0, 0, 0)
+            quatf physics:localRot1 = (1, 0, 0, 0)
+            float physics:lowerLimit = -180
+            float physics:upperLimit = 180
+            custom float urdf:limit:effort = 196.53
+        }
+
+        def PhysicsRevoluteJoint "R_KNEE_P_out" (
+            prepend apiSchemas = ["NewtonJointAPI", "PhysicsDriveAPI:angular", "PhysicsJointStateAPI:angular"]
+        )
+        {
+            float drive:angular:physics:damping = 0
+            float drive:angular:physics:maxForce = 196.53
+            float drive:angular:physics:stiffness = 0
+            float newton:damping = 0.0017453292
+            float newton:friction = 0.3
+            float newton:velocityLimit = 510
+            uniform token physics:axis = "Z"
+            custom rel physics:body0
+            append rel physics:body0 = </grasshopper_lower_body/Geometry/base_link/PELVIS/R_HIP_P/R_HIP_P_rotor/R_HIP_R_BRACKET/R_HIP_R/R_HIP_R_rotor/R_HIP_Y_BRACKET/R_HIP_Y_rotor/R_HIP_Y/R_KNEE_P_BRACKET/R_KNEE_P>
+            custom rel physics:body1
+            append rel physics:body1 = </grasshopper_lower_body/Geometry/base_link/PELVIS/R_HIP_P/R_HIP_P_rotor/R_HIP_R_BRACKET/R_HIP_R/R_HIP_R_rotor/R_HIP_Y_BRACKET/R_HIP_Y_rotor/R_HIP_Y/R_KNEE_P_BRACKET/R_KNEE_P/R_KNEE_P_rotor>
+            point3f physics:localPos0 = (1.110223e-16, 0, 2.7755576e-17)
+            point3f physics:localPos1 = (0, 0, 0)
+            quatf physics:localRot0 = (1, 0, 0, 0)
+            quatf physics:localRot1 = (1, 0, 0, 0)
+            float physics:lowerLimit = -180
+            float physics:upperLimit = 180
+            custom float urdf:limit:effort = 196.53
+        }
+
+        def PhysicsRevoluteJoint "R_ANKLE_P_out" (
+            prepend apiSchemas = ["NewtonJointAPI", "PhysicsDriveAPI:angular", "PhysicsJointStateAPI:angular"]
+        )
+        {
+            float drive:angular:physics:damping = 0
+            float drive:angular:physics:maxForce = 196.53
+            float drive:angular:physics:stiffness = 0
+            float newton:damping = 0.0017453292
+            float newton:friction = 0.3
+            float newton:velocityLimit = 510
+            uniform token physics:axis = "Z"
+            custom rel physics:body0
+            append rel physics:body0 = </grasshopper_lower_body/Geometry/base_link/PELVIS/R_HIP_P/R_HIP_P_rotor/R_HIP_R_BRACKET/R_HIP_R/R_HIP_R_rotor/R_HIP_Y_BRACKET/R_HIP_Y_rotor/R_HIP_Y/R_KNEE_P_BRACKET/R_KNEE_P/R_KNEE_P_rotor/R_ANKLE_P_BRACKET/R_ANKLE_P_rotor>
+            custom rel physics:body1
+            append rel physics:body1 = </grasshopper_lower_body/Geometry/base_link/PELVIS/R_HIP_P/R_HIP_P_rotor/R_HIP_R_BRACKET/R_HIP_R/R_HIP_R_rotor/R_HIP_Y_BRACKET/R_HIP_Y_rotor/R_HIP_Y/R_KNEE_P_BRACKET/R_KNEE_P/R_KNEE_P_rotor/R_ANKLE_P_BRACKET/R_ANKLE_P_rotor/R_ANKLE_P>
+            point3f physics:localPos0 = (0, 0, -2.7755576e-17)
+            point3f physics:localPos1 = (0, 0, 0)
+            quatf physics:localRot0 = (1, 0, 0, 0)
+            quatf physics:localRot1 = (1, 0, 0, 0)
+            float physics:lowerLimit = -180
+            float physics:upperLimit = 180
+            custom float urdf:limit:effort = 196.53
+        }
+
+        def PhysicsRevoluteJoint "R_ANKLE_R_out" (
+            prepend apiSchemas = ["NewtonJointAPI", "PhysicsDriveAPI:angular", "PhysicsJointStateAPI:angular"]
+        )
+        {
+            float drive:angular:physics:damping = 0
+            float drive:angular:physics:maxForce = 135
+            float drive:angular:physics:stiffness = 0
+            float newton:damping = 0.0017453292
+            float newton:friction = 0.3
+            float newton:velocityLimit = 570
+            uniform token physics:axis = "Z"
+            custom rel physics:body0
+            append rel physics:body0 = </grasshopper_lower_body/Geometry/base_link/PELVIS/R_HIP_P/R_HIP_P_rotor/R_HIP_R_BRACKET/R_HIP_R/R_HIP_R_rotor/R_HIP_Y_BRACKET/R_HIP_Y_rotor/R_HIP_Y/R_KNEE_P_BRACKET/R_KNEE_P/R_KNEE_P_rotor/R_ANKLE_P_BRACKET/R_ANKLE_P_rotor/R_ANKLE_P/R_ANKLE_R_BRACKET/R_ANKLE_R>
+            custom rel physics:body1
+            append rel physics:body1 = </grasshopper_lower_body/Geometry/base_link/PELVIS/R_HIP_P/R_HIP_P_rotor/R_HIP_R_BRACKET/R_HIP_R/R_HIP_R_rotor/R_HIP_Y_BRACKET/R_HIP_Y_rotor/R_HIP_Y/R_KNEE_P_BRACKET/R_KNEE_P/R_KNEE_P_rotor/R_ANKLE_P_BRACKET/R_ANKLE_P_rotor/R_ANKLE_P/R_ANKLE_R_BRACKET/R_ANKLE_R/R_ANKLE_R_rotor>
+            point3f physics:localPos0 = (-4.440892e-16, -2.7755576e-17, -3.469447e-18)
+            point3f physics:localPos1 = (0, 0, 0)
+            quatf physics:localRot0 = (1, 0, 0, 0)
+            quatf physics:localRot1 = (1, 0, 0, 0)
+            float physics:lowerLimit = -180
+            float physics:upperLimit = 180
+            custom float urdf:limit:effort = 135
+        }
+
+        def PhysicsRevoluteJoint "L_HIP_P_out" (
+            prepend apiSchemas = ["NewtonJointAPI", "PhysicsDriveAPI:angular", "PhysicsJointStateAPI:angular"]
+        )
+        {
+            float drive:angular:physics:damping = 0
+            float drive:angular:physics:maxForce = 196.53
+            float drive:angular:physics:stiffness = 0
+            float newton:damping = 0.0017453292
+            float newton:friction = 0.3
+            float newton:velocityLimit = 510
+            uniform token physics:axis = "Z"
+            custom rel physics:body0
+            append rel physics:body0 = </grasshopper_lower_body/Geometry/base_link/PELVIS/L_HIP_P>
+            custom rel physics:body1
+            append rel physics:body1 = </grasshopper_lower_body/Geometry/base_link/PELVIS/L_HIP_P/L_HIP_P_rotor>
+            point3f physics:localPos0 = (0, 0, 0)
+            point3f physics:localPos1 = (0, 0, 0)
+            quatf physics:localRot0 = (1, 0, 0, 0)
+            quatf physics:localRot1 = (1, 0, 0, 0)
+            float physics:lowerLimit = -180
+            float physics:upperLimit = 180
+            custom float urdf:limit:effort = 196.53
+        }
+
+        def PhysicsRevoluteJoint "L_HIP_R_out" (
+            prepend apiSchemas = ["NewtonJointAPI", "PhysicsDriveAPI:angular", "PhysicsJointStateAPI:angular"]
+        )
+        {
+            float drive:angular:physics:damping = 0
+            float drive:angular:physics:maxForce = 196.53
+            float drive:angular:physics:stiffness = 0
+            float newton:damping = 0.0017453292
+            float newton:friction = 0.3
+            float newton:velocityLimit = 510
+            uniform token physics:axis = "Z"
+            custom rel physics:body0
+            append rel physics:body0 = </grasshopper_lower_body/Geometry/base_link/PELVIS/L_HIP_P/L_HIP_P_rotor/L_HIP_R_BRACKET/L_HIP_R>
+            custom rel physics:body1
+            append rel physics:body1 = </grasshopper_lower_body/Geometry/base_link/PELVIS/L_HIP_P/L_HIP_P_rotor/L_HIP_R_BRACKET/L_HIP_R/L_HIP_R_rotor>
+            point3f physics:localPos0 = (0, 2.7755576e-17, 0)
+            point3f physics:localPos1 = (0, 0, 0)
+            quatf physics:localRot0 = (1, 0, 0, 0)
+            quatf physics:localRot1 = (1, 0, 0, 0)
+            float physics:lowerLimit = -180
+            float physics:upperLimit = 180
+            custom float urdf:limit:effort = 196.53
+        }
+
+        def PhysicsRevoluteJoint "L_HIP_Y_out" (
+            prepend apiSchemas = ["NewtonJointAPI", "PhysicsDriveAPI:angular", "PhysicsJointStateAPI:angular"]
+        )
+        {
+            float drive:angular:physics:damping = 0
+            float drive:angular:physics:maxForce = 196.53
+            float drive:angular:physics:stiffness = 0
+            float newton:damping = 0.0017453292
+            float newton:friction = 0.3
+            float newton:velocityLimit = 510
+            uniform token physics:axis = "Z"
+            custom rel physics:body0
+            append rel physics:body0 = </grasshopper_lower_body/Geometry/base_link/PELVIS/L_HIP_P/L_HIP_P_rotor/L_HIP_R_BRACKET/L_HIP_R/L_HIP_R_rotor/L_HIP_Y_BRACKET/L_HIP_Y_rotor>
+            custom rel physics:body1
+            append rel physics:body1 = </grasshopper_lower_body/Geometry/base_link/PELVIS/L_HIP_P/L_HIP_P_rotor/L_HIP_R_BRACKET/L_HIP_R/L_HIP_R_rotor/L_HIP_Y_BRACKET/L_HIP_Y_rotor/L_HIP_Y>
+            point3f physics:localPos0 = (0, 0, -5.551115e-17)
+            point3f physics:localPos1 = (0, 0, 0)
+            quatf physics:localRot0 = (1, 0, 0, 0)
+            quatf physics:localRot1 = (1, 0, 0, 0)
+            float physics:lowerLimit = -180
+            float physics:upperLimit = 180
+            custom float urdf:limit:effort = 196.53
+        }
+
+        def PhysicsRevoluteJoint "L_KNEE_P_out" (
+            prepend apiSchemas = ["NewtonJointAPI", "PhysicsDriveAPI:angular", "PhysicsJointStateAPI:angular"]
+        )
+        {
+            float drive:angular:physics:damping = 0
+            float drive:angular:physics:maxForce = 196.53
+            float drive:angular:physics:stiffness = 0
+            float newton:damping = 0.0017453292
+            float newton:friction = 0.3
+            float newton:velocityLimit = 510
+            uniform token physics:axis = "Z"
+            custom rel physics:body0
+            append rel physics:body0 = </grasshopper_lower_body/Geometry/base_link/PELVIS/L_HIP_P/L_HIP_P_rotor/L_HIP_R_BRACKET/L_HIP_R/L_HIP_R_rotor/L_HIP_Y_BRACKET/L_HIP_Y_rotor/L_HIP_Y/L_KNEE_P_BRACKET/L_KNEE_P>
+            custom rel physics:body1
+            append rel physics:body1 = </grasshopper_lower_body/Geometry/base_link/PELVIS/L_HIP_P/L_HIP_P_rotor/L_HIP_R_BRACKET/L_HIP_R/L_HIP_R_rotor/L_HIP_Y_BRACKET/L_HIP_Y_rotor/L_HIP_Y/L_KNEE_P_BRACKET/L_KNEE_P/L_KNEE_P_rotor>
+            point3f physics:localPos0 = (-6.3108872e-30, 0, -2.7755576e-17)
+            point3f physics:localPos1 = (0, 0, 0)
+            quatf physics:localRot0 = (1, 0, 0, 0)
+            quatf physics:localRot1 = (1, 0, 0, 0)
+            float physics:lowerLimit = -180
+            float physics:upperLimit = 180
+            custom float urdf:limit:effort = 196.53
+        }
+
+        def PhysicsRevoluteJoint "L_ANKLE_P_out" (
+            prepend apiSchemas = ["NewtonJointAPI", "PhysicsDriveAPI:angular", "PhysicsJointStateAPI:angular"]
+        )
+        {
+            float drive:angular:physics:damping = 0
+            float drive:angular:physics:maxForce = 196.53
+            float drive:angular:physics:stiffness = 0
+            float newton:damping = 0.0017453292
+            float newton:friction = 0.3
+            float newton:velocityLimit = 510
+            uniform token physics:axis = "Z"
+            custom rel physics:body0
+            append rel physics:body0 = </grasshopper_lower_body/Geometry/base_link/PELVIS/L_HIP_P/L_HIP_P_rotor/L_HIP_R_BRACKET/L_HIP_R/L_HIP_R_rotor/L_HIP_Y_BRACKET/L_HIP_Y_rotor/L_HIP_Y/L_KNEE_P_BRACKET/L_KNEE_P/L_KNEE_P_rotor/L_ANKLE_P_BRACKET/L_ANKLE_P_rotor>
+            custom rel physics:body1
+            append rel physics:body1 = </grasshopper_lower_body/Geometry/base_link/PELVIS/L_HIP_P/L_HIP_P_rotor/L_HIP_R_BRACKET/L_HIP_R/L_HIP_R_rotor/L_HIP_Y_BRACKET/L_HIP_Y_rotor/L_HIP_Y/L_KNEE_P_BRACKET/L_KNEE_P/L_KNEE_P_rotor/L_ANKLE_P_BRACKET/L_ANKLE_P_rotor/L_ANKLE_P>
+            point3f physics:localPos0 = (2.524355e-29, 0, -2.7755576e-17)
+            point3f physics:localPos1 = (0, 0, 0)
+            quatf physics:localRot0 = (1, 0, 0, 0)
+            quatf physics:localRot1 = (1, 0, 0, 0)
+            float physics:lowerLimit = -180
+            float physics:upperLimit = 180
+            custom float urdf:limit:effort = 196.53
+        }
+
+        def PhysicsRevoluteJoint "L_ANKLE_R_out" (
+            prepend apiSchemas = ["NewtonJointAPI", "PhysicsDriveAPI:angular", "PhysicsJointStateAPI:angular"]
+        )
+        {
+            float drive:angular:physics:damping = 0
+            float drive:angular:physics:maxForce = 135
+            float drive:angular:physics:stiffness = 0
+            float newton:damping = 0.0017453292
+            float newton:friction = 0.3
+            float newton:velocityLimit = 570
+            uniform token physics:axis = "Z"
+            custom rel physics:body0
+            append rel physics:body0 = </grasshopper_lower_body/Geometry/base_link/PELVIS/L_HIP_P/L_HIP_P_rotor/L_HIP_R_BRACKET/L_HIP_R/L_HIP_R_rotor/L_HIP_Y_BRACKET/L_HIP_Y_rotor/L_HIP_Y/L_KNEE_P_BRACKET/L_KNEE_P/L_KNEE_P_rotor/L_ANKLE_P_BRACKET/L_ANKLE_P_rotor/L_ANKLE_P/L_ANKLE_R_BRACKET/L_ANKLE_R>
+            custom rel physics:body1
+            append rel physics:body1 = </grasshopper_lower_body/Geometry/base_link/PELVIS/L_HIP_P/L_HIP_P_rotor/L_HIP_R_BRACKET/L_HIP_R/L_HIP_R_rotor/L_HIP_Y_BRACKET/L_HIP_Y_rotor/L_HIP_Y/L_KNEE_P_BRACKET/L_KNEE_P/L_KNEE_P_rotor/L_ANKLE_P_BRACKET/L_ANKLE_P_rotor/L_ANKLE_P/L_ANKLE_R_BRACKET/L_ANKLE_R/L_ANKLE_R_rotor>
+            point3f physics:localPos0 = (-2.220446e-16, -2.7755576e-17, 3.469447e-18)
+            point3f physics:localPos1 = (0, 0, 0)
+            quatf physics:localRot0 = (1, 0, 0, 0)
+            quatf physics:localRot1 = (1, 0, 0, 0)
+            float physics:lowerLimit = -180
+            float physics:upperLimit = 180
+            custom float urdf:limit:effort = 135
+        }
+
+        def PhysicsFixedJoint "to_WAIST_Y"
+        {
+            custom rel physics:body0
+            append rel physics:body0 = </grasshopper_lower_body/Geometry/base_link/PELVIS>
+            custom rel physics:body1
+            append rel physics:body1 = </grasshopper_lower_body/Geometry/base_link/PELVIS/WAIST_Y>
+            point3f physics:localPos0 = (-0.125, 0, 0.08445)
+            point3f physics:localPos1 = (0, 0, 0)
+            quatf physics:localRot0 = (-0.19509004, 0, 0, 0.9807853)
+            quatf physics:localRot1 = (1, 0, 0, 0)
+        }
+
+        def PhysicsFixedJoint "to_WAIST"
+        {
+            custom rel physics:body0
+            append rel physics:body0 = </grasshopper_lower_body/Geometry/base_link/PELVIS/WAIST_Y/WAIST_Y_rotor>
+            custom rel physics:body1
+            append rel physics:body1 = </grasshopper_lower_body/Geometry/base_link/PELVIS/WAIST_Y/WAIST_Y_rotor/WAIST>
+            point3f physics:localPos0 = (-0.115484945, 0.04783543, 0.08695)
+            point3f physics:localPos1 = (0, 0, 0)
+            quatf physics:localRot0 = (-0.19509004, 0, 0, -0.9807853)
+            quatf physics:localRot1 = (1, 0, 0, 0)
+        }
+
+        def PhysicsFixedJoint "to_WAIST_P"
+        {
+            custom rel physics:body0
+            append rel physics:body0 = </grasshopper_lower_body/Geometry/base_link/PELVIS/WAIST_Y/WAIST_Y_rotor/WAIST>
+            custom rel physics:body1
+            append rel physics:body1 = </grasshopper_lower_body/Geometry/base_link/PELVIS/WAIST_Y/WAIST_Y_rotor/WAIST/WAIST_P>
+            point3f physics:localPos0 = (-5.169879e-26, 0.07045, 0)
+            point3f physics:localPos1 = (0, 0, 0)
+            quatf physics:localRot0 = (0.7010574, 0.7010574, -0.09229592, 0.09229592)
+            quatf physics:localRot1 = (1, 0, 0, 0)
+        }
+
+        def PhysicsFixedJoint "to_WAIST_P_RIGHT"
+        {
+            custom rel physics:body0
+            append rel physics:body0 = </grasshopper_lower_body/Geometry/base_link/PELVIS/WAIST_Y/WAIST_Y_rotor/WAIST>
+            custom rel physics:body1
+            append rel physics:body1 = </grasshopper_lower_body/Geometry/base_link/PELVIS/WAIST_Y/WAIST_Y_rotor/WAIST/WAIST_P_RIGHT>
+            point3f physics:localPos0 = (0, -0.07045, 0)
+            point3f physics:localPos1 = (0, 0, 0)
+            quatf physics:localRot0 = (0.27059805, -0.27059805, 0.6532815, 0.6532815)
+            quatf physics:localRot1 = (1, 0, 0, 0)
+        }
+
+        def PhysicsFixedJoint "to_WAIST_P_L_BRACKET"
+        {
+            custom rel physics:body0
+            append rel physics:body0 = </grasshopper_lower_body/Geometry/base_link/PELVIS/WAIST_Y/WAIST_Y_rotor/WAIST/WAIST_P/WAIST_P_rotor>
+            custom rel physics:body1
+            append rel physics:body1 = </grasshopper_lower_body/Geometry/base_link/PELVIS/WAIST_Y/WAIST_Y_rotor/WAIST/WAIST_P/WAIST_P_rotor/WAIST_P_L_BRACKET>
+            point3f physics:localPos0 = (7.027804e-26, 0, -0.03445)
+            point3f physics:localPos1 = (0, 0, 0)
+            quatf physics:localRot0 = (0.7010574, -0.7010574, 0.09229592, -0.09229592)
+            quatf physics:localRot1 = (1, 0, 0, 0)
+        }
+
+        def PhysicsFixedJoint "to_WAIST_P_R_BRACKET"
+        {
+            custom rel physics:body0
+            append rel physics:body0 = </grasshopper_lower_body/Geometry/base_link/PELVIS/WAIST_Y/WAIST_Y_rotor/WAIST/WAIST_P_RIGHT/WAIST_P_RIGHT_rotor>
+            custom rel physics:body1
+            append rel physics:body1 = </grasshopper_lower_body/Geometry/base_link/PELVIS/WAIST_Y/WAIST_Y_rotor/WAIST/WAIST_P_RIGHT/WAIST_P_RIGHT_rotor/WAIST_P_R_BRACKET>
+            point3f physics:localPos0 = (0, 2.0679515e-25, -0.03445)
+            point3f physics:localPos1 = (0, 0, 0)
+            quatf physics:localRot0 = (0.27059805, 0.27059805, -0.6532815, -0.6532815)
+            quatf physics:localRot1 = (1, 0, 0, 0)
+        }
+
+        def PhysicsFixedJoint "to_TORSO"
+        {
+            custom rel physics:body0
+            append rel physics:body0 = </grasshopper_lower_body/Geometry/base_link/PELVIS/WAIST_Y/WAIST_Y_rotor/WAIST/WAIST_P_RIGHT/WAIST_P_RIGHT_rotor/WAIST_P_R_BRACKET>
+            custom rel physics:body1
+            append rel physics:body1 = </grasshopper_lower_body/Geometry/base_link/PELVIS/WAIST_Y/WAIST_Y_rotor/WAIST/WAIST_P_RIGHT/WAIST_P_RIGHT_rotor/WAIST_P_R_BRACKET/TORSO>
+            point3f physics:localPos0 = (0, 0.1049, 0.096)
+            point3f physics:localPos1 = (0, 0, 0)
+            quatf physics:localRot0 = (1, 0, 0, 0)
+            quatf physics:localRot1 = (1, 0, 0, 0)
+        }
+
+        def PhysicsFixedJoint "to_R_HIP_P"
+        {
+            custom rel physics:body0
+            append rel physics:body0 = </grasshopper_lower_body/Geometry/base_link/PELVIS>
+            custom rel physics:body1
+            append rel physics:body1 = </grasshopper_lower_body/Geometry/base_link/PELVIS/R_HIP_P>
+            point3f physics:localPos0 = (0, -0.07045, 0)
+            point3f physics:localPos1 = (0, 0, 0)
+            quatf physics:localRot0 = (0.09229592, -0.09229592, 0.7010574, 0.7010574)
+            quatf physics:localRot1 = (1, 0, 0, 0)
+        }
+
+        def PhysicsFixedJoint "to_R_HIP_R_BRACKET"
+        {
+            custom rel physics:body0
+            append rel physics:body0 = </grasshopper_lower_body/Geometry/base_link/PELVIS/R_HIP_P/R_HIP_P_rotor>
+            custom rel physics:body1
+            append rel physics:body1 = </grasshopper_lower_body/Geometry/base_link/PELVIS/R_HIP_P/R_HIP_P_rotor/R_HIP_R_BRACKET>
+            point3f physics:localPos0 = (2e-9, 3e-9, -0.03445)
+            point3f physics:localPos1 = (0, 0, 0)
+            quatf physics:localRot0 = (0.09229592, 0.09229592, -0.7010574, -0.7010574)
+            quatf physics:localRot1 = (1, 0, 0, 0)
+        }
+
+        def PhysicsFixedJoint "to_R_HIP_R"
+        {
+            custom rel physics:body0
+            append rel physics:body0 = </grasshopper_lower_body/Geometry/base_link/PELVIS/R_HIP_P/R_HIP_P_rotor/R_HIP_R_BRACKET>
+            custom rel physics:body1
+            append rel physics:body1 = </grasshopper_lower_body/Geometry/base_link/PELVIS/R_HIP_P/R_HIP_P_rotor/R_HIP_R_BRACKET/R_HIP_R>
+            point3f physics:localPos0 = (0.007950003, -0.085, -0.022000002)
+            point3f physics:localPos1 = (0, 0, 0)
+            quatf physics:localRot0 = (-0.68301266, 0.18301278, 0.6830127, -0.18301278)
+            quatf physics:localRot1 = (1, 0, 0, 0)
+        }
+
+        def PhysicsFixedJoint "to_R_HIP_Y_BRACKET"
+        {
+            custom rel physics:body0
+            append rel physics:body0 = </grasshopper_lower_body/Geometry/base_link/PELVIS/R_HIP_P/R_HIP_P_rotor/R_HIP_R_BRACKET/R_HIP_R/R_HIP_R_rotor>
+            custom rel physics:body1
+            append rel physics:body1 = </grasshopper_lower_body/Geometry/base_link/PELVIS/R_HIP_P/R_HIP_P_rotor/R_HIP_R_BRACKET/R_HIP_R/R_HIP_R_rotor/R_HIP_Y_BRACKET>
+            point3f physics:localPos0 = (4e-9, 1e-9, -0.03445)
+            point3f physics:localPos1 = (0, 0, 0)
+            quatf physics:localRot0 = (-0.68301266, -0.18301278, -0.6830127, 0.18301278)
+            quatf physics:localRot1 = (1, 0, 0, 0)
+        }
+
+        def PhysicsFixedJoint "to_R_HIP_Y"
+        {
+            custom rel physics:body0
+            append rel physics:body0 = </grasshopper_lower_body/Geometry/base_link/PELVIS/R_HIP_P/R_HIP_P_rotor/R_HIP_R_BRACKET/R_HIP_R/R_HIP_R_rotor/R_HIP_Y_BRACKET>
+            custom rel physics:body1
+            append rel physics:body1 = </grasshopper_lower_body/Geometry/base_link/PELVIS/R_HIP_P/R_HIP_P_rotor/R_HIP_R_BRACKET/R_HIP_R/R_HIP_R_rotor/R_HIP_Y_BRACKET/R_HIP_Y_rotor>
+            point3f physics:localPos0 = (-0.0424, -3e-9, -0.13855)
+            point3f physics:localPos1 = (0, 0, 0)
+            quatf physics:localRot0 = (-1.6081226e-16, -1.0342933e-13, 1, -1.0342543e-13)
+            quatf physics:localRot1 = (1, 0, 0, 0)
+        }
+
+        def PhysicsFixedJoint "to_R_KNEE_P_BRACKET"
+        {
+            custom rel physics:body0
+            append rel physics:body0 = </grasshopper_lower_body/Geometry/base_link/PELVIS/R_HIP_P/R_HIP_P_rotor/R_HIP_R_BRACKET/R_HIP_R/R_HIP_R_rotor/R_HIP_Y_BRACKET/R_HIP_Y_rotor/R_HIP_Y>
+            custom rel physics:body1
+            append rel physics:body1 = </grasshopper_lower_body/Geometry/base_link/PELVIS/R_HIP_P/R_HIP_P_rotor/R_HIP_R_BRACKET/R_HIP_R/R_HIP_R_rotor/R_HIP_Y_BRACKET/R_HIP_Y_rotor/R_HIP_Y/R_KNEE_P_BRACKET>
+            point3f physics:localPos0 = (0, 0, -0.03955)
+            point3f physics:localPos1 = (0, 0, 0)
+            quatf physics:localRot0 = (-1.6081226e-16, 1.0342933e-13, -1, 1.0342543e-13)
+            quatf physics:localRot1 = (1, 0, 0, 0)
+        }
+
+        def PhysicsFixedJoint "to_R_KNEE_P"
+        {
+            custom rel physics:body0
+            append rel physics:body0 = </grasshopper_lower_body/Geometry/base_link/PELVIS/R_HIP_P/R_HIP_P_rotor/R_HIP_R_BRACKET/R_HIP_R/R_HIP_R_rotor/R_HIP_Y_BRACKET/R_HIP_Y_rotor/R_HIP_Y/R_KNEE_P_BRACKET>
+            custom rel physics:body1
+            append rel physics:body1 = </grasshopper_lower_body/Geometry/base_link/PELVIS/R_HIP_P/R_HIP_P_rotor/R_HIP_R_BRACKET/R_HIP_R/R_HIP_R_rotor/R_HIP_Y_BRACKET/R_HIP_Y_rotor/R_HIP_Y/R_KNEE_P_BRACKET/R_KNEE_P>
+            point3f physics:localPos0 = (-5.169879e-26, 0.00255, -0.34)
+            point3f physics:localPos1 = (0, 0, 0)
+            quatf physics:localRot0 = (-0.61237246, 0.61237246, -0.35355332, -0.35355332)
+            quatf physics:localRot1 = (1, 0, 0, 0)
+        }
+
+        def PhysicsFixedJoint "to_R_ANKLE_P_BRACKET"
+        {
+            custom rel physics:body0
+            append rel physics:body0 = </grasshopper_lower_body/Geometry/base_link/PELVIS/R_HIP_P/R_HIP_P_rotor/R_HIP_R_BRACKET/R_HIP_R/R_HIP_R_rotor/R_HIP_Y_BRACKET/R_HIP_Y_rotor/R_HIP_Y/R_KNEE_P_BRACKET/R_KNEE_P/R_KNEE_P_rotor>
+            custom rel physics:body1
+            append rel physics:body1 = </grasshopper_lower_body/Geometry/base_link/PELVIS/R_HIP_P/R_HIP_P_rotor/R_HIP_R_BRACKET/R_HIP_R/R_HIP_R_rotor/R_HIP_Y_BRACKET/R_HIP_Y_rotor/R_HIP_Y/R_KNEE_P_BRACKET/R_KNEE_P/R_KNEE_P_rotor/R_ANKLE_P_BRACKET>
+            point3f physics:localPos0 = (1.110223e-16, 5.551115e-17, -0.03445)
+            point3f physics:localPos1 = (0, 0, 0)
+            quatf physics:localRot0 = (-0.61237246, -0.61237246, 0.35355332, 0.35355332)
+            quatf physics:localRot1 = (1, 0, 0, 0)
+        }
+
+        def PhysicsFixedJoint "to_R_ANKLE_P"
+        {
+            custom rel physics:body0
+            append rel physics:body0 = </grasshopper_lower_body/Geometry/base_link/PELVIS/R_HIP_P/R_HIP_P_rotor/R_HIP_R_BRACKET/R_HIP_R/R_HIP_R_rotor/R_HIP_Y_BRACKET/R_HIP_Y_rotor/R_HIP_Y/R_KNEE_P_BRACKET/R_KNEE_P/R_KNEE_P_rotor/R_ANKLE_P_BRACKET>
+            custom rel physics:body1
+            append rel physics:body1 = </grasshopper_lower_body/Geometry/base_link/PELVIS/R_HIP_P/R_HIP_P_rotor/R_HIP_R_BRACKET/R_HIP_R/R_HIP_R_rotor/R_HIP_Y_BRACKET/R_HIP_Y_rotor/R_HIP_Y/R_KNEE_P_BRACKET/R_KNEE_P/R_KNEE_P_rotor/R_ANKLE_P_BRACKET/R_ANKLE_P_rotor>
+            point3f physics:localPos0 = (0, 0.03445, -0.33)
+            point3f physics:localPos1 = (0, 0, 0)
+            quatf physics:localRot0 = (-2.1976293e-13, -2.1910913e-13, 0.70710677, 0.70710677)
+            quatf physics:localRot1 = (1, 0, 0, 0)
+        }
+
+        def PhysicsFixedJoint "to_R_ANKLE_R_BRACKET"
+        {
+            custom rel physics:body0
+            append rel physics:body0 = </grasshopper_lower_body/Geometry/base_link/PELVIS/R_HIP_P/R_HIP_P_rotor/R_HIP_R_BRACKET/R_HIP_R/R_HIP_R_rotor/R_HIP_Y_BRACKET/R_HIP_Y_rotor/R_HIP_Y/R_KNEE_P_BRACKET/R_KNEE_P/R_KNEE_P_rotor/R_ANKLE_P_BRACKET/R_ANKLE_P_rotor/R_ANKLE_P>
+            custom rel physics:body1
+            append rel physics:body1 = </grasshopper_lower_body/Geometry/base_link/PELVIS/R_HIP_P/R_HIP_P_rotor/R_HIP_R_BRACKET/R_HIP_R/R_HIP_R_rotor/R_HIP_Y_BRACKET/R_HIP_Y_rotor/R_HIP_Y/R_KNEE_P_BRACKET/R_KNEE_P/R_KNEE_P_rotor/R_ANKLE_P_BRACKET/R_ANKLE_P_rotor/R_ANKLE_P/R_ANKLE_R_BRACKET>
+            point3f physics:localPos0 = (0, 0, -0.03955)
+            point3f physics:localPos1 = (0, 0, 0)
+            quatf physics:localRot0 = (-2.1976293e-13, 2.1910913e-13, -0.70710677, -0.70710677)
+            quatf physics:localRot1 = (1, 0, 0, 0)
+        }
+
+        def PhysicsFixedJoint "to_R_ANKLE_R"
+        {
+            custom rel physics:body0
+            append rel physics:body0 = </grasshopper_lower_body/Geometry/base_link/PELVIS/R_HIP_P/R_HIP_P_rotor/R_HIP_R_BRACKET/R_HIP_R/R_HIP_R_rotor/R_HIP_Y_BRACKET/R_HIP_Y_rotor/R_HIP_Y/R_KNEE_P_BRACKET/R_KNEE_P/R_KNEE_P_rotor/R_ANKLE_P_BRACKET/R_ANKLE_P_rotor/R_ANKLE_P/R_ANKLE_R_BRACKET>
+            custom rel physics:body1
+            append rel physics:body1 = </grasshopper_lower_body/Geometry/base_link/PELVIS/R_HIP_P/R_HIP_P_rotor/R_HIP_R_BRACKET/R_HIP_R/R_HIP_R_rotor/R_HIP_Y_BRACKET/R_HIP_Y_rotor/R_HIP_Y/R_KNEE_P_BRACKET/R_KNEE_P/R_KNEE_P_rotor/R_ANKLE_P_BRACKET/R_ANKLE_P_rotor/R_ANKLE_P/R_ANKLE_R_BRACKET/R_ANKLE_R>
+            point3f physics:localPos0 = (-0.023975, 0.0475, -0.11)
+            point3f physics:localPos1 = (0, 0, 0)
+            quatf physics:localRot0 = (0.70710677, 0.0000834386, 0.70710677, 0.0000834386)
+            quatf physics:localRot1 = (1, 0, 0, 0)
+        }
+
+        def PhysicsFixedJoint "to_R_FOOT"
+        {
+            custom rel physics:body0
+            append rel physics:body0 = </grasshopper_lower_body/Geometry/base_link/PELVIS/R_HIP_P/R_HIP_P_rotor/R_HIP_R_BRACKET/R_HIP_R/R_HIP_R_rotor/R_HIP_Y_BRACKET/R_HIP_Y_rotor/R_HIP_Y/R_KNEE_P_BRACKET/R_KNEE_P/R_KNEE_P_rotor/R_ANKLE_P_BRACKET/R_ANKLE_P_rotor/R_ANKLE_P/R_ANKLE_R_BRACKET/R_ANKLE_R/R_ANKLE_R_rotor>
+            custom rel physics:body1
+            append rel physics:body1 = </grasshopper_lower_body/Geometry/base_link/PELVIS/R_HIP_P/R_HIP_P_rotor/R_HIP_R_BRACKET/R_HIP_R/R_HIP_R_rotor/R_HIP_Y_BRACKET/R_HIP_Y_rotor/R_HIP_Y/R_KNEE_P_BRACKET/R_KNEE_P/R_KNEE_P_rotor/R_ANKLE_P_BRACKET/R_ANKLE_P_rotor/R_ANKLE_P/R_ANKLE_R_BRACKET/R_ANKLE_R/R_ANKLE_R_rotor/R_FOOT>
+            point3f physics:localPos0 = (-2.220446e-16, -2.7755576e-17, -0.031925)
+            point3f physics:localPos1 = (0, 0, 0)
+            quatf physics:localRot0 = (0.70710677, -0.0000834386, -0.70710677, -0.0000834386)
+            quatf physics:localRot1 = (1, 0, 0, 0)
+        }
+
+        def PhysicsFixedJoint "to_L_HIP_P"
+        {
+            custom rel physics:body0
+            append rel physics:body0 = </grasshopper_lower_body/Geometry/base_link/PELVIS>
+            custom rel physics:body1
+            append rel physics:body1 = </grasshopper_lower_body/Geometry/base_link/PELVIS/L_HIP_P>
+            point3f physics:localPos0 = (0, 0.07045, 0)
+            point3f physics:localPos1 = (0, 0, 0)
+            quatf physics:localRot0 = (0.70710677, 0.70710677, 0, 0)
+            quatf physics:localRot1 = (1, 0, 0, 0)
+        }
+
+        def PhysicsFixedJoint "to_L_HIP_R_BRACKET"
+        {
+            custom rel physics:body0
+            append rel physics:body0 = </grasshopper_lower_body/Geometry/base_link/PELVIS/L_HIP_P/L_HIP_P_rotor>
+            custom rel physics:body1
+            append rel physics:body1 = </grasshopper_lower_body/Geometry/base_link/PELVIS/L_HIP_P/L_HIP_P_rotor/L_HIP_R_BRACKET>
+            point3f physics:localPos0 = (-3e-9, -2e-9, -0.03445)
+            point3f physics:localPos1 = (0, 0, 0)
+            quatf physics:localRot0 = (0.70710677, -0.70710677, 0, 0)
+            quatf physics:localRot1 = (1, 0, 0, 0)
+        }
+
+        def PhysicsFixedJoint "to_L_HIP_R"
+        {
+            custom rel physics:body0
+            append rel physics:body0 = </grasshopper_lower_body/Geometry/base_link/PELVIS/L_HIP_P/L_HIP_P_rotor/L_HIP_R_BRACKET>
+            custom rel physics:body1
+            append rel physics:body1 = </grasshopper_lower_body/Geometry/base_link/PELVIS/L_HIP_P/L_HIP_P_rotor/L_HIP_R_BRACKET/L_HIP_R>
+            point3f physics:localPos0 = (-0.007949997, 0.085, -0.021999998)
+            point3f physics:localPos1 = (0, 0, 0)
+            quatf physics:localRot0 = (-7.321349e-14, 0.70710677, 7.3178524e-14, 0.70710677)
+            quatf physics:localRot1 = (1, 0, 0, 0)
+        }
+
+        def PhysicsFixedJoint "to_L_HIP_Y_BRACKET"
+        {
+            custom rel physics:body0
+            append rel physics:body0 = </grasshopper_lower_body/Geometry/base_link/PELVIS/L_HIP_P/L_HIP_P_rotor/L_HIP_R_BRACKET/L_HIP_R/L_HIP_R_rotor>
+            custom rel physics:body1
+            append rel physics:body1 = </grasshopper_lower_body/Geometry/base_link/PELVIS/L_HIP_P/L_HIP_P_rotor/L_HIP_R_BRACKET/L_HIP_R/L_HIP_R_rotor/L_HIP_Y_BRACKET>
+            point3f physics:localPos0 = (3e-9, 3e-9, -0.03445)
+            point3f physics:localPos1 = (0, 0, 0)
+            quatf physics:localRot0 = (-7.321349e-14, -0.70710677, -7.3178524e-14, -0.70710677)
+            quatf physics:localRot1 = (1, 0, 0, 0)
+        }
+
+        def PhysicsFixedJoint "to_L_HIP_Y"
+        {
+            custom rel physics:body0
+            append rel physics:body0 = </grasshopper_lower_body/Geometry/base_link/PELVIS/L_HIP_P/L_HIP_P_rotor/L_HIP_R_BRACKET/L_HIP_R/L_HIP_R_rotor/L_HIP_Y_BRACKET>
+            custom rel physics:body1
+            append rel physics:body1 = </grasshopper_lower_body/Geometry/base_link/PELVIS/L_HIP_P/L_HIP_P_rotor/L_HIP_R_BRACKET/L_HIP_R/L_HIP_R_rotor/L_HIP_Y_BRACKET/L_HIP_Y_rotor>
+            point3f physics:localPos0 = (0.0424, 3e-9, -0.13855)
+            point3f physics:localPos1 = (0, 0, 0)
+            quatf physics:localRot0 = (6.123234e-17, 0.8968727, -0.44228876, 9.1480886e-14)
+            quatf physics:localRot1 = (1, 0, 0, 0)
+        }
+
+        def PhysicsFixedJoint "to_L_KNEE_P_BRACKET"
+        {
+            custom rel physics:body0
+            append rel physics:body0 = </grasshopper_lower_body/Geometry/base_link/PELVIS/L_HIP_P/L_HIP_P_rotor/L_HIP_R_BRACKET/L_HIP_R/L_HIP_R_rotor/L_HIP_Y_BRACKET/L_HIP_Y_rotor/L_HIP_Y>
+            custom rel physics:body1
+            append rel physics:body1 = </grasshopper_lower_body/Geometry/base_link/PELVIS/L_HIP_P/L_HIP_P_rotor/L_HIP_R_BRACKET/L_HIP_R/L_HIP_R_rotor/L_HIP_Y_BRACKET/L_HIP_Y_rotor/L_HIP_Y/L_KNEE_P_BRACKET>
+            point3f physics:localPos0 = (0, 1.3877788e-17, -0.03955)
+            point3f physics:localPos1 = (0, 0, 0)
+            quatf physics:localRot0 = (6.123234e-17, -0.8968727, 0.44228876, -9.1480886e-14)
+            quatf physics:localRot1 = (1, 0, 0, 0)
+        }
+
+        def PhysicsFixedJoint "to_L_KNEE_P"
+        {
+            custom rel physics:body0
+            append rel physics:body0 = </grasshopper_lower_body/Geometry/base_link/PELVIS/L_HIP_P/L_HIP_P_rotor/L_HIP_R_BRACKET/L_HIP_R/L_HIP_R_rotor/L_HIP_Y_BRACKET/L_HIP_Y_rotor/L_HIP_Y/L_KNEE_P_BRACKET>
+            custom rel physics:body1
+            append rel physics:body1 = </grasshopper_lower_body/Geometry/base_link/PELVIS/L_HIP_P/L_HIP_P_rotor/L_HIP_R_BRACKET/L_HIP_R/L_HIP_R_rotor/L_HIP_Y_BRACKET/L_HIP_Y_rotor/L_HIP_Y/L_KNEE_P_BRACKET/L_KNEE_P>
+            point3f physics:localPos0 = (-9.466331e-30, -0.00255, -0.34)
+            point3f physics:localPos1 = (0, 0, 0)
+            quatf physics:localRot0 = (0.70710677, 0.70710677, 1.5169533e-14, 1.3121215e-13)
+            quatf physics:localRot1 = (1, 0, 0, 0)
+        }
+
+        def PhysicsFixedJoint "to_L_ANKLE_P_BRACKET"
+        {
+            custom rel physics:body0
+            append rel physics:body0 = </grasshopper_lower_body/Geometry/base_link/PELVIS/L_HIP_P/L_HIP_P_rotor/L_HIP_R_BRACKET/L_HIP_R/L_HIP_R_rotor/L_HIP_Y_BRACKET/L_HIP_Y_rotor/L_HIP_Y/L_KNEE_P_BRACKET/L_KNEE_P/L_KNEE_P_rotor>
+            custom rel physics:body1
+            append rel physics:body1 = </grasshopper_lower_body/Geometry/base_link/PELVIS/L_HIP_P/L_HIP_P_rotor/L_HIP_R_BRACKET/L_HIP_R/L_HIP_R_rotor/L_HIP_Y_BRACKET/L_HIP_Y_rotor/L_HIP_Y/L_KNEE_P_BRACKET/L_KNEE_P/L_KNEE_P_rotor/L_ANKLE_P_BRACKET>
+            point3f physics:localPos0 = (6.3108872e-30, 1.110223e-16, -0.03445)
+            point3f physics:localPos1 = (0, 0, 0)
+            quatf physics:localRot0 = (0.70710677, -0.70710677, -1.5169533e-14, -1.3121215e-13)
+            quatf physics:localRot1 = (1, 0, 0, 0)
+        }
+
+        def PhysicsFixedJoint "to_L_ANKLE_P"
+        {
+            custom rel physics:body0
+            append rel physics:body0 = </grasshopper_lower_body/Geometry/base_link/PELVIS/L_HIP_P/L_HIP_P_rotor/L_HIP_R_BRACKET/L_HIP_R/L_HIP_R_rotor/L_HIP_Y_BRACKET/L_HIP_Y_rotor/L_HIP_Y/L_KNEE_P_BRACKET/L_KNEE_P/L_KNEE_P_rotor/L_ANKLE_P_BRACKET>
+            custom rel physics:body1
+            append rel physics:body1 = </grasshopper_lower_body/Geometry/base_link/PELVIS/L_HIP_P/L_HIP_P_rotor/L_HIP_R_BRACKET/L_HIP_R/L_HIP_R_rotor/L_HIP_Y_BRACKET/L_HIP_Y_rotor/L_HIP_Y/L_KNEE_P_BRACKET/L_KNEE_P/L_KNEE_P_rotor/L_ANKLE_P_BRACKET/L_ANKLE_P_rotor>
+            point3f physics:localPos0 = (-1.2621775e-29, -0.03445, -0.33)
+            point3f physics:localPos1 = (0, 0, 0)
+            quatf physics:localRot0 = (5.801487e-14, 5.7935393e-14, 0.70710677, -0.70710677)
+            quatf physics:localRot1 = (1, 0, 0, 0)
+        }
+
+        def PhysicsFixedJoint "to_L_ANKLE_R_BRACKET"
+        {
+            custom rel physics:body0
+            append rel physics:body0 = </grasshopper_lower_body/Geometry/base_link/PELVIS/L_HIP_P/L_HIP_P_rotor/L_HIP_R_BRACKET/L_HIP_R/L_HIP_R_rotor/L_HIP_Y_BRACKET/L_HIP_Y_rotor/L_HIP_Y/L_KNEE_P_BRACKET/L_KNEE_P/L_KNEE_P_rotor/L_ANKLE_P_BRACKET/L_ANKLE_P_rotor/L_ANKLE_P>
+            custom rel physics:body1
+            append rel physics:body1 = </grasshopper_lower_body/Geometry/base_link/PELVIS/L_HIP_P/L_HIP_P_rotor/L_HIP_R_BRACKET/L_HIP_R/L_HIP_R_rotor/L_HIP_Y_BRACKET/L_HIP_Y_rotor/L_HIP_Y/L_KNEE_P_BRACKET/L_KNEE_P/L_KNEE_P_rotor/L_ANKLE_P_BRACKET/L_ANKLE_P_rotor/L_ANKLE_P/L_ANKLE_R_BRACKET>
+            point3f physics:localPos0 = (1.2621775e-29, 0, -0.03955)
+            point3f physics:localPos1 = (0, 0, 0)
+            quatf physics:localRot0 = (5.801487e-14, -5.7935393e-14, -0.70710677, 0.70710677)
+            quatf physics:localRot1 = (1, 0, 0, 0)
+        }
+
+        def PhysicsFixedJoint "to_L_ANKLE_R"
+        {
+            custom rel physics:body0
+            append rel physics:body0 = </grasshopper_lower_body/Geometry/base_link/PELVIS/L_HIP_P/L_HIP_P_rotor/L_HIP_R_BRACKET/L_HIP_R/L_HIP_R_rotor/L_HIP_Y_BRACKET/L_HIP_Y_rotor/L_HIP_Y/L_KNEE_P_BRACKET/L_KNEE_P/L_KNEE_P_rotor/L_ANKLE_P_BRACKET/L_ANKLE_P_rotor/L_ANKLE_P/L_ANKLE_R_BRACKET>
+            custom rel physics:body1
+            append rel physics:body1 = </grasshopper_lower_body/Geometry/base_link/PELVIS/L_HIP_P/L_HIP_P_rotor/L_HIP_R_BRACKET/L_HIP_R/L_HIP_R_rotor/L_HIP_Y_BRACKET/L_HIP_Y_rotor/L_HIP_Y/L_KNEE_P_BRACKET/L_KNEE_P/L_KNEE_P_rotor/L_ANKLE_P_BRACKET/L_ANKLE_P_rotor/L_ANKLE_P/L_ANKLE_R_BRACKET/L_ANKLE_R>
+            point3f physics:localPos0 = (0.023975, -0.0475, -0.11)
+            point3f physics:localPos1 = (0, 0, 0)
+            quatf physics:localRot0 = (-0.092213534, 0.7010682, 0.092213534, -0.7010682)
+            quatf physics:localRot1 = (1, 0, 0, 0)
+        }
+
+        def PhysicsFixedJoint "to_L_FOOT"
+        {
+            custom rel physics:body0
+            append rel physics:body0 = </grasshopper_lower_body/Geometry/base_link/PELVIS/L_HIP_P/L_HIP_P_rotor/L_HIP_R_BRACKET/L_HIP_R/L_HIP_R_rotor/L_HIP_Y_BRACKET/L_HIP_Y_rotor/L_HIP_Y/L_KNEE_P_BRACKET/L_KNEE_P/L_KNEE_P_rotor/L_ANKLE_P_BRACKET/L_ANKLE_P_rotor/L_ANKLE_P/L_ANKLE_R_BRACKET/L_ANKLE_R/L_ANKLE_R_rotor>
+            custom rel physics:body1
+            append rel physics:body1 = </grasshopper_lower_body/Geometry/base_link/PELVIS/L_HIP_P/L_HIP_P_rotor/L_HIP_R_BRACKET/L_HIP_R/L_HIP_R_rotor/L_HIP_Y_BRACKET/L_HIP_Y_rotor/L_HIP_Y/L_KNEE_P_BRACKET/L_KNEE_P/L_KNEE_P_rotor/L_ANKLE_P_BRACKET/L_ANKLE_P_rotor/L_ANKLE_P/L_ANKLE_R_BRACKET/L_ANKLE_R/L_ANKLE_R_rotor/L_FOOT>
+            point3f physics:localPos0 = (-2.220446e-16, -5.551115e-17, -0.031925)
+            point3f physics:localPos1 = (0, 0, 0)
+            quatf physics:localRot0 = (-0.092213534, -0.7010682, -0.092213534, 0.7010682)
+            quatf physics:localRot1 = (1, 0, 0, 0)
+        }
+    }
+}
+

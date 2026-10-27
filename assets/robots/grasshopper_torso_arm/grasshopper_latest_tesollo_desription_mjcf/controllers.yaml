@@ -1,0 +1,189 @@
+controller_manager:
+  ros__parameters:
+    update_rate: 100
+    joint_state_broadcaster:
+      type: joint_state_broadcaster/JointStateBroadcaster
+    left_arm_joint_gposition_controller:
+      type: forward_command_controller/ForwardCommandController
+    left_dg5fs_trajectory_controller:
+      type: joint_trajectory_controller/JointTrajectoryController
+    right_arm_joint_gposition_controller:
+      type: forward_command_controller/ForwardCommandController
+    right_dg5fs_trajectory_controller:
+      type: joint_trajectory_controller/JointTrajectoryController
+    head_joint_trajectory_controller:
+      type: joint_trajectory_controller/JointTrajectoryController
+    waist_joint_trajectory_controller:
+      type: joint_trajectory_controller/JointTrajectoryController
+joint_state_broadcaster:
+  ros__parameters:
+    joints:
+    - LA_SH_P_out
+    - LA_SH_R_out
+    - LA_ARM_Y_out
+    - LA_EL_P_out
+    - LA_FA_Y_out
+    - LA_WR_P_out
+    - LA_WR_R_out
+    - RA_SH_P_out
+    - RA_SH_R_out
+    - RA_ARM_Y_out
+    - RA_EL_P_out
+    - RA_FA_Y_out
+    - RA_WR_P_out
+    - RA_WR_R_out
+    - WAIST_Y_out
+    - WAIST_P_out
+    - L_HIP_P_out
+    - L_HIP_R_out
+    - L_HIP_Y_out
+    - L_KNEE_P_out
+    - L_ANKLE_P_out
+    - L_ANKLE_R_out
+    - R_HIP_P_out
+    - R_HIP_R_out
+    - R_HIP_Y_out
+    - R_KNEE_P_out
+    - R_ANKLE_P_out
+    - R_ANKLE_R_out
+    - HEAD_Y_out
+    - HEAD_P_out
+    - LA_hand_left_joint_1_1
+    - LA_hand_left_joint_1_2
+    - LA_hand_left_joint_1_3
+    - LA_hand_left_joint_1_4
+    - LA_hand_left_joint_2_1
+    - LA_hand_left_joint_2_2
+    - LA_hand_left_joint_2_3
+    - LA_hand_left_joint_2_4
+    - LA_hand_left_joint_3_1
+    - LA_hand_left_joint_3_2
+    - LA_hand_left_joint_3_3
+    - LA_hand_left_joint_3_4
+    - LA_hand_left_joint_4_1
+    - LA_hand_left_joint_4_2
+    - LA_hand_left_joint_4_3
+    - LA_hand_left_joint_4_4
+    - LA_hand_left_joint_5_1
+    - LA_hand_left_joint_5_2
+    - LA_hand_left_joint_5_3
+    - LA_hand_left_joint_5_4
+    - RA_hand_right_joint_1_1
+    - RA_hand_right_joint_1_2
+    - RA_hand_right_joint_1_3
+    - RA_hand_right_joint_1_4
+    - RA_hand_right_joint_2_1
+    - RA_hand_right_joint_2_2
+    - RA_hand_right_joint_2_3
+    - RA_hand_right_joint_2_4
+    - RA_hand_right_joint_3_1
+    - RA_hand_right_joint_3_2
+    - RA_hand_right_joint_3_3
+    - RA_hand_right_joint_3_4
+    - RA_hand_right_joint_4_1
+    - RA_hand_right_joint_4_2
+    - RA_hand_right_joint_4_3
+    - RA_hand_right_joint_4_4
+    - RA_hand_right_joint_5_1
+    - RA_hand_right_joint_5_2
+    - RA_hand_right_joint_5_3
+    - RA_hand_right_joint_5_4
+/**/left_arm_joint_gposition_controller:
+  ros__parameters:
+    joints:
+    - LA_SH_P_out
+    - LA_SH_R_out
+    - LA_ARM_Y_out
+    - LA_EL_P_out
+    - LA_FA_Y_out
+    - LA_WR_P_out
+    - LA_WR_R_out
+    interface_name: position
+/**/left_dg5fs_trajectory_controller:
+  ros__parameters:
+    joints:
+    - LA_hand_left_joint_1_1
+    - LA_hand_left_joint_1_2
+    - LA_hand_left_joint_1_3
+    - LA_hand_left_joint_1_4
+    - LA_hand_left_joint_2_1
+    - LA_hand_left_joint_2_2
+    - LA_hand_left_joint_2_3
+    - LA_hand_left_joint_2_4
+    - LA_hand_left_joint_3_1
+    - LA_hand_left_joint_3_2
+    - LA_hand_left_joint_3_3
+    - LA_hand_left_joint_3_4
+    - LA_hand_left_joint_4_1
+    - LA_hand_left_joint_4_2
+    - LA_hand_left_joint_4_3
+    - LA_hand_left_joint_4_4
+    - LA_hand_left_joint_5_1
+    - LA_hand_left_joint_5_2
+    - LA_hand_left_joint_5_3
+    - LA_hand_left_joint_5_4
+    command_interfaces:
+    - position
+    state_interfaces:
+    - position
+    - velocity
+/**/right_arm_joint_gposition_controller:
+  ros__parameters:
+    joints:
+    - RA_SH_P_out
+    - RA_SH_R_out
+    - RA_ARM_Y_out
+    - RA_EL_P_out
+    - RA_FA_Y_out
+    - RA_WR_P_out
+    - RA_WR_R_out
+    interface_name: position
+/**/right_dg5fs_trajectory_controller:
+  ros__parameters:
+    joints:
+    - RA_hand_right_joint_1_1
+    - RA_hand_right_joint_1_2
+    - RA_hand_right_joint_1_3
+    - RA_hand_right_joint_1_4
+    - RA_hand_right_joint_2_1
+    - RA_hand_right_joint_2_2
+    - RA_hand_right_joint_2_3
+    - RA_hand_right_joint_2_4
+    - RA_hand_right_joint_3_1
+    - RA_hand_right_joint_3_2
+    - RA_hand_right_joint_3_3
+    - RA_hand_right_joint_3_4
+    - RA_hand_right_joint_4_1
+    - RA_hand_right_joint_4_2
+    - RA_hand_right_joint_4_3
+    - RA_hand_right_joint_4_4
+    - RA_hand_right_joint_5_1
+    - RA_hand_right_joint_5_2
+    - RA_hand_right_joint_5_3
+    - RA_hand_right_joint_5_4
+    command_interfaces:
+    - position
+    state_interfaces:
+    - position
+    - velocity
+/**/head_joint_trajectory_controller:
+  ros__parameters:
+    joints:
+    - HEAD_Y_out
+    - HEAD_P_out
+    command_interfaces:
+    - position
+    state_interfaces:
+    - position
+    - velocity
+/**/waist_joint_trajectory_controller:
+  ros__parameters:
+    joints:
+    - WAIST_Y_out
+    - L_WAIST_P_out
+    - R_WAIST_P_out
+    command_interfaces:
+    - position
+    state_interfaces:
+    - position
+    - velocity

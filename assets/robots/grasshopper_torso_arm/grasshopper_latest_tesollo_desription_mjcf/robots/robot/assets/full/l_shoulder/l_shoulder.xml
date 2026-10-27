@@ -1,0 +1,20 @@
+<mujoco model="l_shoulder">
+  <default>
+    <default class="visual">
+      <geom group="2" type="mesh" contype="0" conaffinity="0"/>
+    </default>
+    <default class="collision">
+      <geom group="3" type="mesh"/>
+    </default>
+  </default>
+  <asset>
+    <material name="mtl_l_shoulder" specular="0.20000000000000004" shininess="1.0" rgba="0.74901961 0.74901961 0.74901961 1.0"/>
+    <mesh file="l_shoulder.obj"/>
+  </asset>
+  <worldbody>
+    <body name="l_shoulder">
+      <geom material="mtl_l_shoulder" mesh="l_shoulder" class="visual"/>
+      <geom mesh="l_shoulder" class="collision"/>
+    </body>
+  </worldbody>
+</mujoco>
